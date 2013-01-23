@@ -12,7 +12,7 @@
  * @param int $sig <p>
  * One of the PCNTL signals constants.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function posix_kill ($pid, $sig) {}
 
@@ -47,7 +47,7 @@ function posix_getuid () {}
  * @param int $uid <p>
  * The user id.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function posix_setuid ($uid) {}
 
@@ -66,7 +66,7 @@ function posix_geteuid () {}
  * @param int $uid <p>
  * The user id.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function posix_seteuid ($uid) {}
 
@@ -85,7 +85,7 @@ function posix_getgid () {}
  * @param int $gid <p>
  * The group id.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function posix_setgid ($gid) {}
 
@@ -104,7 +104,7 @@ function posix_getegid () {}
  * @param int $gid <p>
  * The group id.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function posix_setegid ($gid) {}
 
@@ -151,7 +151,7 @@ function posix_setsid () {}
  * @param int $pgid <p>
  * The process group id.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function posix_setpgid ($pid, $pgid) {}
 
@@ -274,7 +274,7 @@ function posix_getcwd () {}
  * umask. The permissions of the created file are
  * (mode &amp; ~umask).
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function posix_mkfifo ($pathname, $mode) {}
 
@@ -299,7 +299,7 @@ function posix_mkfifo ($pathname, $mode) {}
  * @param int $minor [optional] <p>
  * The minor device kernel identifier.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function posix_mknod ($pathname, $mode, $major = null, $minor = null) {}
 
@@ -322,7 +322,7 @@ function posix_mknod ($pathname, $mode, $major = null, $minor = null) {}
  * POSIX_F_OK just requests checking for the
  * existence of the file.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function posix_access ($file, $mode = null) {}
 
@@ -694,7 +694,7 @@ function posix_strerror ($errno) {}
  * @param int $base_group_id <p>
  * Typically the group number from the password file.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function posix_initgroups ($name, $base_group_id) {}
 

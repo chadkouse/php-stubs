@@ -21,7 +21,7 @@ function getlastmod () {}
  * Returns false if input contains character from outside the base64
  * alphabet.
  * </p>
- * @return string the original data&return.falseforfailure;. The returned data may be
+ * @return string the original data or false on failure. The returned data may be
  * binary.
  */
 function base64_decode ($data, $strict = null) {}
@@ -645,9 +645,11 @@ function base_convert ($number, $frombase, $tobase) {}
  * @param int $decimals [optional] <p>
  * Sets the number of decimal points.
  * </p>
+ * @param string $dec_point [optional]
+ * @param string $thousands_sep [optional]
  * @return string A formatted version of number.
  */
-function number_format ($number, $decimals = 0) {}
+function number_format ($number , $decimals = 0 , $dec_point = '.' , $thousands_sep = ',' ) {}
 
 /**
  * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
@@ -672,7 +674,7 @@ function fmod ($x, $y) {}
  * @param string $in_addr <p>
  * A 32bit IPv4, or 128bit IPv6 address.
  * </p>
- * @return string a string representation of the address&return.falseforfailure;.
+ * @return string a string representation of the address or false on failure.
  */
 function inet_ntop ($in_addr) {}
 
@@ -730,7 +732,7 @@ function getenv ($varname) {}
  * @param string $setting <p>
  * The setting, like "FOO=BAR"
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function putenv ($setting) {}
 
@@ -926,7 +928,7 @@ function magic_quotes_runtime ($new_setting) {}
  * @param bool $new_setting <p>
  * false for off, true for on.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function set_magic_quotes_runtime ($new_setting) {}
 
@@ -947,7 +949,7 @@ function get_magic_quotes_gpc () {}
 function get_magic_quotes_runtime () {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP %lt;5.4)<br/>
  * Import GET/POST/Cookie variables into the global scope
  * @link http://php.net/manual/en/function.import-request-variables.php
  * @param string $types <p>
@@ -977,7 +979,8 @@ function get_magic_quotes_runtime () {}
  * prefix. This is a possible security hazard. Notice level errors are
  * not displayed using the default error reporting level.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
+ * @deprecated This function has been DEPRECATED as of PHP 5.3.0 and REMOVED as of PHP 5.4.0.
  */
 function import_request_variables ($types, $prefix = null) {}
 
@@ -1046,7 +1049,7 @@ function import_request_variables ($types, $prefix = null) {}
  * This message type uses the same internal function as 
  * mail does.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function error_log ($message, $message_type = null, $destination = null, $extra_headers = null) {}
 ?>

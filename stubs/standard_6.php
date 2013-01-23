@@ -111,7 +111,7 @@ function stream_context_create (array $options = null, array $params = null) {}
  * params should be an associative array of the structure:
  * $params['paramname'] = "paramvalue";.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function stream_context_set_params ($stream_or_context, array $params) {}
 
@@ -137,7 +137,7 @@ function stream_context_get_params ($stream_or_context) {}
  * @param string $wrapper 
  * @param string $option 
  * @param mixed $value 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function stream_context_set_option ($stream_or_context, $wrapper, $option, $value) {}
 
@@ -261,7 +261,7 @@ function stream_filter_append ($stream, $filtername, $read_write = null, $params
  * @param resource $stream_filter <p>
  * The stream filter to be removed.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function stream_filter_remove ($stream_filter) {}
 
@@ -376,7 +376,7 @@ function stream_socket_server ($local_socket, &$errno = null, &$errstr = null, $
  * Can also be determined later using
  * stream_socket_get_name.
  * </p>
- * @return resource Returns true on success or false on failure.
+ * @return resource true on success or false on failure.
  */
 function stream_socket_accept ($server_socket, $timeout = null, &$peername = null) {}
 
@@ -507,7 +507,7 @@ function stream_socket_enable_crypto ($stream, $enable, $crypto_type = null, $se
  * STREAM_SHUT_RDWR (disable further receptions and
  * transmissions).
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function stream_socket_shutdown ($stream, $how) {}
 
@@ -574,7 +574,7 @@ function stream_copy_to_stream ($source, $dest, $maxlength = null, $offset = nul
  * @param int $offset [optional] <p>
  * Seek to the specified offset before reading.
  * </p>
- * @return string a string&return.falseforfailure;.
+ * @return string a string or false on failure.
  */
 function stream_get_contents ($handle, $maxlength = null, $offset = null) {}
 
@@ -585,7 +585,7 @@ function stream_get_contents ($handle, $maxlength = null, $offset = null) {}
  * @param resource $stream <p>
  * The stream to check.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function stream_supports_lock ($stream) {}
 
@@ -645,7 +645,7 @@ function fgetcsv ($handle, $length = null, $delimiter = null, $enclosure = null,
  * The optional enclosure parameter sets the field
  * enclosure (one character only).
  * </p>
- * @return int the length of the written string&return.falseforfailure;.
+ * @return int the length of the written string or false on failure.
  */
 function fputcsv ($handle, array $fields, $delimiter = null, $enclosure = null) {}
 
@@ -663,7 +663,7 @@ function fputcsv ($handle, array $fields, $delimiter = null, $enclosure = null) 
  * The optional third argument is set to true if the lock would block
  * (EWOULDBLOCK errno condition).
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function flock ($handle, $operation, &$wouldblock = null) {}
 
@@ -713,8 +713,27 @@ function get_meta_tags ($filename, $use_include_path = null) {}
  * allowed to write to that output stream.
  * </p>
  * @return int 0 on success, or EOF if the request cannot be honored.
+ * @see stream_set_read_buffer()
  */
 function stream_set_write_buffer ($stream, $buffer) {}
+
+/**
+ * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
+ * Sets file buffering on the given stream
+ * @link http://php.net/manual/en/function.stream-set-read-buffer.php
+ * @param resource $stream <p>
+ * The file pointer.
+ * </p>
+ * @param int $buffer <p>
+ * The number of bytes to buffer. If buffer
+ * is 0 then write operations are unbuffered. This ensures that all writes
+ * with fwrite are completed before other processes are
+ * allowed to write to that output stream.
+ * </p>
+ * @return int 0 on success, or EOF if the request cannot be honored.
+ * @see stream_set_write_buffer()
+ */
+function stream_set_read_buffer ($stream, $buffer) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -752,7 +771,7 @@ function set_socket_blocking ($socket, $mode) {}
  * while in blocking mode it will wait for data to become available
  * on the stream.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function stream_set_blocking ($stream, $mode) {}
 
@@ -866,7 +885,7 @@ function stream_get_line ($handle, $length, $ending = null) {}
  * protocol is a URL protocol. Default is 0, local
  * stream.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  * </p>
  * <p>
  * stream_wrapper_register will return false if the
@@ -900,7 +919,7 @@ function stream_resolve_include_path ($filename) {}
  * @link http://php.net/manual/en/function.stream-wrapper-unregister.php
  * @param string $protocol <p>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function stream_wrapper_unregister ($protocol) {}
 
@@ -910,7 +929,7 @@ function stream_wrapper_unregister ($protocol) {}
  * @link http://php.net/manual/en/function.stream-wrapper-restore.php
  * @param string $protocol <p>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function stream_wrapper_restore ($protocol) {}
 
@@ -938,7 +957,7 @@ function stream_get_transports () {}
  * @param mixed $stream_or_url <p>
  * The stream resource or URL to check.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function stream_is_local ($stream_or_url) {}
 
@@ -972,7 +991,7 @@ function get_headers ($url, $format = null) {}
  * @param int $microseconds [optional] <p>
  * The microseconds part of the timeout to be set.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function stream_set_timeout ($stream, $seconds, $microseconds = null) {}
 

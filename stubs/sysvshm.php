@@ -29,7 +29,7 @@ function shm_attach ($key, $memsize = null, $perm = null) {}
  * The shared memory identifier as returned by
  * shm_attach
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function shm_remove ($shm_identifier) {}
 
@@ -60,7 +60,7 @@ function shm_detach ($shm_identifier) {}
  * The variable. All variable-types
  * are supported.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function shm_put_var ($shm_identifier, $variable_key, $variable) {}
 
@@ -103,7 +103,7 @@ function shm_get_var ($shm_identifier, $variable_key) {}
  * @param int $variable_key <p>
  * The variable key.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function shm_remove_var ($shm_identifier, $variable_key) {}
 

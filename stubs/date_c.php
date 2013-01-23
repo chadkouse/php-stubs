@@ -43,8 +43,8 @@ class DateTime {
     /**
      * Alter the timestamp of a DateTime object by incrementing or decrementing
      * in a format accepted by strtotime().
-     * @param string $modify
-     * @return DateTime
+     * @param string $modify A date/time string. Valid formats are explained in <a href="http://www.php.net/manual/en/datetime.formats.php">Date and Time Formats</a>.
+     * @return DateTime Returns the DateTime object for method chaining or FALSE on failure.
      * @link http://php.net/manual/en/datetime.modify.php
      */
     public function modify ($modify) {}
@@ -332,10 +332,26 @@ class DatePeriod implements Traversable {
      * @param DateTime $start
      * @param DateInterval $interval
      * @param DateTime $end
-     * @param int $options
+     * @param int $options Can be set to DatePeriod::EXCLUDE_START_DATE.
      * @link http://php.net/manual/en/dateperiod.construct.php
      */
     public function __construct (DateTime $start, DateInterval $interval, DateTime $end, $options=0) {}
+
+    /**
+     * @param DateTime $start
+     * @param DateInterval $interval
+     * @param int $recirrences Number of recurrences
+     * @param int $options Can be set to DatePeriod::EXCLUDE_START_DATE.
+     * @link http://php.net/manual/en/dateperiod.construct.php
+     */
+    public function __construct (DateTime $start, DateInterval $interval, $recirrences, $options=0) {}
+
+    /**
+     * @param string $isostr String containing the ISO interval.
+     * @param int $options Can be set to DatePeriod::EXCLUDE_START_DATE.
+     * @link http://php.net/manual/en/dateperiod.construct.php
+     */
+    public function __construct ($isostr, $options=0) {}
 }
 
 ?>

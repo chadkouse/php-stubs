@@ -9,7 +9,7 @@ function xdebug_get_stack_depth () {}
 
 /**
  * Displays the current function stack, in a similar way as what Xdebug would display in an error situation.
- * @return void
+ * @return array
  */
 function xdebug_get_function_stack () {}
 

@@ -24,7 +24,7 @@ function xmlrpc_encode ($value) {}
  * @return mixed either an array, or an integer, or a string, or a boolean according
  * to the response returned by the XMLRPC method.
  */
-function xmlrpc_decode ($xml, $encoding = null) {}
+function xmlrpc_decode ($xml, $encoding = "iso-8859-1") {}
 
 /**
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
@@ -59,8 +59,10 @@ function xmlrpc_encode_request ($method, $params, array $output_options = null) 
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
  * Gets xmlrpc type for a PHP value
  * @link http://php.net/manual/en/function.xmlrpc-get-type.php
- * @param mixed $value 
- * @return string 
+ * @param mixed $value <p>
+ * PHP value
+ * </p>
+ * @return string the XML-RPC type.
  */
 function xmlrpc_get_type ($value) {}
 
@@ -74,8 +76,8 @@ function xmlrpc_get_type ($value) {}
  * @param string $type <p>
  * 'base64' or 'datetime'
  * </p>
- * @return bool Returns true on success or false on failure.
- * If successful, value is converted to an object.
+ * @return bool true on success or false on failure.
+ * If successful, <i>value</i> is converted to an object.
  */
 function xmlrpc_set_type (&$value, $type) {}
 
@@ -84,7 +86,7 @@ function xmlrpc_set_type (&$value, $type) {}
  * Determines if an array value represents an XMLRPC fault
  * @link http://php.net/manual/en/function.xmlrpc-is-fault.php
  * @param array $arg <p>
- * Array returned by xmlrpc_decode.
+ * Array returned by <b>xmlrpc_decode</b>.
  * </p>
  * @return bool true if the argument means fault, false otherwise. Fault
  * description is available in $arg["faultString"], fault

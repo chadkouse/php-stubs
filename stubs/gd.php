@@ -107,7 +107,7 @@ function gd_info () {}
  * A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagearc ($image, $cx, $cy, $width, $height, $start, $end, $color) {}
 
@@ -132,7 +132,7 @@ function imagearc ($image, $cx, $cy, $width, $height, $start, $end, $color) {}
  * The color of the ellipse. A color identifier created with
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imageellipse ($image, $cx, $cy, $width, $height, $color) {}
 
@@ -155,7 +155,7 @@ function imageellipse ($image, $cx, $cy, $width, $height, $color) {}
  * A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagechar ($image, $font, $x, $y, $c, $color) {}
 
@@ -178,7 +178,7 @@ function imagechar ($image, $font, $x, $y, $c, $color) {}
  * A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagecharup ($image, $font, $x, $y, $c, $color) {}
 
@@ -286,7 +286,7 @@ function imagecolorclosesthwb ($image, $red, $green, $blue) {}
  * @param int $color <p>
  * The color identifier.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagecolordeallocate ($image, $color) {}
 
@@ -413,7 +413,7 @@ function imagecolorsforindex ($image, $index) {}
  * @param int $src_h <p>
  * Source height.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagecopy ($dst_im, $src_im, $dst_x, $dst_y, $src_x, $src_y, $src_w, $src_h) {}
 
@@ -452,7 +452,7 @@ function imagecopy ($dst_im, $src_im, $dst_x, $dst_y, $src_x, $src_y, $src_w, $s
  * to imagecopy for pallete images, while it
  * implements alpha transparency for true colour images.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagecopymerge ($dst_im, $src_im, $dst_x, $dst_y, $src_x, $src_y, $src_w, $src_h, $pct) {}
 
@@ -491,7 +491,7 @@ function imagecopymerge ($dst_im, $src_im, $dst_x, $dst_y, $src_x, $src_y, $src_
  * identically to imagecopy for pallete images, while 
  * it implements alpha transparency for true colour images.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagecopymergegray ($dst_im, $src_im, $dst_x, $dst_y, $src_x, $src_y, $src_w, $src_h, $pct) {}
 
@@ -525,7 +525,7 @@ function imagecopymergegray ($dst_im, $src_im, $dst_x, $dst_y, $src_x, $src_y, $
  * @param int $src_h <p>
  * Source height.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagecopyresized ($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h) {}
 
@@ -580,7 +580,7 @@ function imageistruecolor ($image) {}
  * @param int $ncolors <p>
  * Sets the maximum number of colors that should be retained in the palette.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagetruecolortopalette ($image, $dither, $ncolors) {}
 
@@ -592,7 +592,7 @@ function imagetruecolortopalette ($image, $dither, $ncolors) {}
  * @param int $thickness <p>
  * Thickness, in pixels.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagesetthickness ($image, $thickness) {}
 
@@ -628,7 +628,7 @@ function imagesetthickness ($image, $thickness) {}
  * @param int $style <p>
  * A bitwise OR of the following possibilities:
  * IMG_ARC_PIE
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagefilledarc ($image, $cx, $cy, $width, $height, $start, $end, $color, $style) {}
 
@@ -653,7 +653,7 @@ function imagefilledarc ($image, $cx, $cy, $width, $height, $start, $end, $color
  * The fill color. A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagefilledellipse ($image, $cx, $cy, $width, $height, $color) {}
 
@@ -666,7 +666,7 @@ function imagefilledellipse ($image, $cx, $cy, $width, $height, $color) {}
  * Whether to enable the blending mode or not. On true color images 
  * the default value is true otherwise the default value is false
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagealphablending ($image, $blendmode) {}
 
@@ -678,7 +678,7 @@ function imagealphablending ($image, $blendmode) {}
  * @param bool $saveflag <p>
  * Whether to save the alpha channel or not. Default to false. 
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagesavealpha ($image, $saveflag) {}
 
@@ -805,7 +805,7 @@ function imagecolorexactalpha ($image, $red, $green, $blue, $alpha) {}
  * @param int $src_h <p>
  * Source height.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagecopyresampled ($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h) {}
 
@@ -835,7 +835,7 @@ function imagerotate ($image, $angle, $bgd_color, $ignore_transparent = null) {}
  * @param bool $enabled <p>
  * Whether to enable antialiasing or not.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imageantialias ($image, $enabled) {}
 
@@ -847,7 +847,7 @@ function imageantialias ($image, $enabled) {}
  * @param resource $tile <p>
  * The image resource to be used as a tile.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagesettile ($image, $tile) {}
 
@@ -859,7 +859,7 @@ function imagesettile ($image, $tile) {}
  * @param resource $brush <p>
  * An image resource.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagesetbrush ($image, $brush) {}
 
@@ -873,7 +873,7 @@ function imagesetbrush ($image, $brush) {}
  * IMG_COLOR_TRANSPARENT constant to add a 
  * transparent pixel.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagesetstyle ($image, $stylearray ) {}
 
@@ -1011,7 +1011,7 @@ function imagecreatefromgd2part ($filename, $srcX, $srcY, $width, $height) {}
  * PNG_ALL_FILTERS may also be used to respectively
  * disable or activate all filters.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagepng ($image, $filename = null, $quality = null, $filters = null) {}
 
@@ -1024,7 +1024,7 @@ function imagepng ($image, $filename = null, $quality = null, $filters = null) {
  * The path to save the file to. If not set or &null;, the raw image stream
  * will be outputted directly.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagegif ($image, $filename = null) {}
 
@@ -1046,7 +1046,7 @@ function imagegif ($image, $filename = null) {}
  * quality, smaller file) to 100 (best quality, biggest file). The 
  * default is the default IJG quality value (about 75).
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagejpeg ($image, $filename = null, $quality = null) {}
 
@@ -1064,7 +1064,7 @@ function imagejpeg ($image, $filename = null, $quality = null) {}
  * identifier obtained from imagecolorallocate.
  * The default foreground color is black.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagewbmp ($image, $filename = null, $foreground = null) {}
 
@@ -1077,7 +1077,7 @@ function imagewbmp ($image, $filename = null, $foreground = null) {}
  * The path to save the file to. If not set or &null;, the raw image stream
  * will be outputted directly.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagegd ($image, $filename = null) {}
 
@@ -1098,7 +1098,7 @@ function imagegd ($image, $filename = null) {}
  * IMG_GD2_COMPRESSED. Default is 
  * IMG_GD2_RAW.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagegd2 ($image, $filename = null, $chunk_size = null, $type = null) {}
 
@@ -1107,7 +1107,7 @@ function imagegd2 ($image, $filename = null, $chunk_size = null, $type = null) {
  * Destroy an image
  * @link http://php.net/manual/en/function.imagedestroy.php
  * @param resource $image 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagedestroy ($image) {}
 
@@ -1122,7 +1122,7 @@ function imagedestroy ($image) {}
  * @param float $outputgamma <p>
  * The output gamma.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagegammacorrect ($image, $inputgamma, $outputgamma) {}
 
@@ -1141,7 +1141,7 @@ function imagegammacorrect ($image, $inputgamma, $outputgamma) {}
  * The fill color. A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagefill ($image, $x, $y, $color) {}
 
@@ -1161,7 +1161,7 @@ function imagefill ($image, $x, $y, $color) {}
  * A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagefilledpolygon ($image, array $points, $num_points, $color) {}
 
@@ -1186,7 +1186,7 @@ function imagefilledpolygon ($image, array $points, $num_points, $color) {}
  * The fill color. A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagefilledrectangle ($image, $x1, $y1, $x2, $y2, $color) {}
 
@@ -1209,7 +1209,7 @@ function imagefilledrectangle ($image, $x1, $y1, $x2, $y2, $color) {}
  * The fill color. A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagefilltoborder ($image, $x, $y, $border, $color) {}
 
@@ -1265,7 +1265,7 @@ function imageinterlace ($image, $interlace = null) {}
  * The line color. A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imageline ($image, $x1, $y1, $x2, $y2, $color) {}
 
@@ -1354,7 +1354,7 @@ function imageloadfont ($file) {}
  * A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagepolygon ($image, array $points, $num_points, $color) {}
 
@@ -1380,7 +1380,7 @@ function imagepolygon ($image, array $points, $num_points, $color) {}
  * A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagerectangle ($image, $x1, $y1, $x2, $y2, $color) {}
 
@@ -1399,7 +1399,7 @@ function imagerectangle ($image, $x1, $y1, $x2, $y2, $color) {}
  * A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagesetpixel ($image, $x, $y, $color) {}
 
@@ -1422,7 +1422,7 @@ function imagesetpixel ($image, $x, $y, $color) {}
  * A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagestring ($image, $font, $x, $y, $string, $color) {}
 
@@ -1445,7 +1445,7 @@ function imagestring ($image, $font, $x, $y, $string, $color) {}
  * A color identifier created with 
  * imagecolorallocate.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagestringup ($image, $font, $x, $y, $string, $color) {}
 
@@ -1846,7 +1846,7 @@ function imagepsloadfont ($filename) {}
  * @param resource $font_index <p>
  * A font resource, returned by imagepsloadfont.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagepsfreefont ($font_index) {}
 
@@ -1863,7 +1863,7 @@ function imagepsfreefont ($font_index) {}
  * IsoLatin1.enc and 
  * IsoLatin2.enc.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagepsencodefont ($font_index, $encodingfile) {}
 
@@ -1877,7 +1877,7 @@ function imagepsencodefont ($font_index, $encodingfile) {}
  * @param float $extend <p>
  * Extension value, must be greater than 0.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagepsextendfont ($font_index, $extend) {}
 
@@ -1891,7 +1891,7 @@ function imagepsextendfont ($font_index, $extend) {}
  * @param float $slant <p>
  * Slant level.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagepsslantfont ($font_index, $slant) {}
 
@@ -2029,7 +2029,7 @@ function imagetypes () {}
  * @param int $threshold <p>
  * Threshold value, between 0 and 8 (inclusive).
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function jpeg2wbmp ($jpegname, $wbmpname, $dest_height, $dest_width, $threshold) {}
 
@@ -2052,7 +2052,7 @@ function jpeg2wbmp ($jpegname, $wbmpname, $dest_height, $dest_width, $threshold)
  * @param int $threshold <p>
  * Threshold value, between 0 and 8 (inclusive).
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function png2wbmp ($pngname, $wbmpname, $dest_height, $dest_width, $threshold) {}
 
@@ -2068,7 +2068,7 @@ function png2wbmp ($pngname, $wbmpname, $dest_height, $dest_width, $threshold) {
  * @param int $threshold [optional] <p>
  * Threshold value, between 0 and 255 (inclusive).
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function image2wbmp ($image, $filename = null, $threshold = null) {}
 
@@ -2082,7 +2082,7 @@ function image2wbmp ($image, $filename = null, $threshold = null) {}
  * IMG_EFFECT_REPLACE
  * Use pixel replacement (equivalent of passing true to
  * imagealphablending)
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagelayereffect ($image, $effect) {}
 
@@ -2096,7 +2096,7 @@ function imagelayereffect ($image, $effect) {}
  * A palette image link resource pointing to an image that has the same
  * size as image1.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagecolormatch ($image1, $image2) {}
 
@@ -2113,7 +2113,7 @@ function imagecolormatch ($image1, $image2) {}
  * identifier obtained from imagecolorallocate.
  * The default foreground color is black.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagexbm ($image, $filename, $foreground = null) {}
 
@@ -2135,7 +2135,7 @@ function imagexbm ($image, $filename, $foreground = null) {}
  * IMG_FILTER_COLORIZE: Alpha channel, A value 
  * between 0 and 127. 0 indicates completely opaque while 127 indicates 
  * completely transparent.
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imagefilter ($image, $filtertype, $arg1 = null, $arg2 = null, $arg3 = null, $arg4 = null) {}
 
@@ -2153,7 +2153,7 @@ function imagefilter ($image, $filtertype, $arg1 = null, $arg2 = null, $arg3 = n
  * @param float $offset <p>
  * Color offset.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function imageconvolution ($image, array $matrix, $div, $offset) {}
 

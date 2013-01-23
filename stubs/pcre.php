@@ -13,59 +13,77 @@
  * The input string.
  * </p>
  * @param array $matches [optional] <p>
- * If matches is provided, then it is filled with
+ * If <i>matches</i> is provided, then it is filled with
  * the results of search. $matches[0] will contain the
  * text that matched the full pattern, $matches[1]
  * will have the text that matched the first captured parenthesized
  * subpattern, and so on.
  * </p>
  * @param int $flags [optional] <p>
- * flags can be the following flag:
- * PREG_OFFSET_CAPTURE
+ * <i>flags</i> can be the following flag:
+ * <b>PREG_OFFSET_CAPTURE</b>
  * If this flag is passed, for every occurring match the appendant string
  * offset will also be returned. Note that this changes the value of
- * matches into an array where every element is an
+ * <i>matches</i> into an array where every element is an
  * array consisting of the matched string at offset 0
- * and its string offset into subject at offset
+ * and its string offset into <i>subject</i> at offset
  * 1.
  * @param int $offset [optional] <p>
  * Normally, the search starts from the beginning of the subject string.
- * The optional parameter offset can be used to
+ * The optional parameter <i>offset</i> can be used to
  * specify the alternate place from which to start the search (in bytes).
  * </p>
  * <p>
- * Using offset is not equivalent to passing 
+ * Using <i>offset</i> is not equivalent to passing
  * substr($subject, $offset) to
- * preg_match in place of the subject string,
- * because pattern can contain assertions such as
+ * <b>preg_match</b> in place of the subject string,
+ * because <i>pattern</i> can contain assertions such as
  * ^, $ or
  * (?&lt;=x). Compare:
- * ]]>
- * &example.outputs;
+ * <code>
+ * $subject = "abcdef";
+ * $pattern = '/^def/';
+ * preg_match($pattern, $subject, $matches, PREG_OFFSET_CAPTURE, 3);
+ * print_r($matches);
+ * </code>
+ * The above example will output:
+ * <pre>
+ * Array
+ * (
+ * )
+ * </pre>
  * <p>
  * while this example
  * </p>
- * ]]>
+ * <code>
+ * $subject = "abcdef";
+ * $pattern = '/^def/';
+ * preg_match($pattern, substr($subject,3), $matches, PREG_OFFSET_CAPTURE);
+ * print_r($matches);
+ * </code>
  * <p>
  * will produce
  * </p>
+ * <pre>
  * Array
+ * (
+ * [0] => Array
  * (
  * [0] => def
  * [1] => 0
  * )
  * )
- * ]]>
+ * </pre>
  * </p>
- * @return int preg_match returns the number of times
- * pattern matches. That will be either 0 times
- * (no match) or 1 time because preg_match will stop
- * searching after the first match. preg_match_all
+ * @return int <b>preg_match</b> returns the number of times
+ * <i>pattern</i> matches. That will be either 0 times
+ * (no match) or 1 time because <b>preg_match</b> will stop
+ * searching after the first match. <b>preg_match_all</b>
  * on the contrary will continue until it reaches the end of
- * subject.
- * preg_match returns false if an error occurred.
+ * <i>subject</i>.
+ * <b>preg_match</b> returns false if an error occurred.
  */
-function preg_match ($pattern, $subject, array &$matches = null, $flags = null, $offset = null) {}
+function preg_match ($pattern, $subject, array &$matches = null, $flags = 0, $offset = 0) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -77,46 +95,53 @@ function preg_match ($pattern, $subject, array &$matches = null, $flags = null, 
  * @param string $subject <p>
  * The input string.
  * </p>
- * @param array $matches <p>
+ * @param array $matches [optional] <p>
  * Normally, the search starts from the beginning of the subject string.
- * The optional parameter offset can be used to
+ * The optional parameter <i>offset</i> can be used to
  * specify the alternate place from which to start the search (in bytes).
  * </p>
  * <p>
- * Using offset is not equivalent to passing 
+ * Using <i>offset</i> is not equivalent to passing
  * substr($subject, $offset) to
- * preg_match_all in place of the subject string,
- * because pattern can contain assertions such as
+ * <b>preg_match_all</b> in place of the subject string,
+ * because <i>pattern</i> can contain assertions such as
  * ^, $ or
- * (?&lt;=x). See preg_match
+ * (?&lt;=x). See <b>preg_match</b>
  * for examples.
  * </p>
  * @param int $flags [optional] <p>
  * Can be a combination of the following flags (note that it doesn't make
- * sense to use PREG_PATTERN_ORDER together with
- * PREG_SET_ORDER):
- * PREG_PATTERN_ORDER
+ * sense to use <b>PREG_PATTERN_ORDER</b> together with
+ * <b>PREG_SET_ORDER</b>):
+ * <b>PREG_PATTERN_ORDER</b>
  * <p>
  * Orders results so that $matches[0] is an array of full
  * pattern matches, $matches[1] is an array of strings matched by
  * the first parenthesized subpattern, and so on.
  * </p>
  * <p>
- * ]]>
- * &example.outputs;
+ * <code>
+ * preg_match_all("|]+>(.*)]+>|U",
+ * "example: this is a test",
+ * $out, PREG_PATTERN_ORDER);
+ * echo $out[0][0] . ", " . $out[0][1] . "\n";
+ * echo $out[1][0] . ", " . $out[1][1] . "\n";
+ * </code>
+ * The above example will output:
+ * <pre>
  * example: , this is a test
  * example: , this is a test
- * ]]>
+ * </pre>
  * <p>
  * So, $out[0] contains array of strings that matched full pattern,
  * and $out[1] contains array of strings enclosed by tags.
  * </p>
  * </p>
- * @param int $offset [optional] 
+ * @param int $offset [optional]
  * @return int the number of full pattern matches (which might be zero),
  * or false if an error occurred.
  */
-function preg_match_all ($pattern, $subject, array &$matches, $flags = null, $offset = null) {}
+function preg_match_all ($pattern, $subject, array &$matches = null, $flags = PREG_PATTERN_ORDER, $offset = 0) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -127,26 +152,23 @@ function preg_match_all ($pattern, $subject, array &$matches, $flags = null, $of
  * strings.
  * </p>
  * <p>
- * The e modifier makes preg_replace
- * treat the replacement parameter as PHP code after
- * the appropriate references substitution is done. Tip: make sure that
- * replacement constitutes a valid PHP code string,
- * otherwise PHP will complain about a parse error at the line containing
- * preg_replace.
+ * Several PCRE modifiers
+ * are also available, including 'e' (PREG_REPLACE_EVAL), which
+ * is specific to this function.
  * </p>
  * @param mixed $replacement <p>
  * The string or an array with strings to replace. If this parameter is a
- * string and the pattern parameter is an array,
+ * string and the <i>pattern</i> parameter is an array,
  * all patterns will be replaced by that string. If both
- * pattern and replacement
- * parameters are arrays, each pattern will be
- * replaced by the replacement counterpart. If
- * there are fewer elements in the replacement
- * array than in the pattern array, any extra
- * patterns will be replaced by an empty string.
+ * <i>pattern</i> and <i>replacement</i>
+ * parameters are arrays, each <i>pattern</i> will be
+ * replaced by the <i>replacement</i> counterpart. If
+ * there are fewer elements in the <i>replacement</i>
+ * array than in the <i>pattern</i> array, any extra
+ * <i>pattern</i>s will be replaced by an empty string.
  * </p>
  * <p>
- * replacement may contain references of the form
+ * <i>replacement</i> may contain references of the form
  * \\n or (since PHP 4.0.4)
  * $n, with the latter form
  * being the preferred one. Every such reference will be replaced by the text
@@ -159,16 +181,16 @@ function preg_match_all ($pattern, $subject, array &$matches, $flags = null, $of
  * ("\\\\" PHP string).
  * </p>
  * <p>
- * When working with a replacement pattern where a backreference is 
+ * When working with a replacement pattern where a backreference is
  * immediately followed by another number (i.e.: placing a literal number
- * immediately after a matched pattern), you cannot use the familiar 
- * \\1 notation for your backreference. 
+ * immediately after a matched pattern), you cannot use the familiar
+ * \\1 notation for your backreference.
  * \\11, for example, would confuse
- * preg_replace since it does not know whether you
- * want the \\1 backreference followed by a literal 
+ * <b>preg_replace</b> since it does not know whether you
+ * want the \\1 backreference followed by a literal
  * 1, or the \\11 backreference
- * followed by nothing. In this case the solution is to use 
- * \${1}1. This creates an isolated 
+ * followed by nothing. In this case the solution is to use
+ * \${1}1. This creates an isolated
  * $1 backreference, leaving the 1
  * as a literal.
  * </p>
@@ -180,36 +202,35 @@ function preg_match_all ($pattern, $subject, array &$matches, $flags = null, $of
  * from backreference usage with either single or double quotes (e.g.
  * 'strlen(\'$1\')+strlen("$2")'). Make sure you are
  * aware of PHP's string
- * syntax to know exactly how the interpreted string will look
- * like.
+ * syntax to know exactly how the interpreted string will look.
  * </p>
  * @param mixed $subject <p>
  * The string or an array with strings to search and replace.
  * </p>
  * <p>
- * If subject is an array, then the search and
- * replace is performed on every entry of subject,
+ * If <i>subject</i> is an array, then the search and
+ * replace is performed on every entry of <i>subject</i>,
  * and the return value is an array as well.
  * </p>
  * @param int $limit [optional] <p>
  * The maximum possible replacements for each pattern in each
- * subject string. Defaults to
+ * <i>subject</i> string. Defaults to
  * -1 (no limit).
  * </p>
  * @param int $count [optional] <p>
  * If specified, this variable will be filled with the number of
  * replacements done.
  * </p>
- * @return mixed preg_replace returns an array if the
- * subject parameter is an array, or a string
+ * @return mixed <b>preg_replace</b> returns an array if the
+ * <i>subject</i> parameter is an array, or a string
  * otherwise.
  * </p>
  * <p>
- * If matches are found, the new subject will
- * be returned, otherwise subject will be
- * returned unchanged or &null; if an error occurred.
+ * If matches are found, the new <i>subject</i> will
+ * be returned, otherwise <i>subject</i> will be
+ * returned unchanged or null if an error occurred.
  */
-function preg_replace ($pattern, $replacement, $subject, $limit = null, &$count = null) {}
+function preg_replace ($pattern, $replacement, $subject, $limit = -1, &$count = null) {}
 
 /**
  * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
@@ -221,66 +242,85 @@ function preg_replace ($pattern, $replacement, $subject, $limit = null, &$count 
  * </p>
  * @param callback $callback <p>
  * A callback that will be called and passed an array of matched elements
- * in the subject string. The callback should
+ * in the <i>subject</i> string. The callback should
  * return the replacement string.
  * </p>
  * <p>
- * You'll often need the callback function
- * for a preg_replace_callback in just one place.
+ * You'll often need the <i>callback</i> function
+ * for a <b>preg_replace_callback</b> in just one place.
  * In this case you can use an
  * anonymous function (since
- * PHP 5.3.0) or create_function to
+ * PHP 5.3.0) or <b>create_function</b> to
  * declare an anonymous function as callback within the call to
- * preg_replace_callback. By doing it this way
+ * <b>preg_replace_callback</b>. By doing it this way
  * you have all information for the call in one place and do not
  * clutter the function namespace with a callback function's name
  * not used anywhere else.
  * </p>
  * <p>
- * preg_replace_callback and 
- * create_function
- * ]]>
+ * <b>preg_replace_callback</b> and
+ * <b>create_function</b>
+ * <code>
+ * /* a unix-style command line filter to convert uppercase
+ * * letters at the beginning of paragraphs to lowercase * /
+ * $fp = fopen("php://stdin", "r") or die("can't read stdin");
+ * while (!feof($fp)) {
+ * $line = fgets($fp);
+ * $line = preg_replace_callback(
+ * '|<p>\s*\w|',
+ * create_function(
+ * // single quotes are essential here,
+ * // or alternative escape all $ as \$
+ * '$matches',
+ * 'return strtolower($matches[0]);'
+ * ),
+ * $line
+ * );
+ * echo $line;
+ * }
+ * fclose($fp);
+ * </code>
  * </p>
  * @param mixed $subject <p>
  * The string or an array with strings to search and replace.
  * </p>
  * @param int $limit [optional] <p>
  * The maximum possible replacements for each pattern in each
- * subject string. Defaults to
+ * <i>subject</i> string. Defaults to
  * -1 (no limit).
  * </p>
  * @param int $count [optional] <p>
  * If specified, this variable will be filled with the number of
  * replacements done.
  * </p>
- * @return mixed preg_replace_callback returns an array if the
- * subject parameter is an array, or a string
- * otherwise. On errors the return value is &null;
+ * @return mixed <b>preg_replace_callback</b> returns an array if the
+ * <i>subject</i> parameter is an array, or a string
+ * otherwise. On errors the return value is null
  * </p>
  * <p>
  * If matches are found, the new subject will be returned, otherwise
- * subject will be returned unchanged.
+ * <i>subject</i> will be returned unchanged.
  */
-function preg_replace_callback ($pattern, $callback, $subject, $limit = null, &$count = null) {}
+function preg_replace_callback ($pattern, $callback, $subject, $limit = -1, &$count = null) {}
 
 /**
  * (PHP 5 &gt;= 5.3.0)<br/>
  * Perform a regular expression search and replace
  * @link http://php.net/manual/en/function.preg-filter.php
- * @param mixed $pattern 
- * @param mixed $replacement 
- * @param mixed $subject 
- * @param int $limit [optional] 
- * @param int $count [optional] 
- * @return mixed an array if the subject
+ * @param mixed $pattern
+ * @param mixed $replacement
+ * @param mixed $subject
+ * @param int $limit [optional]
+ * @param int $count [optional]
+ * @return mixed an array if the <i>subject</i>
  * parameter is an array, or a string otherwise.
  * </p>
  * <p>
- * If matches are found, the new subject will
- * be returned, otherwise subject will be
- * returned unchanged or &null; if an error occurred.
+ * If no matches are found or an error occurred, an empty array
+ * is returned when <i>subject</i> is an array
+ * or null otherwise.
  */
-function preg_filter ($regex, $replace, $subject, $limit, &$count) {}
+function preg_filter ($pattern, $replacement, $subject, $limit = -1, &$count = null) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -293,22 +333,22 @@ function preg_filter ($regex, $replace, $subject, $limit, &$count) {}
  * The input string.
  * </p>
  * @param int $limit [optional] <p>
- * If specified, then only substrings up to limit
+ * If specified, then only substrings up to <i>limit</i>
  * are returned with the rest of the string being placed in the last
- * substring. A limit of -1, 0 or null means "no limit"
- * and, as is standard across PHP, you can use null to skip to the 
- * flags parameter.
+ * substring. A <i>limit</i> of -1, 0 or null means "no limit"
+ * and, as is standard across PHP, you can use null to skip to the
+ * <i>flags</i> parameter.
  * </p>
  * @param int $flags [optional] <p>
- * flags can be any combination of the following
- * flags (combined with bitwise | operator):
- * PREG_SPLIT_NO_EMPTY
+ * <i>flags</i> can be any combination of the following
+ * flags (combined with the | bitwise operator):
+ * <b>PREG_SPLIT_NO_EMPTY</b>
  * If this flag is set, only non-empty pieces will be returned by
- * preg_split.
- * @return array an array containing substrings of subject
- * split along boundaries matched by pattern.
+ * <b>preg_split</b>.
+ * @return array an array containing substrings of <i>subject</i>
+ * split along boundaries matched by <i>pattern</i>.
  */
-function preg_split ($pattern, $subject, $limit = null, $flags = null) {}
+function preg_split ($pattern, $subject, $limit = -1, $flags = 0) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -318,7 +358,7 @@ function preg_split ($pattern, $subject, $limit = null, $flags = null) {}
  * The input string.
  * </p>
  * @param string $delimiter [optional] <p>
- * If the optional delimiter is specified, it
+ * If the optional <i>delimiter</i> is specified, it
  * will also be escaped. This is useful for escaping the delimiter
  * that is required by the PCRE functions. The / is the most commonly
  * used delimiter.
@@ -338,26 +378,26 @@ function preg_quote ($str, $delimiter = null) {}
  * The input array.
  * </p>
  * @param int $flags [optional] <p>
- * If set to PREG_GREP_INVERT, this function returns
+ * If set to <b>PREG_GREP_INVERT</b>, this function returns
  * the elements of the input array that do not match
- * the given pattern.
+ * the given <i>pattern</i>.
  * </p>
  * @return array an array indexed using the keys from the
- * input array.
+ * <i>input</i> array.
  */
-function preg_grep ($pattern, array $input, $flags = null) {}
+function preg_grep ($pattern, array $input, $flags = 0) {}
 
 /**
  * (PHP 5 &gt;= 5.2.0)<br/>
  * Returns the error code of the last PCRE regex execution
  * @link http://php.net/manual/en/function.preg-last-error.php
  * @return int one of the following constants (explained on their own page):
- * PREG_NO_ERROR
- * PREG_INTERNAL_ERROR
- * PREG_BACKTRACK_LIMIT_ERROR (see also pcre.backtrack_limit)
- * PREG_RECURSION_LIMIT_ERROR (see also pcre.recursion_limit)
- * PREG_BAD_UTF8_ERROR
- * PREG_BAD_UTF8_OFFSET_ERROR (since PHP 5.3.0)
+ * <b>PREG_NO_ERROR</b>
+ * <b>PREG_INTERNAL_ERROR</b>
+ * <b>PREG_BACKTRACK_LIMIT_ERROR</b> (see also pcre.backtrack_limit)
+ * <b>PREG_RECURSION_LIMIT_ERROR</b> (see also pcre.recursion_limit)
+ * <b>PREG_BAD_UTF8_ERROR</b>
+ * <b>PREG_BAD_UTF8_OFFSET_ERROR</b> (since PHP 5.3.0)
  */
 function preg_last_error () {}
 
@@ -366,7 +406,7 @@ function preg_last_error () {}
  * Orders results so that $matches[0] is an array of full pattern
  * matches, $matches[1] is an array of strings matched by the first
  * parenthesized subpattern, and so on. This flag is only used with
- * preg_match_all.
+ * <b>preg_match_all</b>.
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_PATTERN_ORDER', 1);
@@ -374,30 +414,28 @@ define ('PREG_PATTERN_ORDER', 1);
 /**
  * Orders results so that $matches[0] is an array of first set of
  * matches, $matches[1] is an array of second set of matches, and so
- * on. This flag is only used with preg_match_all.
+ * on. This flag is only used with <b>preg_match_all</b>.
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_SET_ORDER', 2);
 
 /**
  * See the description of
- * PREG_SPLIT_OFFSET_CAPTURE. This flag is
- * available since PHP 4.3.0.
+ * <b>PREG_SPLIT_OFFSET_CAPTURE</b>.
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_OFFSET_CAPTURE', 256);
 
 /**
- * This flag tells preg_split to return only non-empty
+ * This flag tells <b>preg_split</b> to return only non-empty
  * pieces.
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_SPLIT_NO_EMPTY', 1);
 
 /**
- * This flag tells preg_split to capture
- * parenthesized expression in the delimiter pattern as well. This flag
- * is available since PHP 4.0.5.
+ * This flag tells <b>preg_split</b> to capture
+ * parenthesized expression in the delimiter pattern as well.
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_SPLIT_DELIM_CAPTURE', 2);
@@ -407,64 +445,59 @@ define ('PREG_SPLIT_DELIM_CAPTURE', 2);
  * offset will also be returned. Note that this changes the return
  * values in an array where every element is an array consisting of the
  * matched string at offset 0 and its string offset within subject at
- * offset 1. This flag is available since PHP 4.3.0
- * and is only used for preg_split.
+ * offset 1. This flag is only used for <b>preg_split</b>.
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_SPLIT_OFFSET_CAPTURE', 4);
 define ('PREG_GREP_INVERT', 1);
 
 /**
- * Returned by preg_last_error if there were no
- * errors. Available since PHP 5.2.0.
+ * Returned by <b>preg_last_error</b> if there were no
+ * errors.
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_NO_ERROR', 0);
 
 /**
- * Returned by preg_last_error if there was an
- * internal PCRE error. Available since PHP 5.2.0.
+ * Returned by <b>preg_last_error</b> if there was an
+ * internal PCRE error.
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_INTERNAL_ERROR', 1);
 
 /**
- * Returned by preg_last_error if backtrack limit was exhausted.
- * Available since PHP 5.2.0.
+ * Returned by <b>preg_last_error</b> if backtrack limit was exhausted.
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_BACKTRACK_LIMIT_ERROR', 2);
 
 /**
- * Returned by preg_last_error if recursion limit was exhausted.
- * Available since PHP 5.2.0.
+ * Returned by <b>preg_last_error</b> if recursion limit was exhausted.
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_RECURSION_LIMIT_ERROR', 3);
 
 /**
- * Returned by preg_last_error if the last error was
- * caused by malformed UTF-8 data (only when running a regex in UTF-8 mode). Available
- * since PHP 5.2.0.
+ * Returned by <b>preg_last_error</b> if the last error was
+ * caused by malformed UTF-8 data (only when running a regex in UTF-8 mode).
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_BAD_UTF8_ERROR', 4);
 
 /**
- * Returned by preg_last_error if the offset didn't
+ * Returned by <b>preg_last_error</b> if the offset didn't
  * correspond to the begin of a valid UTF-8 code point (only when running
  * a regex in UTF-8
- * mode). Available since PHP 5.3.0.
+ * mode).
  * @link http://php.net/manual/en/pcre.constants.php
  */
 define ('PREG_BAD_UTF8_OFFSET_ERROR', 5);
 
 /**
  * PCRE version and release date (e.g. "7.0 18-Dec-2006").
- * Available since PHP 5.2.4.
  * @link http://php.net/manual/en/pcre.constants.php
  */
-define ('PCRE_VERSION', "8.00 2009-10-19");
+define ('PCRE_VERSION', "8.12 2011-01-15");
 
 // End of pcre v.
 ?>

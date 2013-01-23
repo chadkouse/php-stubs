@@ -1082,4 +1082,260 @@ define ('DNS_ANY', 268435456);
 define ('DNS_ALL', 251713587);
 
 // End of standard v.5.3.1-0.dotdeb.1
-?>
+
+
+//WI-11084 Constant not defined PHP_QUERY_RFC3986
+
+/**
+ * Encoding is performed per RFC 1738 and the application/x-www-form-urlencoded media type,
+ * which implies that spaces are encoded as plus (+) signs.
+ * @link http://php.net/manual/en/function.http-build-query.php
+ */
+define('PHP_QUERY_RFC1738', 1);
+/**
+ * Encoding is performed according to RFC 3986, and spaces will be percent encoded (%20).
+ * @link http://php.net/manual/en/function.http-build-query.php
+ */
+define('PHP_QUERY_RFC3986', 2);
+
+
+//WI-11254 Stubs for missing constants from PHP 5.4
+
+/**
+ * Specifies where the manpages were installed into. Available since PHP 5.3.7.
+ * @link http://php.net/manual/en/reserved.constants.php
+ */
+define('PHP_MANDIR', '/usr/local/php/php/man');
+/**
+ * Specifies where the binaries were installed into.
+ * @link http://php.net/manual/en/reserved.constants.php
+ */
+define('PHP_BINARY', '/usr/local/php/bin/php');
+
+
+
+/** @link http://php.net/manual/en/outcontrol.constants.php */
+define('PHP_OUTPUT_HANDLER_WRITE', 0);
+/** @link http://php.net/manual/en/outcontrol.constants.php */
+define('PHP_OUTPUT_HANDLER_FLUSH', 4);
+/** @link http://php.net/manual/en/outcontrol.constants.php */
+define('PHP_OUTPUT_HANDLER_CLEAN', 2);
+/** @link http://php.net/manual/en/outcontrol.constants.php */
+define('PHP_OUTPUT_HANDLER_FINAL', 8);
+/** @link http://php.net/manual/en/outcontrol.constants.php */
+define('PHP_OUTPUT_HANDLER_CLEANABLE', 16);
+/** @link http://php.net/manual/en/outcontrol.constants.php */
+define('PHP_OUTPUT_HANDLER_FLUSHABLE', 32);
+/** @link http://php.net/manual/en/outcontrol.constants.php */
+define('PHP_OUTPUT_HANDLER_REMOVABLE', 64);
+/** @link http://php.net/manual/en/outcontrol.constants.php */
+define('PHP_OUTPUT_HANDLER_STDFLAGS', 112);
+/** @link http://php.net/manual/en/outcontrol.constants.php */
+define('PHP_OUTPUT_HANDLER_STARTED', 4096);
+/** @link http://php.net/manual/en/outcontrol.constants.php */
+define('PHP_OUTPUT_HANDLER_DISABLED', 8192);
+
+
+
+/** @link http://php.net/manual/en/libxml.constants.php */
+define('LIBXML_PEDANTIC', 128);
+
+
+
+
+/** @link http://php.net/manual/en/zlib.constants.php */
+define('ZLIB_ENCODING_RAW', -15);
+/** @link http://php.net/manual/en/zlib.constants.php */
+define('ZLIB_ENCODING_GZIP', 31);
+/** @link http://php.net/manual/en/zlib.constants.php */
+define('ZLIB_ENCODING_DEFLATE', 15);
+
+
+
+/**
+ * Equivalent to calling htmlspecialchars() with ENT_QUOTES set.
+ * Encoding quotes can be disabled by setting FILTER_FLAG_NO_ENCODE_QUOTES.
+ * Like htmlspecialchars(), this filter is aware of the default_charset
+ * and if a sequence of bytes is detected that makes up an invalid character
+ * in the current character set then the entire string is rejected resulting in
+ * a 0-length string.
+ * @link http://php.net/manual/en/filter.filters.sanitize.php
+ */
+define('FILTER_SANITIZE_FULL_SPECIAL_CHARS', 515);
+
+
+
+
+
+/**
+ * Return value of session_status() if sessions are disabled. Since PHP 5.4.0.
+ * @link http://php.net/manual/en/function.session-status.php
+ */
+define('PHP_SESSION_DISABLED', 0);
+/**
+ * Return value of session_status() if sessions are enabled, but no session exists. Since PHP 5.4.0.
+ * @link http://php.net/manual/en/function.session-status.php
+ */
+define('PHP_SESSION_NONE', 1);
+/**
+ * Return value of session_status() if sessions are enabled, and a session exists. Since PHP 5.4.0.
+ * @link http://php.net/manual/en/function.session-status.php
+ */
+define('PHP_SESSION_ACTIVE', 2);
+
+
+
+/**
+ * Joins a multicast group. (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('MCAST_JOIN_GROUP', 42);
+/**
+ * Leaves a multicast group. (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('MCAST_LEAVE_GROUP', 45);
+/**
+ * Blocks packets arriving from a specific source to a specific multicast group,
+ * which must have been previously joined. (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('MCAST_BLOCK_SOURCE', 43);
+/**
+ * Unblocks (start receiving again) packets arriving from
+ * a specific source address to a specific multicast group,
+ * which must have been previously joined. (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('MCAST_UNBLOCK_SOURCE', 44);
+/**
+ * Receive packets destined to a specific multicast group
+ * whose source address matches a specific value. (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('MCAST_JOIN_SOURCE_GROUP', 46);
+/**
+ * Stop receiving packets destined to a specific multicast group
+ * whose soure address matches a specific value. (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('MCAST_LEAVE_SOURCE_GROUP', 47);
+/**
+ * The outgoing interface for IPv4 multicast packets. (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('IP_MULTICAST_IF', 32);
+/**
+ * The outgoing interface for IPv6 multicast packets. (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('IP_MULTICAST_TTL', 33);
+/**
+ * The multicast loopback policy for IPv4 packets,
+ * which determines whether multicast packets sent by this socket
+ * also reach receivers in the same host that have joined the same multicast group
+ * on the outgoing interface used by this socket. This is the case by default. (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('IP_MULTICAST_LOOP', 34);
+/**
+ * Analogous to IP_MULTICAST_LOOP, but for IPv6. (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('IPV6_MULTICAST_IF', 17);
+/**
+ * The time-to-live of outgoing IPv4 multicast packets.
+ * This should be a value between 0 (don't leave the interface) and 255.
+ * The default value is 1 (only the local network is reached). (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('IPV6_MULTICAST_HOPS', 18);
+/**
+ * Analogous to IP_MULTICAST_TTL, but for IPv6 packets.
+ * The value -1 is also accepted, meaning the route default should be used. (added in PHP 5.4)
+ * @link http://php.net/manual/en/function.socket-get-option.php
+ */
+define('IPV6_MULTICAST_LOOP', 19);
+
+
+
+define('IPPROTO_IP', 0);
+define('IPPROTO_IPV6', 41);
+
+
+
+/**
+ * Replace invalid code unit sequences with a Unicode Replacement Character
+ * U+FFFD (UTF-8) or &#FFFD; (otherwise) instead of returning an empty string.
+ * @link http://php.net/manual/en/function.htmlspecialchars.php
+ */
+define('ENT_SUBSTITUTE', 8);
+/**
+ * Replace invalid code points for the given document type with
+ * a Unicode Replacement Character U+FFFD (UTF-8) or &#FFFD;
+ * (otherwise) instead of leaving them as is. This may be useful,
+ * for instance, to ensure the well-formedness of XML documents
+ * with embedded external content.
+ * @link http://php.net/manual/en/function.htmlspecialchars.php
+ */
+define('ENT_DISALLOWED', 128);
+/**
+ * Handle code as HTML 4.01.
+ * @link http://php.net/manual/en/function.htmlspecialchars.php
+ */
+define('ENT_HTML401', 0);
+/**
+ * Handle code as XML 1.
+ * @link http://php.net/manual/en/function.htmlspecialchars.php
+ */
+define('ENT_XML1', 16);
+/**
+ * Handle code as XHTML.
+ * @link http://php.net/manual/en/function.htmlspecialchars.php
+ */
+define('ENT_XHTML', 32);
+/**
+ * Handle code as HTML 5.
+ * @link http://php.net/manual/en/function.htmlspecialchars.php
+ */
+define('ENT_HTML5', 48);
+
+
+/** @link http://php.net/manual/en/function.scandir.php */
+define('SCANDIR_SORT_ASCENDING', 0);
+/** @link http://php.net/manual/en/function.scandir.php */
+define('SCANDIR_SORT_DESCENDING', 1);
+/** @link http://php.net/manual/en/function.scandir.php */
+define('SCANDIR_SORT_NONE', 2);
+
+
+
+/**
+ * SORT_NATURAL is used to compare items as strings using "natural ordering" like natsort(). Added in PHP 5.4.0.
+ * @link http://php.net/manual/en/array.constants.php
+ */
+define('SORT_NATURAL', 6);
+/**
+ * SORT_FLAG_CASE can be combined (bitwise OR) with SORT_STRING or SORT_NATURAL to sort strings case-insensitively. Added in PHP 5.4.0.
+ * @link http://php.net/manual/en/array.constants.php
+ */
+define('SORT_FLAG_CASE', 8);
+
+
+
+/** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
+define('STREAM_META_TOUCH', 1);
+/** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
+define('STREAM_META_OWNER', 3);
+/** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
+define('STREAM_META_OWNER_NAME', 2);
+/** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
+define('STREAM_META_GROUP', 5);
+/** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
+define('STREAM_META_GROUP_NAME', 4);
+/** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
+define('STREAM_META_ACCESS', 6);
+
+
+
+

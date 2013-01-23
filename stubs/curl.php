@@ -1207,7 +1207,7 @@ function curl_version ($age = null) {}
  * </td>
  * </tr>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function curl_setopt ($ch, $option, $value) {}
 
@@ -1232,7 +1232,7 @@ function curl_setopt_array ($ch, array $options) {}
  * Perform a cURL session
  * @link http://php.net/manual/en/function.curl-exec.php
  * @param resource $ch 
- * @return mixed Returns true on success or false on failure. However, if the CURLOPT_RETURNTRANSFER
+ * @return mixed true on success or false on failure. However, if the CURLOPT_RETURNTRANSFER
  * option is set, it will return the result on success, false on failure.
  */
 function curl_exec ($ch) {}

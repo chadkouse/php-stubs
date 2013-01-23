@@ -16,7 +16,7 @@ class SoapClient  {
 	 * @param $wsdl
 	 * @param $options [optional]
 	 */
-	public function SoapClient ($wsdl, $options) {}
+	public function __construct ($wsdl, $options) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.0.1)<br/>
@@ -67,7 +67,7 @@ class SoapClient  {
 	 * On error, if the SoapClient object was constructed with the trace
 	 * option set to false, a SoapFault object will be returned.
 	 */
-	public function __soapCall ($function_name, $arguments, $options, $input_headers, &$output_headers) {}
+	public function __soapCall ($function_name, array $arguments, array $options = null, $input_headers = null, array &$output_headers = null) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.0.1)<br/>
@@ -105,7 +105,8 @@ class SoapClient  {
 	 * (PHP 5 &gt;= 5.0.1)<br/>
 	 * Returns list of available SOAP functions
 	 * @link http://php.net/manual/en/soapclient.getfunctions.php
-	 * @return array The list of SOAP functions.
+	 * @return array The array of SOAP function prototypes, detailing the return type,
+	 * the function name and type-hinted paramaters.
 	 */
 	public function __getFunctions () {}
 
@@ -113,7 +114,7 @@ class SoapClient  {
 	 * (PHP 5 &gt;= 5.0.1)<br/>
 	 * Returns a list of SOAP types
 	 * @link http://php.net/manual/en/soapclient.gettypes.php
-	 * @return array An array of SOAP types.
+	 * @return array The array of SOAP types, detailing all structures and types.
 	 */
 	public function __getTypes () {}
 
@@ -139,7 +140,7 @@ class SoapClient  {
 	 * </p>
 	 * @return string The XML SOAP response.
 	 */
-	public function __doRequest ($request, $location, $action, $version, $one_way = null) {}
+	public function __doRequest ($request, $location, $action, $version, $one_way = 0) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.0.4)<br/>
@@ -157,7 +158,7 @@ class SoapClient  {
 
 	/**
 	 * (PHP 5 &gt;= 5.0.1)<br/>
-	 * Sets the location of the Web service to use.
+	 * Sets the location of the Web service to use
 	 * @link http://php.net/manual/en/soapclient.setlocation.php
 	 * @param string $new_location [optional] <p>
 	 * The new endpoint URL.
@@ -168,14 +169,14 @@ class SoapClient  {
 
 	/**
 	 * (PHP 5 &gt;= 5.0.5)<br/>
-	 * Sets SOAP headers for subsequent calls.
+	 * Sets SOAP headers for subsequent calls
 	 * @link http://php.net/manual/en/soapclient.setsoapheaders.php
 	 * @param mixed $soapheaders [optional] <p>
-	 * The headers to be set. It could be SoapHeader
-	 * object or array of SoapHeader objects.
-	 * If not specified or set to &null;, the headers will be deleted.
+	 * The headers to be set. It could be <b>SoapHeader</b>
+	 * object or array of <b>SoapHeader</b> objects.
+	 * If not specified or set to null, the headers will be deleted.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function __setSoapHeaders ($soapheaders = null) {}
 
@@ -221,7 +222,7 @@ class SoapServer  {
 	 * (PHP 5 &gt;= 5.1.2)<br/>
 	 * Sets SoapServer persistence mode
 	 * @link http://php.net/manual/en/soapserver.setpersistence.php
-	 * @param string $mode <p>
+	 * @param int $mode <p>
 	 * One of the SOAP_PERSISTENCE_XXX constants.
 	 * </p>
 	 * <p>
@@ -241,19 +242,20 @@ class SoapServer  {
 	 * @param string $class_name <p>
 	 * The name of the exported class.
 	 * </p>
-	 * @param string $args [optional] <p>
+	 * @param mixed $args [optional] <p>
 	 * These optional parameters will be passed to the default class constructor
 	 * during object creation. 
 	 * </p>
-	 * @return void 
+	 * @param mixed $_ [optional]
+	 * @return void
 	 */
-	public function setClass ($class_name, $args = null) {}
+	public function setClass ($class_name, $args = null, $_ = null) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.2.0)<br/>
 	 * Sets the object which will be used to handle SOAP requests
 	 * @link http://php.net/manual/en/soapserver.setobject.php
-	 * @param string $object <p>
+	 * @param object $object <p>
 	 * The object to handle the requests.
 	 * </p>
 	 * @return void 
@@ -264,7 +266,7 @@ class SoapServer  {
 	 * (PHP 5 &gt;= 5.0.1)<br/>
 	 * Adds one or more functions to handle SOAP requests
 	 * @link http://php.net/manual/en/soapserver.addfunction.php
-	 * @param string $functions <p>
+	 * @param mixed $functions <p>
 	 * To export one function, pass the function name into this parameter as
 	 * a string.
 	 * </p>
@@ -272,10 +274,10 @@ class SoapServer  {
 	 * To export several functions, pass an array of function names.
 	 * </p>
 	 * <p>
-	 * To export all the functions, pass a special constant SOAP_FUNCTIONS_ALL.
+	 * To export all the functions, pass a special constant <b>SOAP_FUNCTIONS_ALL</b>.
 	 * </p>
 	 * <p>
-	 * functions must receive all input arguments in the same
+	 * <i>functions</i> must receive all input arguments in the same
 	 * order as defined in the WSDL file (They should not receive any output parameters
 	 * as arguments) and return one or more values. To return several values they must
 	 * return an array with named output parameters.
@@ -336,7 +338,7 @@ class SoapServer  {
 	 * </p>
 	 * @return void 
 	 */
-	public function addSoapHeader ($objectSoapHeader ) {}
+	public function addSoapHeader (SoapHeader $object) {}
 
 }
 
@@ -345,12 +347,6 @@ class SoapServer  {
  * @link http://php.net/manual/en/class.soapfault.php
  */
 class SoapFault extends Exception  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-
-
 	/**
 	 * (PHP 5 &gt;= 5.0.1)<br/>
 	 * SoapFault constructor
@@ -372,80 +368,18 @@ class SoapFault extends Exception  {
 	 */
 	public function __toString () {}
 
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
+    /**
+   	 * (PHP 5 &gt;= 5.0.1)<br/>
+   	 * This class is used to send SOAP fault responses from the PHP handler. faultcode, faultstring, faultactor and detail are standard elements of a SOAP Fault.
+   	 * @link http://php.net/manual/en/soapfault.soapfault.php
+   	 * @param string $faultcode The error code of the SoapFault.
+   	 * @param string $faultstring The error message of the SoapFault.
+   	 * @param string $faultactor [optional] A string identifying the actor that caused the error.
+   	 * @param string $detail [optional] More details about the cause of the error.
+   	 * @param string $faultname [optional] Can be used to select the proper fault encoding from WSDL.
+   	 * @param string $headerfault [optional] Can be used during SOAP header handling to report an error in the response header.
+   	 */
+    public function __construct ($faultcode, $faultstring, $faultactor, $detail, $faultname, $headerfault) {}
 
 }
 
@@ -492,9 +426,9 @@ class SoapHeader  {
  * @param bool $handler [optional] <p>
  * Set to true to send error details to clients.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool the original value.
  */
-function use_soap_error_handler ($handler = null) {}
+function use_soap_error_handler ($handler = true) {}
 
 /**
  * Checks if a SOAP call has failed

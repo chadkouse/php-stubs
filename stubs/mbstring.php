@@ -81,7 +81,7 @@ function mb_language ($language = null) {}
  * for string functions defined by the mbstring module.
  * </p>
  * @return mixed If encoding is set, then 
- * Returns true on success or false on failure.
+ * true on success or false on failure.
  * If encoding is omitted, then 
  * the current character encoding name is returned.
  */
@@ -120,7 +120,7 @@ function mb_http_input ($type = null) {}
  * @return mixed If encoding is omitted,
  * mb_http_output returns the current HTTP output
  * character encoding. Otherwise, 
- * Returns true on success or false on failure.
+ * true on success or false on failure.
  */
 function mb_http_output ($encoding = null) {}
 
@@ -163,7 +163,7 @@ function mb_http_output ($encoding = null) {}
  * <p>
  * Useless detect order example
  * </p>
- * @return mixed Returns true on success or false on failure.
+ * @return mixed true on success or false on failure.
  */
 function mb_detect_order ($encoding_list = null) {}
 
@@ -192,7 +192,7 @@ function mb_substitute_character ($substrchar = null) {}
  * @param array $result [optional] <p>
  * An array containing decoded and character encoded converted values.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function mb_parse_str ($encoded_string, array &$result = null) {}
 
@@ -597,7 +597,11 @@ function mb_detect_encoding ($str, $encoding_list = null, $strict = null) {}
 function mb_list_encodings () {}
 
 /**
- * @param $encoding
+ * (PHP 5  &gt;= 5.3.0)<br/>
+ * Get aliases of a known encoding type
+ * @param string $encoding The encoding type being checked, for aliases.
+ * @return array a numerically indexed array of encoding aliases on success, or FALSE on failure
+ * @link http://php.net/manual/en/function.mb-encoding-aliases.php
  */
 function mb_encoding_aliases ($encoding) {}
 
@@ -848,7 +852,7 @@ function mb_decode_numericentity ($str, array $convmap, $encoding = null) {}
  * parameter. It is useful when setting the correct Return-Path
  * header when using sendmail.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function mb_send_mail ($to, $subject, $message, $additional_headers = null, $additional_parameter = null) {}
 
@@ -883,7 +887,7 @@ function mb_get_info ($type = null) {}
  * @param string $encoding [optional] <p>
  * The expected encoding.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function mb_check_encoding ($var = null, $encoding = null) {}
 

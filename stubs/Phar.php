@@ -8,95 +8,6 @@
  * @link http://php.net/manual/en/class.PharException.php
  */
 class PharException extends Exception  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * String representation of the exception
-	 * @link http://php.net/manual/en/exception.tostring.php
-	 * @return string the string representation of the exception.
-	 */
-	public function __toString () {}
-
 }
 
 /**
@@ -246,7 +157,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
 	 * Decompresses all files in the current Phar archive
 	 * @link http://php.net/manual/en/phar.decompressfiles.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function decompressFiles () {}
 
@@ -410,7 +321,11 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 */
 	public function extractTo ($pathto, $files = null, $overwrite = null) {}
 
-	public function getAlias () {}
+        /**
+         * @see setAlias
+         * @return string
+         */
+        public function getAlias () {}
 
 	public function getPath () {}
 
@@ -555,7 +470,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @param string $offset <p>
 	 * The filename (relative path) to modify in a Phar.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function offsetUnset ($offset) {}
 
@@ -581,7 +496,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @param string $webindex [optional] <p>
 	 * Relative path within the phar archive to run if accessed through a web browser
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setDefaultStub ($index = null, $webindex = null) {}
 
@@ -596,28 +511,18 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 */
 	public function setMetadata ($metadata) {}
 
-	/**
-	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.1.0)<br/>
-	 * set the signature algorithm for a phar and apply it.  The
-	 * @link http://php.net/manual/en/phardata.setsignaturealgorithm.php
-	 * @param int $sigtype <p>
-	 * One of Phar::MD5,
-	 * Phar::SHA1, Phar::SHA256,
-	 * Phar::SHA512, or Phar::PGP
-	 * </p>
-	 * @param string $privatekey [optional] <p>
-	 * The contents of an OpenSSL private key, as extracted from a certificate or
-	 * OpenSSL key file:
-	 * setSignatureAlgorithm(Phar::OPENSSL, $pkey);
-	 * ?>
-	 * ]]>
-	 * See phar introduction for instructions on
-	 * naming and placement of the public key file.
-	 * </p>
-	 * @param int $sigtype 
-	 * @return void 
-	 */
-	public function setSignatureAlgorithm ($sigtype, $privatekey = null, $sigtype) {}
+    /**
+     * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.1.0)<br/>
+     * set the signature algorithm for a phar and apply it.
+     * @link http://php.net/manual/en/phardata.setsignaturealgorithm.php
+     * @param int $sigtype <p>
+     * One of Phar::MD5,
+     * Phar::SHA1, Phar::SHA256,
+     * Phar::SHA512, or Phar::PGP (pgp not yet supported and falls back to SHA-1).
+     * </p>
+     * @return void
+     */
+	public function setSignatureAlgorithm ($sigtype) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -627,7 +532,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * A string or an open stream handle to use as the executable stub for this
 	 * phar archive.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setStub ($stub) {}
 
@@ -744,7 +649,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * phar archive, and a PharException will be thrown if
 	 * a new alias is specified in this case.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	final public static function loadPhar ($filename, $alias = null) {}
 
@@ -759,7 +664,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @param int $dataoffset [optional] <p>
 	 * Unused variable, here for compatibility with PEAR's PHP_Archive.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	final public static function mapPhar ($alias = null, $dataoffset = null) {}
 
@@ -813,7 +718,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @param string $archive <p>
 	 * The path on disk to the phar archive.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	final public static function unlinkArchive ($archive) {}
 
@@ -1251,18 +1156,6 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
  * @link http://php.net/manual/en/class.PharData.php
  */
 class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, SeekableIterator, Traversable, Iterator, Countable, ArrayAccess {
-	const CURRENT_MODE_MASK = 240;
-	const CURRENT_AS_PATHNAME = 32;
-	const CURRENT_AS_FILEINFO = 0;
-	const CURRENT_AS_SELF = 16;
-	const KEY_MODE_MASK = 3840;
-	const KEY_AS_PATHNAME = 0;
-	const FOLLOW_SYMLINKS = 512;
-	const KEY_AS_FILENAME = 256;
-	const NEW_CURRENT_AND_KEY = 256;
-	const SKIP_DOTS = 4096;
-	const UNIX_PATHS = 8192;
-
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1366,7 +1259,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * Phar::BZ2 to add compression, or Phar::NONE
 	 * to remove compression.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function compressFiles ($compression) {}
 
@@ -1374,7 +1267,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
 	 * Decompresses all files in the current zip archive
 	 * @link http://php.net/manual/en/phardata.decompressfiles.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function decompressFiles () {}
 
@@ -1387,7 +1280,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * Phar::BZ2 to add compression, or Phar::NONE
 	 * to remove compression.
 	 * </p>
-	 * @param string $extension <p>
+	 * @param string $extension [optional] <p>
 	 * By default, the extension is .tar.gz or .tar.bz2
 	 * for compressing a tar, and .tar for decompressing.
 	 * </p>
@@ -1528,7 +1421,11 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 */
 	public function extractTo ($pathto, $files = null, $overwrite = null) {}
 
-	public function getAlias () {}
+    /**
+     * @see setAlias
+     * @return string
+     */
+    public function getAlias () {}
 
 	public function getPath () {}
 
@@ -1592,7 +1489,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * @param string $offset <p>
 	 * The filename (relative path) to modify in the tar/zip archive.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function offsetUnset ($offset) {}
 
@@ -1855,207 +1752,6 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 */
 	public function __toString () {}
 
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the path to the file
-	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
-	 * @return string The path to the file.
-	 */
-	public function getPathname () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets file permissions
-	 * @link http://php.net/manual/en/splfileinfo.getperms.php
-	 * @return int the file permissions.
-	 */
-	public function getPerms () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the inode for the file
-	 * @link http://php.net/manual/en/splfileinfo.getinode.php
-	 * @return int the inode number for the filesystem object.
-	 */
-	public function getInode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets file size
-	 * @link http://php.net/manual/en/splfileinfo.getsize.php
-	 * @return int The filesize in bytes.
-	 */
-	public function getSize () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the owner of the file
-	 * @link http://php.net/manual/en/splfileinfo.getowner.php
-	 * @return int The owner id in numerical format.
-	 */
-	public function getOwner () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the file group
-	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
-	 * @return int The group id in numerical format.
-	 */
-	public function getGroup () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets last access time of the file
-	 * @link http://php.net/manual/en/splfileinfo.getatime.php
-	 * @return int the time the file was last accessed.
-	 */
-	public function getATime () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the last modified time
-	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
-	 * @return int the last modified time for the file, in a Unix timestamp.
-	 */
-	public function getMTime () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the inode change time
-	 * @link http://php.net/manual/en/splfileinfo.getctime.php
-	 * @return int The last change time, in a Unix timestamp.
-	 */
-	public function getCTime () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets file type
-	 * @link http://php.net/manual/en/splfileinfo.gettype.php
-	 * @return string A string representing the type of the entry.
-	 * May be one of file, link,
-	 * or dir
-	 */
-	public function getType () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Tells if file is readable
-	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
-	 * @return bool true if readable, false otherwise.
-	 */
-	public function isReadable () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Tells if the file is executable
-	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
-	 * @return bool true if executable, false otherwise.
-	 */
-	public function isExecutable () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Tells if the object references a regular file
-	 * @link http://php.net/manual/en/splfileinfo.isfile.php
-	 * @return bool true if the file exists and is a regular file (not a link), false otherwise.
-	 */
-	public function isFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Tells if the file is a directory
-	 * @link http://php.net/manual/en/splfileinfo.isdir.php
-	 * @return bool true if a directory, false otherwise.
-	 */
-	public function isDir () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Tells if the file is a link
-	 * @link http://php.net/manual/en/splfileinfo.islink.php
-	 * @return bool true if the file is a link, false otherwise.
-	 */
-	public function isLink () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
-	 * Gets the target of a link
-	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
-	 * @return string the target of the filesystem link.
-	 */
-	public function getLinkTarget () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
-	 * Gets absolute path to file
-	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
-	 */
-	public function getRealPath () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets an SplFileInfo object for the file
-	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
-	 * @param string $class_name [optional] <p>
-	 * Name of an SplFileInfo derived class to use. 
-	 * </p>
-	 * @return SplFileInfo An SplFileInfo object created for the file.
-	 */
-	public function getFileInfo ($class_name = null) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets an SplFileInfo object for the path
-	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
-	 * @param string $class_name [optional] <p>
-	 * Name of an SplFileInfo derived class to use.
-	 * </p>
-	 * @return SplFileInfo an SplFileInfo object for the parent path of the file.
-	 */
-	public function getPathInfo ($class_name = null) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets an SplFileObject object for the file
-	 * @link http://php.net/manual/en/splfileinfo.openfile.php
-	 * @param string $open_mode [optional] <p>
-	 * The mode for opening the file. See the fopen
-	 * documentation for descriptions of possible modes. The default 
-	 * is read only.
-	 * </p>
-	 * @param bool $use_include_path [optional] <p>
-	 * &parameter.use_include_path;
-	 * </p>
-	 * @param resource $context [optional] <p>
-	 * &parameter.context;
-	 * </p>
-	 * @return SplFileObject The opened file as an SplFileObject object.
-	 */
-	public function openFile ($open_mode = null, $use_include_path = null, $context = null) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Sets the class name used with <methodname>SplFileInfo::openFile</methodname>
-	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
-	 * @param string $class_name [optional] <p>
-	 * The class name to use when openFile() is called. 
-	 * </p>
-	 * @return void 
-	 */
-	public function setFileClass ($class_name = null) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Sets the class used with getFileInfo and getPathInfo
-	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
-	 * @param string $class_name [optional] <p>
-	 * The class name to use.
-	 * </p>
-	 * @return void 
-	 */
-	public function setInfoClass ($class_name = null) {}
-
 }
 
 /**
@@ -2096,7 +1792,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * Compresses the current Phar entry with either zlib or bzip2 compression
 	 * @link http://php.net/manual/en/pharfileinfo.compress.php
 	 * @param int $compression 
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function compress ($compression) {}
 
@@ -2104,7 +1800,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
 	 * Decompresses the current Phar entry within the phar
 	 * @link http://php.net/manual/en/pharfileinfo.decompress.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function decompress () {}
 
@@ -2194,250 +1890,6 @@ class PharFileInfo extends SplFileInfo  {
 	 * @return void 
 	 */
 	public function setMetadata ($metadata) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the path without filename
-	 * @link http://php.net/manual/en/splfileinfo.getpath.php
-	 * @return string the path to the file.
-	 */
-	public function getPath () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the filename
-	 * @link http://php.net/manual/en/splfileinfo.getfilename.php
-	 * @return string The filename.
-	 */
-	public function getFilename () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
-	 * Gets the base name of the file
-	 * @link http://php.net/manual/en/splfileinfo.getbasename.php
-	 * @param string $suffix [optional] <p>
-	 * Optional suffix to omit from the base name returned.
-	 * </p>
-	 * @return string the base name without path information.
-	 */
-	public function getBasename ($suffix = null) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the path to the file
-	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
-	 * @return string The path to the file.
-	 */
-	public function getPathname () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets file permissions
-	 * @link http://php.net/manual/en/splfileinfo.getperms.php
-	 * @return int the file permissions.
-	 */
-	public function getPerms () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the inode for the file
-	 * @link http://php.net/manual/en/splfileinfo.getinode.php
-	 * @return int the inode number for the filesystem object.
-	 */
-	public function getInode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets file size
-	 * @link http://php.net/manual/en/splfileinfo.getsize.php
-	 * @return int The filesize in bytes.
-	 */
-	public function getSize () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the owner of the file
-	 * @link http://php.net/manual/en/splfileinfo.getowner.php
-	 * @return int The owner id in numerical format.
-	 */
-	public function getOwner () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the file group
-	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
-	 * @return int The group id in numerical format.
-	 */
-	public function getGroup () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets last access time of the file
-	 * @link http://php.net/manual/en/splfileinfo.getatime.php
-	 * @return int the time the file was last accessed.
-	 */
-	public function getATime () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the last modified time
-	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
-	 * @return int the last modified time for the file, in a Unix timestamp.
-	 */
-	public function getMTime () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets the inode change time
-	 * @link http://php.net/manual/en/splfileinfo.getctime.php
-	 * @return int The last change time, in a Unix timestamp.
-	 */
-	public function getCTime () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets file type
-	 * @link http://php.net/manual/en/splfileinfo.gettype.php
-	 * @return string A string representing the type of the entry.
-	 * May be one of file, link,
-	 * or dir
-	 */
-	public function getType () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Tells if the entry is writable
-	 * @link http://php.net/manual/en/splfileinfo.iswritable.php
-	 * @return bool true if writable, false otherwise;
-	 */
-	public function isWritable () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Tells if file is readable
-	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
-	 * @return bool true if readable, false otherwise.
-	 */
-	public function isReadable () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Tells if the file is executable
-	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
-	 * @return bool true if executable, false otherwise.
-	 */
-	public function isExecutable () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Tells if the object references a regular file
-	 * @link http://php.net/manual/en/splfileinfo.isfile.php
-	 * @return bool true if the file exists and is a regular file (not a link), false otherwise.
-	 */
-	public function isFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Tells if the file is a directory
-	 * @link http://php.net/manual/en/splfileinfo.isdir.php
-	 * @return bool true if a directory, false otherwise.
-	 */
-	public function isDir () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Tells if the file is a link
-	 * @link http://php.net/manual/en/splfileinfo.islink.php
-	 * @return bool true if the file is a link, false otherwise.
-	 */
-	public function isLink () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
-	 * Gets the target of a link
-	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
-	 * @return string the target of the filesystem link.
-	 */
-	public function getLinkTarget () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
-	 * Gets absolute path to file
-	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
-	 */
-	public function getRealPath () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets an SplFileInfo object for the file
-	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
-	 * @param string $class_name [optional] <p>
-	 * Name of an SplFileInfo derived class to use. 
-	 * </p>
-	 * @return SplFileInfo An SplFileInfo object created for the file.
-	 */
-	public function getFileInfo ($class_name = null) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets an SplFileInfo object for the path
-	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
-	 * @param string $class_name [optional] <p>
-	 * Name of an SplFileInfo derived class to use.
-	 * </p>
-	 * @return SplFileInfo an SplFileInfo object for the parent path of the file.
-	 */
-	public function getPathInfo ($class_name = null) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Gets an SplFileObject object for the file
-	 * @link http://php.net/manual/en/splfileinfo.openfile.php
-	 * @param string $open_mode [optional] <p>
-	 * The mode for opening the file. See the fopen
-	 * documentation for descriptions of possible modes. The default 
-	 * is read only.
-	 * </p>
-	 * @param bool $use_include_path [optional] <p>
-	 * &parameter.use_include_path;
-	 * </p>
-	 * @param resource $context [optional] <p>
-	 * &parameter.context;
-	 * </p>
-	 * @return SplFileObject The opened file as an SplFileObject object.
-	 */
-	public function openFile ($open_mode = null, $use_include_path = null, $context = null) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Sets the class name used with <methodname>SplFileInfo::openFile</methodname>
-	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
-	 * @param string $class_name [optional] <p>
-	 * The class name to use when openFile() is called. 
-	 * </p>
-	 * @return void 
-	 */
-	public function setFileClass ($class_name = null) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Sets the class used with getFileInfo and getPathInfo
-	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
-	 * @param string $class_name [optional] <p>
-	 * The class name to use.
-	 * </p>
-	 * @return void 
-	 */
-	public function setInfoClass ($class_name = null) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
-	 * Returns the path to the file as a string
-	 * @link http://php.net/manual/en/splfileinfo.tostring.php
-	 * @return void the path to the file.
-	 */
-	public function __toString () {}
 
 }
 // End of Phar v.2.0.1

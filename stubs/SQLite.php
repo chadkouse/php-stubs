@@ -732,7 +732,7 @@ function sqlite_error_string ($error_code) {}
  * specially important because SQL syntax errors can't be fetched using
  * the sqlite_last_error function.
  * </p>
- * @return SQLiteUnbuffered a result handle&return.falseforfailure;.
+ * @return SQLiteUnbuffered a result handle or false on failure.
  * </p>
  * <p>
  * sqlite_unbuffered_query returns a sequential

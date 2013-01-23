@@ -40,7 +40,7 @@ function odbc_autocommit ($connection_id, $OnOff = null) {}
  * @param int $mode <p>
  * Possible values for mode are:
  * ODBC_BINMODE_PASSTHRU: Passthru BINARY data
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function odbc_binmode ($result_id, $mode) {}
 
@@ -78,7 +78,7 @@ function odbc_close_all () {}
  * @param string $column_name [optional] <p>
  * The column name.
  * </p>
- * @return resource an ODBC result identifier&return.falseforfailure;.
+ * @return resource an ODBC result identifier or false on failure.
  * </p>
  * <p>
  * The result set has the following columns:
@@ -106,7 +106,7 @@ function odbc_columns ($connection_id, $qualifier = null, $schema = null, $table
  * Commit an ODBC transaction
  * @link http://php.net/manual/en/function.odbc-commit.php
  * @param resource $connection_id &odbc.connection.id;
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function odbc_commit ($connection_id) {}
 
@@ -188,7 +188,7 @@ function odbc_data_source ($connection_id, $fetch_type) {}
  * parameter from being taken as a file name. If this is not an option,
  * then you must use another mechanism to store the string, such as
  * executing the query directly with odbc_exec).
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function odbc_execute ($result_id, $parameters_array = nullarray ) {}
 
@@ -444,7 +444,7 @@ function odbc_gettypeinfo ($connection_id, $data_type = null) {}
  * length. If it is set to 0, Long column data is passed through to the
  * client.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function odbc_longreadlen ($result_id, $length) {}
 
@@ -544,7 +544,7 @@ function odbc_result_all ($result_id, $format = null) {}
  * Rollback a transaction
  * @link http://php.net/manual/en/function.odbc-rollback.php
  * @param resource $connection_id &odbc.connection.id;
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function odbc_rollback ($connection_id) {}
 
@@ -568,7 +568,7 @@ function odbc_rollback ($connection_id) {}
  * @param int $param <p>
  * The value for the given option.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function odbc_setoption ($id, $function, $option, $param) {}
 
@@ -635,7 +635,7 @@ function odbc_specialcolumns ($connection_id, $type, $qualifier, $owner, $table,
  * @param int $accuracy <p>
  * The accuracy.
  * </p>
- * @return resource an ODBC result identifier&return.falseforfailure;.
+ * @return resource an ODBC result identifier or false on failure.
  * </p>
  * <p>
  * The result set has the following columns:
@@ -681,7 +681,7 @@ function odbc_statistics ($connection_id, $qualifier, $owner, $table_name, $uniq
  * that type.
  * </p>
  * @return resource an ODBC result identifier containing the information 
- * &return.falseforfailure;.
+ * or false on failure.
  * </p>
  * <p>
  * The result set has the following columns:
@@ -704,7 +704,7 @@ function odbc_tables ($connection_id, $qualifier = null, $owner = null, $name = 
  * </p>
  * @param string $table <p>
  * </p>
- * @return resource an ODBC result identifier&return.falseforfailure;.
+ * @return resource an ODBC result identifier or false on failure.
  * </p>
  * <p>
  * The result set has the following columns:
@@ -736,7 +736,7 @@ function odbc_primarykeys ($connection_id, $qualifier, $owner, $table) {}
  * patterns ('%' to match zero or more characters and '_' to match a
  * single character).
  * </p>
- * @return resource an ODBC result identifier&return.falseforfailure;.
+ * @return resource an ODBC result identifier or false on failure.
  * This result identifier can be used to fetch a list of columns and
  * associated privileges.
  * </p>
@@ -772,7 +772,7 @@ function odbc_columnprivileges ($connection_id, $qualifier, $owner, $table_name,
  * The name. Accepts the following search patterns:
  * ('%' to match zero or more characters and '_' to match a single character)
  * </p>
- * @return resource An ODBC result identifier&return.falseforfailure;.
+ * @return resource An ODBC result identifier or false on failure.
  * </p>
  * <p>
  * The result set has the following columns:
@@ -809,7 +809,7 @@ function odbc_tableprivileges ($connection_id, $qualifier, $owner, $name) {}
  * @param string $fk_table <p>
  * The foreign key table.
  * </p>
- * @return resource an ODBC result identifier&return.falseforfailure;.
+ * @return resource an ODBC result identifier or false on failure.
  * </p>
  * <p>
  * The result set has the following columns:
@@ -850,7 +850,7 @@ function odbc_foreignkeys ($connection_id, $pk_qualifier, $pk_owner, $pk_table, 
  * @link http://php.net/manual/en/function.odbc-procedures.php
  * @param resource $connection_id &odbc.connection.id;
  * @return resource an ODBC
- * result identifier containing the information&return.falseforfailure;.
+ * result identifier containing the information or false on failure.
  * </p>
  * <p>
  * The result set has the following columns:
@@ -872,7 +872,7 @@ function odbc_procedures ($connection_id) {}
  * @param resource $connection_id &odbc.connection.id;
  * @return resource the list of input and output parameters, as well as the
  * columns that make up the result set for the specified procedures. 
- * Returns an ODBC result identifier&return.falseforfailure;.
+ * Returns an ODBC result identifier or false on failure.
  * </p>
  * <p>
  * The result set has the following columns:

@@ -113,7 +113,7 @@ function bcsqrt ($operand, $scale = null) {}
  * @param int $scale <p>
  * The scale factor.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function bcscale ($scale) {}
 

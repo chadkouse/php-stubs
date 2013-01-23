@@ -501,20 +501,16 @@ function checkdate ($month, $day, $year) {}
 /**
  * (PHP 4, PHP 5)<br/>
  * Format a local time/date according to locale settings
- * @link http://php.net/manual/en/function.strftime.php
- * @param string $format <p>
- * <table>
  * The following characters are recognized in the
  * format parameter string
+ * <table>
  * <tr valign="top">
  * <td>format</td>
  * <td>Description</td>
  * <td>Example returned values</td>
  * </tr>
- * <tr valign="top">
- * Day</td>
- * <td>---</td>
- * <td>---</td>
+ * <th valign="top" colspan="3" bgcolor="silver">
+ * Day</th>
  * </tr>
  * <tr valign="top">
  * <td>%a</td>
@@ -552,9 +548,7 @@ function checkdate ($month, $day, $year) {}
  * <td>0 (for Sunday) through 6 (for Saturday)</td>
  * </tr>
  * <tr valign="top">
- * Week</td>
- * <td>---</td>
- * <td>---</td>
+ * <th colspan="3" bgcolor="silver">Week</th>
  * </tr>
  * <tr valign="top">
  * <td>%U</td>
@@ -578,9 +572,7 @@ function checkdate ($month, $day, $year) {}
  * with a Monday)</td>
  * </tr>
  * <tr valign="top">
- * Month</td>
- * <td>---</td>
- * <td>---</td>
+ * <th colspan="3" bgcolor="silver">Month</th>
  * </tr>
  * <tr valign="top">
  * <td>%b</td>
@@ -603,9 +595,7 @@ function checkdate ($month, $day, $year) {}
  * <td>01 (for January) through 12 (for December)</td>
  * </tr>
  * <tr valign="top">
- * Year</td>
- * <td>---</td>
- * <td>---</td>
+ * <th colspan="3" bgcolor="silver">Year</th>
  * </tr>
  * <tr valign="top">
  * <td>%C</td>
@@ -633,9 +623,7 @@ function checkdate ($month, $day, $year) {}
  * <td>Example: 2038</td>
  * </tr>
  * <tr valign="top">
- * Time</td>
- * <td>---</td>
- * <td>---</td>
+ * <th colspan="3" bgcolor="silver">Time</th>
  * </tr>
  * <tr valign="top">
  * <td>%H</td>
@@ -705,9 +693,7 @@ function checkdate ($month, $day, $year) {}
  * <td>Example: -0500 or EST for Eastern Time</td>
  * </tr>
  * <tr valign="top">
- * Time and Date Stamps</td>
- * <td>---</td>
- * <td>---</td>
+ * <th colspan="3" bgcolor="silver">Time and Date Stamps</th>
  * </tr>
  * <tr valign="top">
  * <td>%c</td>
@@ -737,9 +723,7 @@ function checkdate ($month, $day, $year) {}
  * <td>Example: 02/05/09 for February 5, 2009</td>
  * </tr>
  * <tr valign="top">
- * Miscellaneous</td>
- * <td>---</td>
- * <td>---</td>
+ * <th colspan="3" bgcolor="silver">Miscellaneous</th>
  * </tr>
  * <tr valign="top">
  * <td>%n</td>
@@ -763,14 +747,17 @@ function checkdate ($month, $day, $year) {}
  * </p>
  * Contrary to ISO-9899:1999, Sun Solaris starts with Sunday as 1.
  * As a result, %u may not function as described in this manual.
- * @param int $timestamp [optional] 
+ * @link http://php.net/manual/en/function.strftime.php
+ * @param string $format <p>
+ * @param int $timestamp [optional] defaults to the value of time()
+ * Unix timestamp that defaults to the current local time if a timestamp is not given..
  * @return string a string formatted according format
  * using the given timestamp or the current
  * local time if no timestamp is given. Month and weekday names and
  * other language-dependent strings respect the current locale set
  * with setlocale.
  */
-function strftime ($format, $timestamp = null) {}
+function strftime ($format, $timestamp) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -907,7 +894,7 @@ function getdate ($timestamp = null) {}
  * @param DateTimeZone $timezone [optional] <p>
  * Time zone of the time.
  * </p>
- * @return DateTime DateTime object on success&return.falseforfailure;.
+ * @return DateTime DateTime object on success or false on failure.
  */
 function date_create ($time = null, DateTimeZone $timezone = null ) {}
 
@@ -933,7 +920,7 @@ function date_create_from_format (string $format , string $time , DateTimeZone $
  * Date in format accepted by strtotime.
  * </p>
  * @return array array with information about the parsed date
- * on success&return.falseforfailure;.
+ * on success or false on failure.
  */
 function date_parse ($date) {}
 
@@ -964,15 +951,19 @@ function date_get_last_errors () {}
  * @link http://php.net/manual/en/function.date-format.php
  * @param $object
  * @param $format
+ * @return string|bool formatted date string on success or FALSE on failure.
  */
 function date_format ($object, $format) {}
 
 /**
  * (PHP 5 &gt;= 5.2.0)<br/>
+ * Alter the timestamp of a DateTime object by incrementing or decrementing
+ * in a format accepted by strtotime().
  * &Alias; <methodname>DateTime::modify</methodname>
  * @link http://php.net/manual/en/function.date-modify.php
- * @param $object
- * @param $modify
+ * @param DateTime $object A DateTime object returned by date_create(). The function modifies this object.
+ * @param string $modify A date/time string. Valid formats are explained in <a href="http://www.php.net/manual/en/datetime.formats.php">Date and Time Formats</a>.
+ * @return DateTime Returns the DateTime object for method chaining or FALSE on failure.
  */
 function date_modify ($object, $modify) {}
 
@@ -1068,6 +1059,7 @@ function date_isodate_set ($object, $year, $week, $day) {}
  * @link http://php.net/manual/en/function.date-timestamp-set.php
  * @param $object
  * @param $unixtimestamp
+ * @return DateTime object for call chaining or FALSE on failure
  */
 function date_timestamp_set ($object, $unixtimestamp) {}
 
@@ -1087,7 +1079,7 @@ function date_timestamp_get ($object) {}
  * Time zone identifier as full name (e.g. Europe/Prague) or abbreviation
  * (e.g. CET).
  * </p>
- * @return DateTimeZone DateTimeZone object on success &return.falseforfailure;.
+ * @return DateTimeZone DateTimeZone object on success or false on failure.
  */
 function timezone_open ($timezone) {}
 
@@ -1117,7 +1109,7 @@ function timezone_name_get ($object) {}
  * exist then the time zone is searched solely by
  * offset and isdst.
  * </p>
- * @return string time zone name on success&return.falseforfailure;.
+ * @return string time zone name on success or false on failure.
  */
 function timezone_name_from_abbr ($abbr, $gmtOffset = null, $isdst = null) {}
 
@@ -1150,17 +1142,21 @@ function timezone_location_get ($object) {}
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
- * &Alias; <methodname>DateTimeZone::listIdentifiers</methodname>
+ * Alias: {@see DateTimeZone::listIdentifiers()}
  * @link http://php.net/manual/en/function.timezone-identifiers-list.php
- * @param $what [optional]
- * @param $country [optional]
+ * @param int $what [optional] One of DateTimeZone class constants.
+ * @param string $country [optional] A two-letter ISO 3166-1 compatible country code.
+ * @return array Returns array on success or FALSE on failure.
+ * Note: This option is only used when what is set to DateTimeZone::PER_COUNTRY.
  */
-function timezone_identifiers_list ($what, $country) {}
+function timezone_identifiers_list ($what = DateTimeZone::ALL, $country = null) {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.2.0)<br/>
+ * Returns associative array containing dst, offset and the timezone name
  * &Alias; <methodname>DateTimeZone::listAbbreviations</methodname>
  * @link http://php.net/manual/en/function.timezone-abbreviations-list.php
+ * @return array Array on success or FALSE on failure.
  */
 function timezone_abbreviations_list () {}
 
@@ -1258,7 +1254,7 @@ function date_default_timezone_get () {}
  * </p>
  * @param float $gmt_offset [optional] 
  * @return mixed the sunrise time in a specified format on
- * success&return.falseforfailure;.
+ * success or false on failure.
  */
 function date_sunrise ($timestamp, $format = null, $latitude = null, $longitude = null, $zenith = null, $gmt_offset = null) {}
 
@@ -1308,7 +1304,7 @@ function date_sunrise ($timestamp, $format = null, $latitude = null, $longitude 
  * </p>
  * @param float $gmt_offset [optional] 
  * @return mixed the sunset time in a specified format on
- * success&return.falseforfailure;.
+ * success or false on failure.
  */
 function date_sunset ($timestamp, $format = null, $latitude = null, $longitude = null, $zenith = null, $gmt_offset = null) {}
 
@@ -1325,7 +1321,7 @@ function date_sunset ($timestamp, $format = null, $latitude = null, $longitude =
  * @param float $longitude <p>
  * Longitude in degrees.
  * </p>
- * @return array array on success&return.falseforfailure;.
+ * @return array array on success or false on failure.
  */
 function date_sun_info ($time, $latitude, $longitude) {}
 

@@ -27,29 +27,29 @@
  * &sqlsafemode;, this parameter is ignored and empty password is used.
  * </p>
  * @param bool $new_link [optional] <p>
- * If a second call is made to mysql_connect
+ * If a second call is made to <b>mysql_connect</b>
  * with the same arguments, no new link will be established, but
  * instead, the link identifier of the already opened link will be
- * returned. The new_link parameter modifies this 
- * behavior and makes mysql_connect always open 
- * a new link, even if mysql_connect was called 
+ * returned. The <i>new_link</i> parameter modifies this
+ * behavior and makes <b>mysql_connect</b> always open
+ * a new link, even if <b>mysql_connect</b> was called
  * before with the same parameters.
  * In &sqlsafemode;, this parameter is ignored.
  * </p>
  * @param int $client_flags [optional] <p>
- * The client_flags parameter can be a combination 
+ * The <i>client_flags</i> parameter can be a combination
  * of the following constants:
  * 128 (enable LOAD DATA LOCAL handling),
- * MYSQL_CLIENT_SSL,
- * MYSQL_CLIENT_COMPRESS, 
- * MYSQL_CLIENT_IGNORE_SPACE or
- * MYSQL_CLIENT_INTERACTIVE.
+ * <b>MYSQL_CLIENT_SSL</b>,
+ * <b>MYSQL_CLIENT_COMPRESS</b>,
+ * <b>MYSQL_CLIENT_IGNORE_SPACE</b> or
+ * <b>MYSQL_CLIENT_INTERACTIVE</b>.
  * Read the section about for further information.
  * In &sqlsafemode;, this parameter is ignored.
  * </p>
- * @return resource a MySQL link identifier on success&return.falseforfailure;.
+ * @return resource a MySQL link identifier on success or false on failure.
  */
-function mysql_connect ($server = null, $username = null, $password = null, $new_link = null, $client_flags = null) {}
+function mysql_connect ($server = 'ini_get("mysql.default_host")', $username = 'ini_get("mysql.default_user")', $password = 'ini_get("mysql.default_password")', $new_link = false, $client_flags = 0) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -73,25 +73,25 @@ function mysql_connect ($server = null, $username = null, $password = null, $new
  * The password. Default value is an empty password.
  * </p>
  * @param int $client_flags [optional] <p>
- * The client_flags parameter can be a combination 
+ * The <i>client_flags</i> parameter can be a combination
  * of the following constants:
  * 128 (enable LOAD DATA LOCAL handling),
- * MYSQL_CLIENT_SSL, 
- * MYSQL_CLIENT_COMPRESS, 
- * MYSQL_CLIENT_IGNORE_SPACE or
- * MYSQL_CLIENT_INTERACTIVE.
+ * <b>MYSQL_CLIENT_SSL</b>,
+ * <b>MYSQL_CLIENT_COMPRESS</b>,
+ * <b>MYSQL_CLIENT_IGNORE_SPACE</b> or
+ * <b>MYSQL_CLIENT_INTERACTIVE</b>.
  * </p>
  * @return resource a MySQL persistent link identifier on success, or false on 
  * failure.
  */
-function mysql_pconnect ($server = null, $username = null, $password = null, $client_flags = null) {}
+function mysql_pconnect ($server = 'ini_get("mysql.default_host")', $username = 'ini_get("mysql.default_user")', $password = 'ini_get("mysql.default_password")', $client_flags = null) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
  * Close MySQL connection
  * @link http://php.net/manual/en/function.mysql-close.php
  * @param resource $link_identifier [optional] 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function mysql_close ($link_identifier = null) {}
 
@@ -103,7 +103,7 @@ function mysql_close ($link_identifier = null) {}
  * The name of the database that is to be selected.
  * </p>
  * @param resource $link_identifier [optional] 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function mysql_select_db ($database_name, $link_identifier = null) {}
 
@@ -112,7 +112,7 @@ function mysql_select_db ($database_name, $link_identifier = null) {}
  * Send a MySQL query
  * @link http://php.net/manual/en/function.mysql-query.php
  * @param string $query <p>
- * A SQL query
+ * An SQL query
  * </p>
  * <p>
  * The query string should not end with a semicolon.
@@ -120,29 +120,29 @@ function mysql_select_db ($database_name, $link_identifier = null) {}
  * </p>
  * @param resource $link_identifier [optional] 
  * @return resource For SELECT, SHOW, DESCRIBE, EXPLAIN and other statements returning resultset,
- * mysql_query 
+ * <b>mysql_query</b>
  * returns a resource on success, or false on
  * error.
  * </p>
  * <p>
  * For other type of SQL statements, INSERT, UPDATE, DELETE, DROP, etc,
- * mysql_query returns true on success
+ * <b>mysql_query</b> returns true on success
  * or false on error.
  * </p>
  * <p>
  * The returned result resource should be passed to
- * mysql_fetch_array, and other
+ * <b>mysql_fetch_array</b>, and other
  * functions for dealing with result tables, to access the returned data.
  * </p>
  * <p>
- * Use mysql_num_rows to find out how many rows
+ * Use <b>mysql_num_rows</b> to find out how many rows
  * were returned for a SELECT statement or
- * mysql_affected_rows to find out how many
+ * <b>mysql_affected_rows</b> to find out how many
  * rows were affected by a DELETE, INSERT, REPLACE, or UPDATE
  * statement.
  * </p>
  * <p>
- * mysql_query will also fail and return false
+ * <b>mysql_query</b> will also fail and return false
  * if the user does not have permission to access the table(s) referenced by
  * the query.
  */
@@ -160,20 +160,20 @@ function mysql_query ($query, $link_identifier = null) {}
  * </p>
  * @param resource $link_identifier [optional] 
  * @return resource For SELECT, SHOW, DESCRIBE or EXPLAIN statements,
- * mysql_unbuffered_query 
+ * <b>mysql_unbuffered_query</b>
  * returns a resource on success, or false on
  * error.
  * </p>
  * <p>
  * For other type of SQL statements, UPDATE, DELETE, DROP, etc,
- * mysql_unbuffered_query returns true on success
+ * <b>mysql_unbuffered_query</b> returns true on success
  * or false on error.
  */
 function mysql_unbuffered_query ($query, $link_identifier = null) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
- * Send a MySQL query
+ * Selects a database and executes a query on it
  * @link http://php.net/manual/en/function.mysql-db-query.php
  * @deprecated since 5.3.0, use mysql_select_db() and mysql_query() instead
  * @param string $database <p>
@@ -199,9 +199,10 @@ function mysql_db_query ($database, $query, $link_identifier = null) {}
  * @link http://php.net/manual/en/function.mysql-list-dbs.php
  * @param resource $link_identifier [optional] 
  * @return resource a result pointer resource on success, or false on
- * failure. Use the mysql_tablename function to traverse 
+ * failure. Use the <b>mysql_tablename</b> function to traverse
  * this result pointer, or any function for result tables, such as 
- * mysql_fetch_array.
+ * <b>mysql_fetch_array</b>.
+ * @deprecated This function has been DEPRECATED as of PHP 5.4.0.
  */
 function mysql_list_dbs ($link_identifier = null) {}
 
@@ -213,12 +214,12 @@ function mysql_list_dbs ($link_identifier = null) {}
  * The name of the database
  * </p>
  * @param resource $link_identifier [optional] 
- * @return resource A result pointer resource on success&return.falseforfailure;.
+ * @return resource A result pointer resource on success or false on failure.
  * </p>
  * <p>
- * Use the mysql_tablename function to
+ * Use the <b>mysql_tablename</b> function to
  * traverse this result pointer, or any function for result tables,
- * such as mysql_fetch_array.
+ * such as <b>mysql_fetch_array</b>.
  */
 function mysql_list_tables ($database, $link_identifier = null) {}
 
@@ -237,10 +238,10 @@ function mysql_list_tables ($database, $link_identifier = null) {}
  * failure.
  * </p>
  * <p>
- * The returned result can be used with mysql_field_flags,
- * mysql_field_len,
- * mysql_field_name&listendand;
- * mysql_field_type.
+ * The returned result can be used with <b>mysql_field_flags</b>,
+ * <b>mysql_field_len</b>,
+ * <b>mysql_field_name</b>&listendand;
+ * <b>mysql_field_type</b>.
  */
 function mysql_list_fields ($database_name, $table_name, $link_identifier = null) {}
 
@@ -249,7 +250,7 @@ function mysql_list_fields ($database_name, $table_name, $link_identifier = null
  * List MySQL processes
  * @link http://php.net/manual/en/function.mysql-list-processes.php
  * @param resource $link_identifier [optional] 
- * @return resource A result pointer resource on success&return.falseforfailure;.
+ * @return resource A result pointer resource on success or false on failure.
  */
 function mysql_list_processes ($link_identifier = null) {}
 
@@ -289,7 +290,7 @@ function mysql_errno ($link_identifier = null) {}
  * <p>
  * When using UPDATE, MySQL will not update columns where the new value is the 
  * same as the old value. This creates the possibility that 
- * mysql_affected_rows may not actually equal the number 
+ * <b>mysql_affected_rows</b> may not actually equal the number
  * of rows matched, only the number of rows that were literally affected by 
  * the query.
  * </p>
@@ -333,14 +334,14 @@ function mysql_insert_id ($link_identifier = null) {}
  * @return string The contents of one cell from a MySQL result set on success, or 
  * false on failure.
  */
-function mysql_result ($result, $row, $field = null) {}
+function mysql_result ($result, $row, $field = 0) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
  * Get number of rows in result
  * @link http://php.net/manual/en/function.mysql-num-rows.php
  * @param resource $result 
- * @return int The number of rows in a result set on success&return.falseforfailure;.
+ * @return int The number of rows in a result set on success or false on failure.
  */
 function mysql_num_rows ($result) {}
 
@@ -350,7 +351,7 @@ function mysql_num_rows ($result) {}
  * @link http://php.net/manual/en/function.mysql-num-fields.php
  * @param resource $result 
  * @return int the number of fields in the result set resource on
- * success&return.falseforfailure;.
+ * success or false on failure.
  */
 function mysql_num_fields ($result) {}
 
@@ -363,7 +364,7 @@ function mysql_num_fields ($result) {}
  * false if there are no more rows.
  * </p>
  * <p>
- * mysql_fetch_row fetches one row of data from
+ * <b>mysql_fetch_row</b> fetches one row of data from
  * the result associated with the specified result identifier. The
  * row is returned as an array. Each result column is stored in an
  * array offset, starting at offset 0.
@@ -377,18 +378,18 @@ function mysql_fetch_row ($result) {}
  * @param resource $result 
  * @param int $result_type [optional] <p>
  * The type of array that is to be fetched. It's a constant and can
- * take the following values: MYSQL_ASSOC, 
- * MYSQL_NUM, and
- * MYSQL_BOTH.
+ * take the following values: <b>MYSQL_ASSOC</b>,
+ * <b>MYSQL_NUM</b>, and
+ * <b>MYSQL_BOTH</b>.
  * </p>
  * @return array an array of strings that corresponds to the fetched row, or false
  * if there are no more rows. The type of returned array depends on
- * how result_type is defined. By using 
- * MYSQL_BOTH (default), you'll get an array with both 
- * associative and number indices. Using MYSQL_ASSOC, you 
- * only get associative indices (as mysql_fetch_assoc 
- * works), using MYSQL_NUM, you only get number indices 
- * (as mysql_fetch_row works).
+ * how <i>result_type</i> is defined. By using
+ * <b>MYSQL_BOTH</b> (default), you'll get an array with both
+ * associative and number indices. Using <b>MYSQL_ASSOC</b>, you
+ * only get associative indices (as <b>mysql_fetch_assoc</b>
+ * works), using <b>MYSQL_NUM</b>, you only get number indices
+ * (as <b>mysql_fetch_row</b> works).
  * </p>
  * <p>
  * If two or more columns of the result have the same field names,
@@ -397,7 +398,7 @@ function mysql_fetch_row ($result) {}
  * make an alias for the column. For aliased columns, you cannot
  * access the contents with the original column name.
  */
-function mysql_fetch_array ($result, $result_type = null) {}
+function mysql_fetch_array ($result, $result_type = MYSQL_BOTH) {}
 
 /**
  * (PHP 4 &gt;= 4.0.3, PHP 5)<br/>
@@ -412,8 +413,8 @@ function mysql_fetch_array ($result, $result_type = null) {}
  * the last column will take precedence. To access the other
  * column(s) of the same name, you either need to access the
  * result with numeric indices by using
- * mysql_fetch_row or add alias names.
- * See the example at the mysql_fetch_array
+ * <b>mysql_fetch_row</b> or add alias names.
+ * See the example at the <b>mysql_fetch_array</b>
  * description about aliases.
  */
 function mysql_fetch_assoc ($result) {}
@@ -425,11 +426,11 @@ function mysql_fetch_assoc ($result) {}
  * @param resource $result 
  * @param string $class_name [optional] <p>
  * The name of the class to instantiate, set the properties of and return.
- * If not specified, a stdClass object is returned.
+ * If not specified, a <b>stdClass</b> object is returned.
  * </p>
  * @param array $params [optional] <p>
  * An optional array of parameters to pass to the constructor
- * for class_name objects.
+ * for <i>class_name</i> objects.
  * </p>
  * @return stdClass|object an object with string properties that correspond to the
  * fetched row, or false if there are no more rows.
@@ -450,7 +451,7 @@ function mysql_fetch_object ($result, $class_name = null, array $params = null )
  * @param int $row_number <p>
  * The desired row number of the new result pointer.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function mysql_data_seek ($result, $row_number) {}
 
@@ -459,7 +460,7 @@ function mysql_data_seek ($result, $row_number) {}
  * Get the length of each output in a result
  * @link http://php.net/manual/en/function.mysql-fetch-lengths.php
  * @param resource $result 
- * @return array An array of lengths on success&return.falseforfailure;.
+ * @return array An array of lengths on success or false on failure.
  */
 function mysql_fetch_lengths ($result) {}
 
@@ -471,7 +472,7 @@ function mysql_fetch_lengths ($result) {}
  * @param int $field_offset [optional] <p>
  * The numerical field offset. If the field offset is not specified, the 
  * next field that was not yet retrieved by this function is retrieved. 
- * The field_offset starts at 0.
+ * The <i>field_offset</i> starts at 0.
  * </p>
  * @return object an object containing field information. The properties 
  * of the object are:
@@ -481,7 +482,7 @@ function mysql_fetch_lengths ($result) {}
  * table - name of the table the column belongs to
  * def - default value of the column
  * max_length - maximum length of the column
- * not_null - 1 if the column cannot be &null;
+ * not_null - 1 if the column cannot be null
  * primary_key - 1 if the column is a primary key
  * unique_key - 1 if the column is a unique key
  * multiple_key - 1 if the column is a non-unique key
@@ -491,7 +492,7 @@ function mysql_fetch_lengths ($result) {}
  * unsigned - 1 if the column is unsigned
  * zerofill - 1 if the column is zero-filled
  */
-function mysql_fetch_field ($result, $field_offset = null) {}
+function mysql_fetch_field ($result, $field_offset = 0) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -499,7 +500,7 @@ function mysql_fetch_field ($result, $field_offset = null) {}
  * @link http://php.net/manual/en/function.mysql-field-seek.php
  * @param resource $result 
  * @param int $field_offset 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function mysql_field_seek ($result, $field_offset) {}
 
@@ -508,7 +509,7 @@ function mysql_field_seek ($result, $field_offset) {}
  * Free result memory
  * @link http://php.net/manual/en/function.mysql-free-result.php
  * @param resource $result 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  * </p>
  * <p>
  * If a non-resource is used for the result, an
@@ -524,7 +525,7 @@ function mysql_free_result ($result) {}
  * @link http://php.net/manual/en/function.mysql-field-name.php
  * @param resource $result 
  * @param int $field_offset 
- * @return string The name of the specified field index on success&return.falseforfailure;.
+ * @return string The name of the specified field index on success or false on failure.
  */
 function mysql_field_name ($result, $field_offset) {}
 
@@ -544,7 +545,7 @@ function mysql_field_table ($result, $field_offset) {}
  * @link http://php.net/manual/en/function.mysql-field-len.php
  * @param resource $result 
  * @param int $field_offset 
- * @return int The length of the specified field index on success&return.falseforfailure;.
+ * @return int The length of the specified field index on success or false on failure.
  */
 function mysql_field_len ($result, $field_offset) {}
 
@@ -568,7 +569,7 @@ function mysql_field_type ($result, $field_offset) {}
  * @link http://php.net/manual/en/function.mysql-field-flags.php
  * @param resource $result 
  * @param int $field_offset 
- * @return string a string of flags associated with the result&return.falseforfailure;.
+ * @return string a string of flags associated with the result or false on failure.
  * </p>
  * <p>
  * The following flags are reported, if your version of MySQL
@@ -595,7 +596,7 @@ function mysql_escape_string ($unescaped_string) {}
 
 /**
  * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
- * Escapes special characters in a string for use in a SQL statement
+ * Escapes special characters in a string for use in an SQL statement
  * @link http://php.net/manual/en/function.mysql-real-escape-string.php
  * @param string $unescaped_string <p>
  * The string that is to be escaped.
@@ -613,7 +614,7 @@ function mysql_real_escape_string ($unescaped_string, $link_identifier = null) {
  * @return string a string with the status for uptime, threads, queries, open tables, 
  * flush tables and queries per second. For a complete list of other status 
  * variables, you have to use the SHOW STATUS SQL command. 
- * If link_identifier is invalid, &null; is returned.
+ * If <i>link_identifier</i> is invalid, null is returned.
  */
 function mysql_stat ($link_identifier = null) {}
 
@@ -622,7 +623,7 @@ function mysql_stat ($link_identifier = null) {}
  * Return the current thread ID
  * @link http://php.net/manual/en/function.mysql-thread-id.php
  * @param resource $link_identifier [optional] 
- * @return int The thread ID on success&return.falseforfailure;.
+ * @return int The thread ID on success or false on failure.
  */
 function mysql_thread_id ($link_identifier = null) {}
 
@@ -659,7 +660,7 @@ function mysql_get_client_info () {}
  * @link http://php.net/manual/en/function.mysql-get-host-info.php
  * @param resource $link_identifier [optional] 
  * @return string a string describing the type of MySQL connection in use for the 
- * connection&return.falseforfailure;.
+ * connection or false on failure.
  */
 function mysql_get_host_info ($link_identifier = null) {}
 
@@ -668,7 +669,7 @@ function mysql_get_host_info ($link_identifier = null) {}
  * Get MySQL protocol info
  * @link http://php.net/manual/en/function.mysql-get-proto-info.php
  * @param resource $link_identifier [optional] 
- * @return int the MySQL protocol on success&return.falseforfailure;.
+ * @return int the MySQL protocol on success or false on failure.
  */
 function mysql_get_proto_info ($link_identifier = null) {}
 
@@ -677,7 +678,7 @@ function mysql_get_proto_info ($link_identifier = null) {}
  * Get MySQL server info
  * @link http://php.net/manual/en/function.mysql-get-server-info.php
  * @param resource $link_identifier [optional] 
- * @return string the MySQL server version on success&return.falseforfailure;.
+ * @return string the MySQL server version on success or false on failure.
  */
 function mysql_get_server_info ($link_identifier = null) {}
 
@@ -701,42 +702,92 @@ function mysql_info ($link_identifier = null) {}
  * A valid character set name.
  * </p>
  * @param resource $link_identifier [optional] 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function mysql_set_charset ($charset, $link_identifier = null) {}
 
-function mysql () {}
+/**
+ * @param $database_name
+ * @param $query
+ * @param $link_identifier [optional]
+ */
+function mysql ($database_name, $query, $link_identifier) {}
 
-function mysql_fieldname () {}
+/**
+ * @param $result
+ * @param $field_index
+ */
+function mysql_fieldname ($result, $field_index) {}
 
-function mysql_fieldtable () {}
+/**
+ * @param $result
+ * @param $field_offset
+ */
+function mysql_fieldtable ($result, $field_offset) {}
 
-function mysql_fieldlen () {}
+/**
+ * @param $result
+ * @param $field_offset
+ */
+function mysql_fieldlen ($result, $field_offset) {}
 
-function mysql_fieldtype () {}
+/**
+ * @param $result
+ * @param $field_offset
+ */
+function mysql_fieldtype ($result, $field_offset) {}
 
-function mysql_fieldflags () {}
+/**
+ * @param $result
+ * @param $field_offset
+ */
+function mysql_fieldflags ($result, $field_offset) {}
 
-function mysql_selectdb () {}
+/**
+ * @param $database_name
+ * @param $link_identifier [optional]
+ */
+function mysql_selectdb ($database_name, $link_identifier) {}
 
-function mysql_freeresult () {}
+/**
+ * @param $result
+ */
+function mysql_freeresult ($result) {}
 
-function mysql_numfields () {}
+/**
+ * @param $result
+ */
+function mysql_numfields ($result) {}
 
-function mysql_numrows () {}
+/**
+ * @param $result
+ */
+function mysql_numrows ($result) {}
 
-function mysql_listdbs () {}
+/**
+ * @param $link_identifier [optional]
+ */
+function mysql_listdbs ($link_identifier) {}
 
-function mysql_listtables () {}
+/**
+ * @param $database_name
+ * @param $link_identifier [optional]
+ */
+function mysql_listtables ($database_name, $link_identifier) {}
 
-function mysql_listfields () {}
+/**
+ * @param $database_name
+ * @param $table_name
+ * @param $link_identifier [optional]
+ */
+function mysql_listfields ($database_name, $table_name, $link_identifier) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
- * Get result data
+ * Retrieves database name from the call to <b>mysql_list_dbs</b>
  * @link http://php.net/manual/en/function.mysql-db-name.php
  * @param resource $result <p>
- * The result pointer from a call to mysql_list_dbs.
+ * The result pointer from a call to <b>mysql_list_dbs</b>.
  * </p>
  * @param int $row <p>
  * The index into the result set.
@@ -745,12 +796,17 @@ function mysql_listfields () {}
  * The field name.
  * </p>
  * @return string the database name on success, and false on failure. If false
- * is returned, use mysql_error to determine the nature
+ * is returned, use <b>mysql_error</b> to determine the nature
  * of the error.
  */
 function mysql_db_name ($result, $row, $field = null) {}
 
-function mysql_dbname () {}
+/**
+ * @param $result
+ * @param $row
+ * @param $field [optional]
+ */
+function mysql_dbname ($result, $row, $field) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -758,21 +814,26 @@ function mysql_dbname () {}
  * @link http://php.net/manual/en/function.mysql-tablename.php
  * @param resource $result <p>
  * A result pointer resource that's returned from 
- * mysql_list_tables.
+ * <b>mysql_list_tables</b>.
  * </p>
  * @param int $i <p>
  * The integer index (row/table number)
  * </p>
- * @return string The name of the table on success&return.falseforfailure;.
+ * @return string The name of the table on success or false on failure.
  * </p>
  * <p>
- * Use the mysql_tablename function to
+ * Use the <b>mysql_tablename</b> function to
  * traverse this result pointer, or any function for result tables,
- * such as mysql_fetch_array.
+ * such as <b>mysql_fetch_array</b>.
  */
 function mysql_tablename ($result, $i) {}
 
-function mysql_table_name () {}
+/**
+ * @param $result
+ * @param $row
+ * @param $field [optional]
+ */
+function mysql_table_name ($result, $row, $field) {}
 
 
 /**

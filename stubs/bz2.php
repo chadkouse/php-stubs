@@ -63,7 +63,7 @@ function bzwrite ($bz, $data, $length = null) {}
  * The file pointer. It must be valid and must point to a file 
  * successfully opened by bzopen.
  * </p>
- * @return int Returns true on success or false on failure.
+ * @return int true on success or false on failure.
  */
 function bzflush ($bz) {}
 
@@ -75,7 +75,7 @@ function bzflush ($bz) {}
  * The file pointer. It must be valid and must point to a file 
  * successfully opened by bzopen.
  * </p>
- * @return int Returns true on success or false on failure.
+ * @return int true on success or false on failure.
  */
 function bzclose ($bz) {}
 

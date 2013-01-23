@@ -262,9 +262,11 @@ function str_pad ($input, $pad_length, $pad_string = null, $pad_type = null) {}
 /**
  * (PHP 4, PHP 5)<br/>
  * &Alias; <function>rtrim</function>
+ * @see rtrim()
  * @link http://php.net/manual/en/function.chop.php
- * @param $str
- * @param $character_mask [optional]
+ * @param string $str The input string.
+ * @param string $character_mask [optional]
+ * @return string the modified string.
  */
 function chop ($str, $character_mask) {}
 
@@ -272,9 +274,14 @@ function chop ($str, $character_mask) {}
  * (PHP 4, PHP 5)<br/>
  * &Alias; <function>strstr</function>
  * @link http://php.net/manual/en/function.strchr.php
- * @param $haystack
- * @param $needle
- * @param $part [optional]
+ * Note: This function is case-sensitive. For case-insensitive searches, use stristr().
+ * Note: If you only want to determine if a particular needle occurs within haystack,
+ * use the faster and less memory intensive function strpos() instead.
+ *
+ * @param string $haystack The input string.
+ * @param mixed $needle If needle is not a string, it is converted to an integer and applied as the ordinal value of a character.
+ * @param bool $part [optional] If TRUE, strstr() returns the part of the haystack before the first occurrence of the needle (excluding the needle).
+ * @return string Returns the portion of string, or FALSE if needle is not found.
  */
 function strchr ($haystack, $needle, $part) {}
 
@@ -582,7 +589,7 @@ function linkinfo ($path) {}
  * @param string $link <p>
  * The link name.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function symlink ($target, $link) {}
 
@@ -596,7 +603,7 @@ function symlink ($target, $link) {}
  * @param string $to_path <p>
  * Target of the link.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function link ($from_path, $to_path) {}
 
@@ -608,7 +615,7 @@ function link ($from_path, $to_path) {}
  * Path to the file.
  * </p>
  * @param resource $context [optional] &note.context-support;
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function unlink ($filename, $context = null) {}
 
@@ -889,7 +896,7 @@ function proc_get_status ($process) {}
  * @param int $increment <p>
  * The increment value of the priority change.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  * If an error occurs, like the user lacks permission to change the priority, 
  * an error of level E_WARNING is also generated.
  */

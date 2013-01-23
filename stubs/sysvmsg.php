@@ -50,7 +50,7 @@ function msg_get_queue ($key, $perms = null) {}
  * </p>
  * @param int $errorcode [optional] <p>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  * </p>
  * <p>
  * Upon successful completion the message queue data structure is updated as
@@ -139,7 +139,7 @@ function msg_send ($queue, $msgtype, $message, $serialize = null, $blocking = nu
  * If the function fails, the optional errorcode
  * will be set to the value of the system errno variable.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  * </p>
  * <p>
  * Upon successful completion the message queue data structure is updated as
@@ -156,7 +156,7 @@ function msg_receive ($queue, $desiredmsgtype, &$msgtype, $maxsize, &$message, $
  * @param resource $queue <p>
  * Message queue resource handle
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function msg_remove_queue ($queue) {}
 
@@ -248,7 +248,7 @@ function msg_stat_queue ($queue) {}
  * You specify the values you require by setting the value of the keys
  * that you require in the data array.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function msg_set_queue ($queue, array $data) {}
 
@@ -259,7 +259,7 @@ function msg_set_queue ($queue, array $data) {}
  * @param int $key <p>
  * Queue key.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function msg_queue_exists ($key) {}
 

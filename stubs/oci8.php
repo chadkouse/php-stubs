@@ -27,7 +27,7 @@ class OCI_Lob  {
 	 * length bytes. Otherwise, it will completrely
 	 * purge the LOB.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function truncate ($length = null) {}
 
@@ -55,7 +55,7 @@ class OCI_Lob  {
 	 * OCI_LOB_BUFFER_FREE flag only when you are not
 	 * going to work with the LOB anymore.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 * </p>
 	 * <p>
 	 * Returns false if buffering was not enabled or an error occurred.
@@ -68,7 +68,7 @@ class OCI_Lob  {
 	 * @param on_off bool <p>
 	 * true for on and false for off.
 	 * </p>
-	 * @return bool Returns true on success or false on failure. Repeated calls to this method with the same flag will
+	 * @return bool true on success or false on failure. Repeated calls to this method with the same flag will
 	 * return true.
 	 */
 	public function setbuffering ($on_off) {}
@@ -84,7 +84,7 @@ class OCI_Lob  {
 	/**
 	 * Moves the internal pointer to the beginning of the large object
 	 * @link http://php.net/manual/en/function.oci-lob-rewind.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function rewind () {}
 
@@ -123,7 +123,7 @@ class OCI_Lob  {
 	 * bytes to the end of large object (use negative value to move to a position
 	 * before the end of large object)
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function seek ($offset, $whence = null) {}
 
@@ -148,7 +148,7 @@ class OCI_Lob  {
 	 * @param lob_from OCI_Lob <p>
 	 * The copied LOB.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function append (OCI_Lob $lob_from) {}
 
@@ -181,7 +181,7 @@ class OCI_Lob  {
 	 * @param length int[optional] <p>
 	 * Indicates the length of data to be exported. 
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function export ($filename, $start = null, $length = null) {}
 
@@ -191,7 +191,7 @@ class OCI_Lob  {
 	 * @param filename string <p>
 	 * Path to the file.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function import ($filename) {}
 
@@ -207,14 +207,14 @@ class OCI_Lob  {
 	 * OCI_TEMP_CLOB (default value) is used to create
 	 * temporary CLOBs
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function writetemporary ($data, $lob_type = null) {}
 
 	/**
 	 * Closes LOB descriptor
 	 * @link http://php.net/manual/en/function.oci-lob-close.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function close () {}
 
@@ -227,7 +227,7 @@ class OCI_Lob  {
 	 * @param offset int[optional] <p>
 	 * Can be used to indicate offset from the beginning of the large object.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function save ($data, $offset = null) {}
 
@@ -241,7 +241,7 @@ class OCI_Lob  {
 	/**
 	 * Frees resources associated with the LOB descriptor
 	 * @link http://php.net/manual/en/function.oci-lob-free.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function free () {}
 
@@ -255,7 +255,7 @@ class OCI_Collection  {
 	 * @param value mixed <p>
 	 * The value to be added to the collection. Can be a string or a number.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function append ($value) {}
 
@@ -280,7 +280,7 @@ class OCI_Collection  {
 	 * @param value mixed <p>
 	 * Can be a string or a number.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function assignelem ($index, $value) {}
 
@@ -290,7 +290,7 @@ class OCI_Collection  {
 	 * @param from OCI-Collection <p>
 	 * An instance of OCI-Collection.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function assign (OCI_Collection $from) {}
 
@@ -317,14 +317,14 @@ class OCI_Collection  {
 	 * @param num int <p>
 	 * The number of elements to be trimmed.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function trim ($num) {}
 
 	/**
 	 * Frees the resources associated with the collection object
 	 * @link http://php.net/manual/en/function.oci-collection-free.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function free () {}
 
@@ -355,7 +355,7 @@ class OCI_Collection  {
  * allocate it first using oci_new_descriptor. See 
  * also the oci_bind_by_name function.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_define_by_name ($statement, $column_name, &$variable, $type = null) {}
 
@@ -387,7 +387,7 @@ function oci_define_by_name ($statement, $column_name, &$variable, $type = null)
  * <p>
  * SQLT_FILE - for BFILEs;
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_bind_by_name ($statement, $ph_name, &$variable, $maxlength = null, $type = null) {}
 
@@ -420,7 +420,7 @@ function oci_bind_by_name ($statement, $ph_name, &$variable, $maxlength = null, 
  * <p>
  * SQLT_NUM - for arrays of NUMBER.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_bind_array_by_name ($statement, $name, array &$var_array, $max_table_length, $max_item_length = null, $type = null) {}
 
@@ -538,7 +538,7 @@ function oci_field_type_raw ($statement, $field) {}
  * need to explicitly call oci_commit to commit
  * the transaction, or oci_rollback to abort it.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_execute ($statement, $mode = null) {}
 
@@ -548,7 +548,7 @@ function oci_execute ($statement, $mode = null) {}
  * @param statement resource <p>
  * An OCI statement.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_cancel ($statement) {}
 
@@ -558,7 +558,7 @@ function oci_cancel ($statement) {}
  * @param statement resource <p>
  * A valid OCI statement identifier.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_fetch ($statement) {}
 
@@ -664,7 +664,7 @@ function oci_fetch_all ($statement, array &$output, $skip = null, $maxrows = nul
  * @param statement resource <p>
  * A valid OCI statement identifier.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_free_statement ($statement) {}
 
@@ -777,7 +777,7 @@ function oci_num_rows ($statement) {}
  * An Oracle connection identifier, returned by 
  * oci_connect.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_close ($connection) {}
 
@@ -1023,7 +1023,7 @@ function oci_lob_append ($lob_descriptor_to, $lob_descriptor_from) {}
  * @param length int[optional] <p>
  * Indicates the length of data to be copied.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_lob_copy (OCI_Lob $lob_to, OCI_Lob $lob_from, $length = null) {}
 
@@ -1049,7 +1049,7 @@ function oci_lob_seek ($lob_descriptor, $offset, $whence) {}
  * An Oracle connection identifier, returned by 
  * oci_connect or oci_pconnect.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_commit ($connection) {}
 
@@ -1060,7 +1060,7 @@ function oci_commit ($connection) {}
  * An Oracle connection identifier, returned by 
  * oci_connect or oci_pconnect.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_rollback ($connection) {}
 
@@ -1087,7 +1087,7 @@ function oci_new_descriptor ($connection, $type = null) {}
  * </p>
  * @param rows int <p>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_set_prefetch ($statement, $rows) {}
 
@@ -1107,7 +1107,7 @@ function oci_set_prefetch ($statement, $rows) {}
  * @param new_password string <p>
  * The new password to be set.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function oci_password_change ($connection, $username, $old_password, $new_password) {}
 

@@ -43,7 +43,7 @@ function shmop_open ($key, $flags, $mode, $size) {}
  * @param int $count <p>
  * The number of bytes to read
  * </p>
- * @return string the data&return.falseforfailure;.
+ * @return string the data or false on failure.
  */
 function shmop_read ($shmid, $start, $count) {}
 
@@ -100,7 +100,7 @@ function shmop_write ($shmid, $data, $offset) {}
  * The shared memory block identifier created by 
  * shmop_open
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function shmop_delete ($shmid) {}
 

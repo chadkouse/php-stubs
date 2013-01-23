@@ -41,7 +41,7 @@ class LibXMLError  {
  * @link http://php.net/manual/en/function.libxml-set-streams-context.php
  * @param resource $streams_context <p>
  * The stream context resource (created with
- * stream_context_create)
+ * <b>stream_context_create</b>)
  * </p>
  * @return void 
  */
@@ -52,12 +52,12 @@ function libxml_set_streams_context ($streams_context) {}
  * Disable libxml errors and allow user to fetch error information as needed
  * @link http://php.net/manual/en/function.libxml-use-internal-errors.php
  * @param bool $use_errors [optional] <p>
- * Whether to enable user error handling.
+ * Enable (true) user error handling or disable (false) user error handling. Disabling will also clear any existing libxml errors.
  * </p>
  * @return bool This function returns the previous value of
- * use_errors.
+ * <i>use_errors</i>.
  */
-function libxml_use_internal_errors ($use_errors = null) {}
+function libxml_use_internal_errors ($use_errors = false) {}
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -67,6 +67,17 @@ function libxml_use_internal_errors ($use_errors = null) {}
  * buffer, false otherwise.
  */
 function libxml_get_last_error () {}
+
+/**
+ * PHP > 5.4.0 <br/>
+ * Changes the default external entity loader.
+ * @link http://www.php.net/manual/en/function.libxml-set-external-entity-loader.php
+ * @param callable $resolver_function A callable that takes three arguments. <br>
+ * Two strings, a public id and system id, and a context (an array with four keys) <br>
+ * as the third argument. This callback should return a resource, <br>
+ * a string from which a resource can be opened, or <b>NULL</b>.
+ */
+function libxml_set_external_entity_loader ($resolver_function) {}
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -94,23 +105,23 @@ function libxml_get_errors () {}
  * , 
  * and ) to load external entities.
  * </p>
- * @return ReturnType the previous value.
+ * @return bool the previous value.
  */
-function libxml_disable_entity_loader ($disable = null) {}
+function libxml_disable_entity_loader ($disable = true) {}
 
 
 /**
  * libxml version like 20605 or 20617
  * @link http://php.net/manual/en/libxml.constants.php
  */
-define ('LIBXML_VERSION', 20703);
+define ('LIBXML_VERSION', 20708);
 
 /**
  * libxml version like 2.6.5 or 2.6.17
  * @link http://php.net/manual/en/libxml.constants.php
  */
-define ('LIBXML_DOTTED_VERSION', "2.7.3");
-define ('LIBXML_LOADED_VERSION', 20705);
+define ('LIBXML_DOTTED_VERSION', "2.7.8");
+define ('LIBXML_LOADED_VERSION', 20708);
 
 /**
  * Substitute entities
@@ -198,6 +209,12 @@ define ('LIBXML_COMPACT', 65536);
 define ('LIBXML_NOXMLDECL', 2);
 
 /**
+ * Sets XML_PARSE_HUGE flag, which relaxes any hardcoded limit from the parser.
+ * @link http://php.net/manual/en/libxml.constants.php
+ */
+define ('LIBXML_PARSEHUGE', 524288);
+
+/**
  * Expand empty tags (e.g. &lt;br/&gt; to
  * &lt;br&gt;&lt;/br&gt;)
  * <p>
@@ -232,6 +249,20 @@ define ('LIBXML_ERR_ERROR', 2);
  * @link http://php.net/manual/en/libxml.constants.php
  */
 define ('LIBXML_ERR_FATAL', 3);
+
+
+/**
+ * @since 5.4
+ * @link http://www.php.net/manual/en/migration54.global-constants.php
+ */
+define ('LIBXML_HTML_NODEFDTD', 0);
+
+/**
+ * @since 5.4
+ * @link http://www.php.net/manual/en/migration54.global-constants.php
+ */
+define ('LIBXML_HTML_NOIMPLIED', 0);
+
 
 // End of libxml v.
 ?>

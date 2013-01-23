@@ -279,7 +279,7 @@ function closedir ($dir_handle = null) {}
  * @param string $directory <p>
  * The new current directory
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function chdir ($directory) {}
 
@@ -290,7 +290,7 @@ function chdir ($directory) {}
  * @param string $directory <p>
  * The new directory
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function chroot ($directory) {}
 
@@ -334,7 +334,7 @@ function rewinddir ($dir_handle = null) {}
  * not specified, the last link opened by opendir 
  * is assumed.
  * </p>
- * @return string the filename on success&return.falseforfailure;.
+ * @return string the filename on success or false on failure.
  */
 function readdir ($dir_handle = null) {}
 
@@ -398,7 +398,7 @@ function glob ($pattern, $flags = null) {}
  * @param string $filename <p>
  * Path to the file.
  * </p>
- * @return int the time the file was last accessed, &return.falseforfailure;.
+ * @return int the time the file was last accessed, or false on failure.
  * The time is returned as a Unix timestamp.
  */
 function fileatime ($filename) {}
@@ -410,7 +410,7 @@ function fileatime ($filename) {}
  * @param string $filename <p>
  * Path to the file.
  * </p>
- * @return int the time the file was last changed, &return.falseforfailure;.
+ * @return int the time the file was last changed, or false on failure.
  * The time is returned as a Unix timestamp.
  */
 function filectime ($filename) {}
@@ -436,7 +436,7 @@ function filegroup ($filename) {}
  * @param string $filename <p>
  * Path to the file.
  * </p>
- * @return int the inode number of the file, &return.falseforfailure;.
+ * @return int the inode number of the file, or false on failure.
  */
 function fileinode ($filename) {}
 
@@ -447,7 +447,7 @@ function fileinode ($filename) {}
  * @param string $filename <p>
  * Path to the file.
  * </p>
- * @return int the time the file was last modified, &return.falseforfailure;.
+ * @return int the time the file was last modified, or false on failure.
  * The time is returned as a Unix timestamp, which is
  * suitable for the date function.
  */
@@ -460,7 +460,7 @@ function filemtime ($filename) {}
  * @param string $filename <p>
  * Path to the file.
  * </p>
- * @return int the user ID of the owner of the file, &return.falseforfailure;.
+ * @return int the user ID of the owner of the file, or false on failure.
  * The user ID is returned in numerical format, use
  * posix_getpwuid to resolve it to a username.
  */
@@ -473,7 +473,7 @@ function fileowner ($filename) {}
  * @param string $filename <p>
  * Path to the file.
  * </p>
- * @return int the permissions on the file, &return.falseforfailure;.
+ * @return int the permissions on the file, or false on failure.
  */
 function fileperms ($filename) {}
 
@@ -740,7 +740,7 @@ function lstat ($filename) {}
  * @param mixed $user <p>
  * A user name or number.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function chown ($filename, $user) {}
 
@@ -754,7 +754,7 @@ function chown ($filename, $user) {}
  * @param mixed $group <p>
  * A group name or number.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function chgrp ($filename, $group) {}
 
@@ -768,7 +768,7 @@ function chgrp ($filename, $group) {}
  * @param mixed $user <p>
  * User name or number.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function lchown ($filename, $user) {}
 
@@ -782,7 +782,7 @@ function lchown ($filename, $user) {}
  * @param mixed $group <p>
  * The group specified by name or number.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function lchgrp ($filename, $group) {}
 
@@ -815,7 +815,7 @@ function lchgrp ($filename, $group) {}
  * and 'man 2 chmod'.
  * </p>
  * <p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function chmod ($filename, $mode) {}
 
@@ -835,7 +835,7 @@ function chmod ($filename, $mode) {}
  * the value of atime. Otherwise, it is set to
  * time.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function touch ($filename, $time = null, $atime = null) {}
 
@@ -862,7 +862,7 @@ function clearstatcache ($clear_realpath_cache = null, $filename = null) {}
  * A directory of the filesystem or disk partition.
  * </p>
  * @return float the total number of bytes as a float
- * &return.falseforfailure;.
+ * or false on failure.
  */
 function disk_total_space ($directory) {}
 
@@ -879,7 +879,7 @@ function disk_total_space ($directory) {}
  * PHP versions.
  * </p>
  * @return float the number of available bytes as a float
- * &return.falseforfailure;.
+ * or false on failure.
  */
 function disk_free_space ($directory) {}
 
@@ -1104,7 +1104,7 @@ function ezmlm_hash ($addr) {}
  * LOG_USER is the only valid log type under Windows
  * operating systems
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function openlog ($ident, $option, $facility) {}
 

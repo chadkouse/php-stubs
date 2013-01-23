@@ -7,10 +7,11 @@
  * Get and/or set the current session name
  * @link http://php.net/manual/en/function.session-name.php
  * @param string $name [optional] <p>
- * The session name references the session id in cookies and URLs. It
+ * The session name references the name of the session, which is
+ * used in cookies and URLs (e.g. PHPSESSID). It
  * should contain only alphanumeric characters; it should be short and
  * descriptive (i.e. for users with enabled cookie warnings).
- * If name is specified, the name of the current
+ * If <i>name</i> is specified, the name of the current
  * session is changed to its value.
  * </p>
  * <p>
@@ -28,7 +29,7 @@ function session_name ($name = null) {}
  * Get and/or set the current session module
  * @link http://php.net/manual/en/function.session-module-name.php
  * @param string $module [optional] <p>
- * If module is specified, that module will be
+ * If <i>module</i> is specified, that module will be
  * used instead.
  * </p>
  * @return string the name of the current session module.
@@ -41,8 +42,8 @@ function session_module_name ($module = null) {}
  * @link http://php.net/manual/en/function.session-save-path.php
  * @param string $path [optional] <p>
  * Session data path. If specified, the path to which data is saved will
- * be changed. session_save_path needs to be called
- * before session_start for that purpose.
+ * be changed. <b>session_save_path</b> needs to be called
+ * before <b>session_start</b> for that purpose.
  * </p>
  * <p>
  * <p>
@@ -60,18 +61,18 @@ function session_save_path ($path = null) {}
  * Get and/or set the current session id
  * @link http://php.net/manual/en/function.session-id.php
  * @param string $id [optional] <p>
- * If id is specified, it will replace the current
- * session id. session_id needs to be called before
- * session_start for that purpose. Depending on the
+ * If <i>id</i> is specified, it will replace the current
+ * session id. <b>session_id</b> needs to be called before
+ * <b>session_start</b> for that purpose. Depending on the
  * session handler, not all characters are allowed within the session id.
  * For example, the file session handler only allows characters in the
  * range a-z A-Z 0-9 , (comma) and - (minus)!
  * </p>
- * When using session cookies, specifying an id
- * for session_id will always send a new cookie
- * when session_start is called, regardless if the
+ * When using session cookies, specifying an <i>id</i>
+ * for <b>session_id</b> will always send a new cookie
+ * when <b>session_start</b> is called, regardless if the
  * current session id is identical to the one being set.
- * @return string session_id returns the session id for the current
+ * @return string <b>session_id</b> returns the session id for the current
  * session or the empty string ("") if there is no current
  * session (no current session id exists).
  */
@@ -84,9 +85,16 @@ function session_id ($id = null) {}
  * @param bool $delete_old_session [optional] <p>
  * Whether to delete the old associated session file or not.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
-function session_regenerate_id ($delete_old_session = null) {}
+function session_regenerate_id ($delete_old_session = false) {}
+
+/**
+ * PHP > 5.4.0 <br/>
+ * Session shutdown function
+ * @link http://www.php.net/manual/en/function.session-register-shutdown.php
+ */
+function session_register_shutdown  () {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -95,7 +103,7 @@ function session_regenerate_id ($delete_old_session = null) {}
  * @param string $data <p>
  * The encoded data to be stored.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function session_decode ($data) {}
 
@@ -103,13 +111,13 @@ function session_decode ($data) {}
  * (PHP 4, PHP 5)<br/>
  * Register one or more global variables with the current session
  * @link http://php.net/manual/en/function.session-register.php
- * @deprecated since 5.3.0, use the $_SESSION superglobal instead
  * @param mixed $name <p>
  * A string holding the name of a variable or an array consisting of
  * variable names or other arrays.
  * </p>
- * @param mixed $_ [optional] 
- * @return bool Returns true on success or false on failure.
+ * @param mixed $_ [optional]
+ * @return bool true on success or false on failure.
+ * @deprecated This function has been DEPRECATED as of PHP 5.3.0 and REMOVED as of PHP 5.4.0.
  */
 function session_register ($name, $_ = null) {}
 
@@ -117,11 +125,11 @@ function session_register ($name, $_ = null) {}
  * (PHP 4, PHP 5)<br/>
  * Unregister a global variable from the current session
  * @link http://php.net/manual/en/function.session-unregister.php
- * @deprecated since 5.3.0, use the $_SESSION superglobal instead
  * @param string $name <p>
  * The variable name.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
+ * @deprecated This function has been DEPRECATED as of PHP 5.3.0 and REMOVED as of PHP 5.4.0.
  */
 function session_unregister ($name) {}
 
@@ -129,13 +137,13 @@ function session_unregister ($name) {}
  * (PHP 4, PHP 5)<br/>
  * Find out whether a global variable is registered in a session
  * @link http://php.net/manual/en/function.session-is-registered.php
- * @deprecated since 5.3.0, use the $_SESSION superglobal instead
  * @param string $name <p>
  * The variable name.
  * </p>
- * @return bool session_is_registered returns true if there is a
- * global variable with the name name registered in
+ * @return bool <b>session_is_registered</b> returns true if there is a
+ * global variable with the name <i>name</i> registered in
  * the current session, false otherwise.
+ * @deprecated This function has been DEPRECATED as of PHP 5.3.0 and REMOVED as of PHP 5.4.0.
  */
 function session_is_registered ($name) {}
 
@@ -151,7 +159,8 @@ function session_encode () {}
  * (PHP 4, PHP 5)<br/>
  * Initialize session data
  * @link http://php.net/manual/en/function.session-start.php
- * @return bool This function returns true if session was started with success otherwise false.
+ * @return bool This function returns true if a session was successfully started,
+ * otherwise false.
  */
 function session_start () {}
 
@@ -159,7 +168,7 @@ function session_start () {}
  * (PHP 4, PHP 5)<br/>
  * Destroys all data registered to a session
  * @link http://php.net/manual/en/function.session-destroy.php
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function session_destroy () {}
 
@@ -167,7 +176,7 @@ function session_destroy () {}
  * (PHP 4, PHP 5)<br/>
  * Free all session variables
  * @link http://php.net/manual/en/function.session-unset.php
- * @return void 
+ * @return void
  */
 function session_unset () {}
 
@@ -176,13 +185,13 @@ function session_unset () {}
  * Sets user-level session storage functions
  * @link http://php.net/manual/en/function.session-set-save-handler.php
  * @param callback $open <p>
- * Open function, this works like a constructor in classes and is 
- * executed when the session is being opened. The open function 
- * expects two parameters, where the first is the save path and 
+ * Open function, this works like a constructor in classes and is
+ * executed when the session is being opened. The open function
+ * expects two parameters, where the first is the save path and
  * the second is the session name.
  * </p>
  * @param callback $close <p>
- * Close function, this works like a destructor in classes and is 
+ * Close function, this works like a destructor in classes and is
  * executed when the session operation is done.
  * </p>
  * @param callback $read <p>
@@ -192,6 +201,9 @@ function session_unset () {}
  * true for success, false for failure.
  * </p>
  * @param callback $write <p>
+ * Write function that is called when session data is to be saved. This
+ * function expects two parameters: an identifier and the data associated
+ * with it.
  * <p>
  * The "write" handler is not executed until after the output stream is
  * closed. Thus, output from debugging statements in the "write"
@@ -201,15 +213,15 @@ function session_unset () {}
  * </p>
  * </p>
  * @param callback $destroy <p>
- * The destroy handler, this is executed when a session is destroyed with 
- * session_destroy and takes the session id as its 
+ * The destroy handler, this is executed when a session is destroyed with
+ * <b>session_destroy</b> and takes the session id as its
  * only parameter.
  * </p>
  * @param callback $gc <p>
- * The garbage collector, this is executed when the session garbage collector 
+ * The garbage collector, this is executed when the session garbage collector
  * is executed and takes the max session lifetime as its only parameter.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function session_set_save_handler ($open, $close, $read, $write, $destroy, $gc) {}
 
@@ -218,7 +230,7 @@ function session_set_save_handler ($open, $close, $read, $write, $destroy, $gc) 
  * Get and/or set the current cache limiter
  * @link http://php.net/manual/en/function.session-cache-limiter.php
  * @param string $cache_limiter [optional] <p>
- * If cache_limiter is specified, the name of the
+ * If <i>cache_limiter</i> is specified, the name of the
  * current cache limiter is changed to the new value.
  * </p>
  * <table>
@@ -230,21 +242,40 @@ function session_set_save_handler ($open, $close, $read, $write, $destroy, $gc) 
  * <tr valign="top">
  * <td>public</td>
  * <td>
+ * <pre>
+ * Expires: (sometime in the future, according session.cache_expire)
+ * Cache-Control: public, max-age=(sometime in the future, according to session.cache_expire)
+ * Last-Modified: (the timestamp of when the session was last saved)
+ * </pre>
  * </td>
  * </tr>
  * <tr valign="top">
  * <td>private_no_expire</td>
  * <td>
+ * <pre>
+ * Cache-Control: private, max-age=(session.cache_expire in the future), pre-check=(session.cache_expire in the future)
+ * Last-Modified: (the timestamp of when the session was last saved)
+ * </pre>
  * </td>
  * </tr>
  * <tr valign="top">
  * <td>private</td>
  * <td>
+ * <pre>
+ * Expires: Thu, 19 Nov 1981 08:52:00 GMT
+ * Cache-Control: private, max-age=(session.cache_expire in the future), pre-check=(session.cache_expire in the future)
+ * Last-Modified: (the timestamp of when the session was last saved)
+ * </pre>
  * </td>
  * </tr>
  * <tr valign="top">
  * <td>nocache</td>
  * <td>
+ * <pre>
+ * Expires: Thu, 19 Nov 1981 08:52:00 GMT
+ * Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+ * Pragma: no-cache
+ * </pre>
  * </td>
  * </tr>
  * </table>
@@ -257,11 +288,11 @@ function session_cache_limiter ($cache_limiter = null) {}
  * Return current cache expire
  * @link http://php.net/manual/en/function.session-cache-expire.php
  * @param string $new_cache_expire [optional] <p>
- * If new_cache_expire is given, the current cache
- * expire is replaced with new_cache_expire.
+ * If <i>new_cache_expire</i> is given, the current cache
+ * expire is replaced with <i>new_cache_expire</i>.
  * </p>
  * <p>
- * Setting new_cache_expire is of value only, if
+ * Setting <i>new_cache_expire</i> is of value only, if
  * session.cache_limiter is set to a value
  * different from nocache.
  * </p>
@@ -297,9 +328,9 @@ function session_cache_expire ($new_cache_expire = null) {}
  * httponly
  * flag when setting the session cookie.
  * </p>
- * @return void 
+ * @return void
  */
-function session_set_cookie_params ($lifetime, $path = null, $domain = null, $secure = null, $httponly = null) {}
+function session_set_cookie_params ($lifetime, $path = null, $domain = null, $secure = false, $httponly = false) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -307,11 +338,16 @@ function session_set_cookie_params ($lifetime, $path = null, $domain = null, $se
  * @link http://php.net/manual/en/function.session-get-cookie-params.php
  * @return array an array with the current session cookie information, the array
  * contains the following items:
- * "lifetime" - The lifetime of the cookie in seconds.
- * "path" - The path where information is stored.
- * "domain" - The domain of the cookie.
- * "secure" - The cookie should only be sent over secure connections.
- * "httponly" - The cookie can only be accessed through the HTTP protocol.
+ * "lifetime" - The
+ * lifetime of the cookie in seconds.
+ * "path" - The path where
+ * information is stored.
+ * "domain" - The domain
+ * of the cookie.
+ * "secure" - The cookie
+ * should only be sent over secure connections.
+ * "httponly" - The
+ * cookie can only be accessed through the HTTP protocol.
  */
 function session_get_cookie_params () {}
 
@@ -319,24 +355,26 @@ function session_get_cookie_params () {}
  * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
  * Write session data and end session
  * @link http://php.net/manual/en/function.session-write-close.php
- * @return void 
+ * @return void
  */
 function session_write_close () {}
 
 /**
  * (PHP 4 &gt;= 4.4.0, PHP 5)<br/>
- * &Alias; <function>session_write_close</function>
+ * Alias of <b>session_write_close</b>
  * @link http://php.net/manual/en/function.session-commit.php
  */
 function session_commit () {}
 
 /**
- * Constant containing either the session name and session ID in the form of "name=ID"
- * or empty string if session ID was set in an appropriate session cookie.
- * This is the same id as the one returned by session_id().
- * @link http://php.net/manual/en/session.constants.php
+ * (PHP 5 >= 5.4.0)<br>
+ * Returns the current session status
+ * @link http://php.net/manual/en/function.session-status.php
+ * @return <b>PHP_SESSION_DISABLED</b> if sessions are disabled.
+ * <b>PHP_SESSION_NONE</b> if sessions are enabled, but none exists.
+ * <b>PHP_SESSION_ACTIVE</b> if sessions are enabled, and one exists.
  */
-const SID = "name=ID"
+function session_status () {}
 
 // End of session v.
 ?>

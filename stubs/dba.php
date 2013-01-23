@@ -118,7 +118,7 @@
  * can act on behalf of them.
  * </p>
  * @param mixed $_ [optional] 
- * @return resource a positive handle on success&return.falseforfailure;.
+ * @return resource a positive handle on success or false on failure.
  */
 function dba_open ($path, $mode, $handler = null, $_ = null) {}
 
@@ -142,7 +142,7 @@ function dba_open ($path, $mode, $handler = null, $_ = null) {}
  * can act on behalf of them.
  * </p>
  * @param mixed $_ [optional] 
- * @return resource a positive handle on success&return.falseforfailure;.
+ * @return resource a positive handle on success or false on failure.
  */
 function dba_popen ($path, $mode, $handler = null, $_ = null) {}
 
@@ -169,7 +169,7 @@ function dba_close ($handle) {}
  * The database handler, returned by dba_open or
  * dba_popen.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function dba_delete ($key, $handle) {}
 
@@ -225,7 +225,7 @@ function dba_fetch ($key, $handle) {}
  * The database handler, returned by dba_open or
  * dba_popen.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function dba_insert ($key, $value, $handle) {}
 
@@ -243,7 +243,7 @@ function dba_insert ($key, $value, $handle) {}
  * The database handler, returned by dba_open or
  * dba_popen.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function dba_replace ($key, $value, $handle) {}
 
@@ -255,7 +255,7 @@ function dba_replace ($key, $value, $handle) {}
  * The database handler, returned by dba_open or
  * dba_popen.
  * </p>
- * @return string the key on success&return.falseforfailure;.
+ * @return string the key on success or false on failure.
  */
 function dba_firstkey ($handle) {}
 
@@ -267,7 +267,7 @@ function dba_firstkey ($handle) {}
  * The database handler, returned by dba_open or
  * dba_popen.
  * </p>
- * @return string the key on success&return.falseforfailure;.
+ * @return string the key on success or false on failure.
  */
 function dba_nextkey ($handle) {}
 
@@ -279,7 +279,7 @@ function dba_nextkey ($handle) {}
  * The database handler, returned by dba_open or
  * dba_popen.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function dba_optimize ($handle) {}
 
@@ -291,7 +291,7 @@ function dba_optimize ($handle) {}
  * The database handler, returned by dba_open or
  * dba_popen.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function dba_sync ($handle) {}
 

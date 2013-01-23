@@ -528,7 +528,7 @@ function gmp_scan1 ($a, $start) {}
  * @param int $index <p>
  * The bit to test
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function gmp_testbit ($a, $index) {}
 

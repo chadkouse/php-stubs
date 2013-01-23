@@ -30,7 +30,7 @@ class tidy  {
 	 * (PHP 5, PECL tidy &gt;= 0.5.2)<br/>
 	 * Execute configured cleanup and repair operations on parsed markup
 	 * @link http://php.net/manual/en/tidy.cleanrepair.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function cleanRepair () {}
 
@@ -65,7 +65,7 @@ class tidy  {
 	 * @param bool $use_include_path [optional] <p>
 	 * Search for the file in the include_path.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function parseFile ($filename, $config = null, $encoding = null, $use_include_path = null) {}
 
@@ -165,7 +165,7 @@ class tidy  {
 	 * (PHP 5, PECL tidy &gt;= 0.5.2)<br/>
 	 * Run configured diagnostics on parsed and repaired markup
 	 * @link http://php.net/manual/en/function.tidy-diagnose.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function diagnose () {}
 

@@ -11,7 +11,7 @@ class XMLWriter  {
 	 * @param string $uri <p>
 	 * The URI of the resource for the output.
 	 * </p>
-	 * @return bool Object oriented style: Returns true on success or false on failure.
+	 * @return bool Object oriented style: true on success or false on failure.
 	 * </p>
 	 * <p>
 	 * Procedural style: Returns a new xmlwriter resource for later use with the
@@ -23,7 +23,7 @@ class XMLWriter  {
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
 	 * Create new xmlwriter using memory for string output
 	 * @link http://php.net/manual/en/function.xmlwriter-open-memory.php
-	 * @return bool Object oriented style: Returns true on success or false on failure.
+	 * @return bool Object oriented style: true on success or false on failure.
 	 * </p>
 	 * <p>
 	 * Procedural style: Returns a new xmlwriter resource for later use with the
@@ -38,7 +38,7 @@ class XMLWriter  {
 	 * @param bool $indent <p>
 	 * Whether indentation is enabled.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setIndent ($indent) {}
 
@@ -49,7 +49,7 @@ class XMLWriter  {
 	 * @param string $indentString <p>
 	 * The indentation string.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setIndentString ($indentString) {}
 
@@ -57,7 +57,7 @@ class XMLWriter  {
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 1.0.0)<br/>
 	 * Create start comment
 	 * @link http://php.net/manual/en/function.xmlwriter-start-comment.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function startComment () {}
 
@@ -65,7 +65,7 @@ class XMLWriter  {
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 1.0.0)<br/>
 	 * Create end comment
 	 * @link http://php.net/manual/en/function.xmlwriter-end-comment.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function endComment () {}
 
@@ -76,7 +76,7 @@ class XMLWriter  {
 	 * @param string $name <p>
 	 * The attribute name.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function startAttribute ($name) {}
 
@@ -84,7 +84,7 @@ class XMLWriter  {
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
 	 * End attribute
 	 * @link http://php.net/manual/en/function.xmlwriter-end-attribute.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function endAttribute () {}
 
@@ -98,7 +98,7 @@ class XMLWriter  {
 	 * @param string $value <p>
 	 * The value of the attribute.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function writeAttribute ($name, $value) {}
 
@@ -115,7 +115,7 @@ class XMLWriter  {
 	 * @param string $uri <p>
 	 * The namespace URI.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function startAttributeNs ($prefix, $name, $uri) {}
 
@@ -135,7 +135,7 @@ class XMLWriter  {
 	 * @param string $content <p>
 	 * The attribute value.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function writeAttributeNs ($prefix, $name, $uri, $content) {}
 
@@ -146,7 +146,7 @@ class XMLWriter  {
 	 * @param string $name <p>
 	 * The element name.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function startElement ($name) {}
 
@@ -154,7 +154,7 @@ class XMLWriter  {
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
 	 * End current element
 	 * @link http://php.net/manual/en/function.xmlwriter-end-element.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function endElement () {}
 
@@ -162,7 +162,7 @@ class XMLWriter  {
 	 * (PHP 5 &gt;= 5.2.0, PECL xmlwriter &gt;= 2.0.4)<br/>
 	 * End current element
 	 * @link http://php.net/manual/en/function.xmlwriter-full-end-element.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function fullEndElement () {}
 
@@ -179,7 +179,7 @@ class XMLWriter  {
 	 * @param string $uri <p>
 	 * The namespace URI.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function startElementNs ($prefix, $name, $uri) {}
 
@@ -193,7 +193,7 @@ class XMLWriter  {
 	 * @param string $content [optional] <p>
 	 * The element contents.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function writeElement ($name, $content = null) {}
 
@@ -213,7 +213,7 @@ class XMLWriter  {
 	 * @param string $content [optional] <p>
 	 * The element contents.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function writeElementNs ($prefix, $name, $uri, $content = null) {}
 
@@ -224,7 +224,7 @@ class XMLWriter  {
 	 * @param string $target <p>
 	 * The target of the processing instruction.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function startPi ($target) {}
 
@@ -232,7 +232,7 @@ class XMLWriter  {
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
 	 * End current PI
 	 * @link http://php.net/manual/en/function.xmlwriter-end-pi.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function endPi () {}
 
@@ -246,7 +246,7 @@ class XMLWriter  {
 	 * @param string $content <p>
 	 * The content of the processing instruction.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function writePi ($target, $content) {}
 
@@ -254,7 +254,7 @@ class XMLWriter  {
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
 	 * Create start CDATA tag
 	 * @link http://php.net/manual/en/function.xmlwriter-start-cdata.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function startCdata () {}
 
@@ -262,7 +262,7 @@ class XMLWriter  {
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
 	 * End current CDATA
 	 * @link http://php.net/manual/en/function.xmlwriter-end-cdata.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function endCdata () {}
 
@@ -273,7 +273,7 @@ class XMLWriter  {
 	 * @param string $content <p>
 	 * The contents of the CDATA.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function writeCdata ($content) {}
 
@@ -284,7 +284,7 @@ class XMLWriter  {
 	 * @param string $content <p>
 	 * The contents of the text.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function text ($content) {}
 
@@ -295,7 +295,7 @@ class XMLWriter  {
 	 * @param string $content <p>
 	 * The text string to write.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function writeRaw ($content) {}
 
@@ -314,7 +314,7 @@ class XMLWriter  {
 	 * @param string $standalone [optional] <p>
 	 * yes or no.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function startDocument ($version = null, $encoding = null, $standalone = null) {}
 
@@ -322,7 +322,7 @@ class XMLWriter  {
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
 	 * End current document
 	 * @link http://php.net/manual/en/function.xmlwriter-end-document.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function endDocument () {}
 
@@ -333,7 +333,7 @@ class XMLWriter  {
 	 * @param string $content <p>
 	 * The contents of the comment.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function writeComment ($content) {}
 
@@ -350,17 +350,17 @@ class XMLWriter  {
 	 * @param string $systemId [optional] <p>
 	 * The external subset system identifier.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function startDtd ($qualifiedName, $publicId = null, $systemId = null) {}
+	public function startDTD ($qualifiedName, $publicId = null, $systemId = null) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
 	 * End current DTD
 	 * @link http://php.net/manual/en/function.xmlwriter-end-dtd.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function endDtd () {}
+	public function endDTD () {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
@@ -378,9 +378,9 @@ class XMLWriter  {
 	 * @param string $subset [optional] <p>
 	 * The content of the DTD.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function writeDtd ($name, $publicId = null, $systemId = null, $subset = null) {}
+	public function writeDTD ($name, $publicId = null, $systemId = null, $subset = null) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
@@ -389,17 +389,17 @@ class XMLWriter  {
 	 * @param string $qualifiedName <p>
 	 * The qualified name of the document type to create.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function startDtdElement ($qualifiedName) {}
+	public function startDTDElement ($qualifiedName) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
 	 * End current DTD element
 	 * @link http://php.net/manual/en/function.xmlwriter-end-dtd-element.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function endDtdElement () {}
+	public function endDTDElement () {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
@@ -411,9 +411,9 @@ class XMLWriter  {
 	 * @param string $content <p>
 	 * The content of the element.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function writeDtdElement ($name, $content) {}
+	public function writeDTDElement ($name, $content) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
@@ -422,17 +422,17 @@ class XMLWriter  {
 	 * @param string $name <p>
 	 * The attribute list name.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function startDtdAttlist ($name) {}
+	public function startDTDAttlist ($name) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
 	 * End current DTD AttList
 	 * @link http://php.net/manual/en/function.xmlwriter-end-dtd-attlist.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function endDtdAttlist () {}
+	public function endDTDAttlist () {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
@@ -444,9 +444,9 @@ class XMLWriter  {
 	 * @param string $content <p>
 	 * The content of the DTD attribute list.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function writeDtdAttlist ($name, $content) {}
+	public function writeDTDAttlist ($name, $content) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
@@ -457,17 +457,17 @@ class XMLWriter  {
 	 * </p>
 	 * @param bool $isparam <p>
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function startDtdEntity ($name, $isparam) {}
+	public function startDTDEntity ($name, $isparam) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
 	 * End current DTD Entity
 	 * @link http://php.net/manual/en/function.xmlwriter-end-dtd-entity.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function endDtdEntity () {}
+	public function endDTDEntity () {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
@@ -483,9 +483,9 @@ class XMLWriter  {
 	 * @param string $pubid 
 	 * @param string $sysid 
 	 * @param string $ndataid 
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
-	public function writeDtdEntity ($name, $content, $pe, $pubid, $sysid, $ndataid) {}
+	public function writeDTDEntity ($name, $content, $pe, $pubid, $sysid, $ndataid) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
@@ -520,7 +520,7 @@ class XMLWriter  {
  * @param string $uri <p>
  * The URI of the resource for the output.
  * </p>
- * @return bool Object oriented style: Returns true on success or false on failure.
+ * @return bool Object oriented style: true on success or false on failure.
  * </p>
  * <p>
  * Procedural style: Returns a new xmlwriter resource for later use with the
@@ -532,7 +532,7 @@ function xmlwriter_open_uri ($uri) {}
  * (PHP 5 &gt;= 5.1.2, PECL xmlwriter &gt;= 0.1.0)<br/>
  * Create new xmlwriter using memory for string output
  * @link http://php.net/manual/en/function.xmlwriter-open-memory.php
- * @return bool Object oriented style: Returns true on success or false on failure.
+ * @return bool Object oriented style: true on success or false on failure.
  * </p>
  * <p>
  * Procedural style: Returns a new xmlwriter resource for later use with the
@@ -547,7 +547,7 @@ function xmlwriter_open_memory () {}
  * @param bool $indent <p>
  * Whether indentation is enabled.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_set_indent ($indent) {}
 
@@ -558,7 +558,7 @@ function xmlwriter_set_indent ($indent) {}
  * @param string $indentString <p>
  * The indentation string.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_set_indent_string ($indentString) {}
 
@@ -567,7 +567,7 @@ function xmlwriter_set_indent_string ($indentString) {}
  * Create start comment
  * @link http://php.net/manual/en/function.xmlwriter-start-comment.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_comment ($xmlwriter) {}
 
@@ -576,7 +576,7 @@ function xmlwriter_start_comment ($xmlwriter) {}
  * Create end comment
  * @link http://php.net/manual/en/function.xmlwriter-end-comment.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_end_comment ($xmlwriter) {}
 
@@ -587,7 +587,7 @@ function xmlwriter_end_comment ($xmlwriter) {}
  * @param string $name <p>
  * The attribute name.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_attribute ($name) {}
 
@@ -596,7 +596,7 @@ function xmlwriter_start_attribute ($name) {}
  * End attribute
  * @link http://php.net/manual/en/function.xmlwriter-end-attribute.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_end_attribute ($xmlwriter) {}
 
@@ -610,7 +610,7 @@ function xmlwriter_end_attribute ($xmlwriter) {}
  * @param string $value <p>
  * The value of the attribute.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_attribute ($name, $value) {}
 
@@ -627,7 +627,7 @@ function xmlwriter_write_attribute ($name, $value) {}
  * @param string $uri <p>
  * The namespace URI.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_attribute_ns ($prefix, $name, $uri) {}
 
@@ -647,7 +647,7 @@ function xmlwriter_start_attribute_ns ($prefix, $name, $uri) {}
  * @param string $content <p>
  * The attribute value.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_attribute_ns ($prefix, $name, $uri, $content) {}
 
@@ -658,7 +658,7 @@ function xmlwriter_write_attribute_ns ($prefix, $name, $uri, $content) {}
  * @param string $name <p>
  * The element name.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_element ($name) {}
 
@@ -667,7 +667,7 @@ function xmlwriter_start_element ($name) {}
  * End current element
  * @link http://php.net/manual/en/function.xmlwriter-end-element.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_end_element ($xmlwriter) {}
 
@@ -676,7 +676,7 @@ function xmlwriter_end_element ($xmlwriter) {}
  * End current element
  * @link http://php.net/manual/en/function.xmlwriter-full-end-element.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_full_end_element ($xmlwriter) {}
 
@@ -693,7 +693,7 @@ function xmlwriter_full_end_element ($xmlwriter) {}
  * @param string $uri <p>
  * The namespace URI.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_element_ns ($prefix, $name, $uri) {}
 
@@ -707,7 +707,7 @@ function xmlwriter_start_element_ns ($prefix, $name, $uri) {}
  * @param string $content [optional] <p>
  * The element contents.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_element ($name, $content = null) {}
 
@@ -727,7 +727,7 @@ function xmlwriter_write_element ($name, $content = null) {}
  * @param string $content [optional] <p>
  * The element contents.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_element_ns ($prefix, $name, $uri, $content = null) {}
 
@@ -738,7 +738,7 @@ function xmlwriter_write_element_ns ($prefix, $name, $uri, $content = null) {}
  * @param string $target <p>
  * The target of the processing instruction.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_pi ($target) {}
 
@@ -747,7 +747,7 @@ function xmlwriter_start_pi ($target) {}
  * End current PI
  * @link http://php.net/manual/en/function.xmlwriter-end-pi.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_end_pi ($xmlwriter) {}
 
@@ -761,7 +761,7 @@ function xmlwriter_end_pi ($xmlwriter) {}
  * @param string $content <p>
  * The content of the processing instruction.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_pi ($target, $content) {}
 
@@ -770,7 +770,7 @@ function xmlwriter_write_pi ($target, $content) {}
  * Create start CDATA tag
  * @link http://php.net/manual/en/function.xmlwriter-start-cdata.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_cdata ($xmlwriter) {}
 
@@ -779,7 +779,7 @@ function xmlwriter_start_cdata ($xmlwriter) {}
  * End current CDATA
  * @link http://php.net/manual/en/function.xmlwriter-end-cdata.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_end_cdata ($xmlwriter) {}
 
@@ -790,7 +790,7 @@ function xmlwriter_end_cdata ($xmlwriter) {}
  * @param string $content <p>
  * The contents of the CDATA.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_cdata ($content) {}
 
@@ -801,7 +801,7 @@ function xmlwriter_write_cdata ($content) {}
  * @param string $content <p>
  * The contents of the text.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_text ($content) {}
 
@@ -812,7 +812,7 @@ function xmlwriter_text ($content) {}
  * @param string $content <p>
  * The text string to write.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_raw ($content) {}
 
@@ -831,7 +831,7 @@ function xmlwriter_write_raw ($content) {}
  * @param string $standalone [optional] <p>
  * yes or no.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_document ($version = null, $encoding = null, $standalone = null) {}
 
@@ -840,7 +840,7 @@ function xmlwriter_start_document ($version = null, $encoding = null, $standalon
  * End current document
  * @link http://php.net/manual/en/function.xmlwriter-end-document.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_end_document ($xmlwriter) {}
 
@@ -851,7 +851,7 @@ function xmlwriter_end_document ($xmlwriter) {}
  * @param string $content <p>
  * The contents of the comment.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_comment ($content) {}
 
@@ -868,7 +868,7 @@ function xmlwriter_write_comment ($content) {}
  * @param string $systemId [optional] <p>
  * The external subset system identifier.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_dtd ($qualifiedName, $publicId = null, $systemId = null) {}
 
@@ -877,7 +877,7 @@ function xmlwriter_start_dtd ($qualifiedName, $publicId = null, $systemId = null
  * End current DTD
  * @link http://php.net/manual/en/function.xmlwriter-end-dtd.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_end_dtd ($xmlwriter) {}
 
@@ -897,7 +897,7 @@ function xmlwriter_end_dtd ($xmlwriter) {}
  * @param string $subset [optional] <p>
  * The content of the DTD.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_dtd ($name, $publicId = null, $systemId = null, $subset = null) {}
 
@@ -908,7 +908,7 @@ function xmlwriter_write_dtd ($name, $publicId = null, $systemId = null, $subset
  * @param string $qualifiedName <p>
  * The qualified name of the document type to create.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_dtd_element ($qualifiedName) {}
 
@@ -917,7 +917,7 @@ function xmlwriter_start_dtd_element ($qualifiedName) {}
  * End current DTD element
  * @link http://php.net/manual/en/function.xmlwriter-end-dtd-element.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_end_dtd_element ($xmlwriter) {}
 
@@ -931,7 +931,7 @@ function xmlwriter_end_dtd_element ($xmlwriter) {}
  * @param string $content <p>
  * The content of the element.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_dtd_element ($name, $content) {}
 
@@ -942,7 +942,7 @@ function xmlwriter_write_dtd_element ($name, $content) {}
  * @param string $name <p>
  * The attribute list name.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_dtd_attlist ($name) {}
 
@@ -951,7 +951,7 @@ function xmlwriter_start_dtd_attlist ($name) {}
  * End current DTD AttList
  * @link http://php.net/manual/en/function.xmlwriter-end-dtd-attlist.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_end_dtd_attlist ($xmlwriter) {}
 
@@ -965,7 +965,7 @@ function xmlwriter_end_dtd_attlist ($xmlwriter) {}
  * @param string $content <p>
  * The content of the DTD attribute list.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_dtd_attlist ($name, $content) {}
 
@@ -978,7 +978,7 @@ function xmlwriter_write_dtd_attlist ($name, $content) {}
  * </p>
  * @param bool $isparam <p>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_start_dtd_entity ($name, $isparam) {}
 
@@ -987,7 +987,7 @@ function xmlwriter_start_dtd_entity ($name, $isparam) {}
  * End current DTD Entity
  * @link http://php.net/manual/en/function.xmlwriter-end-dtd-entity.php
  * @param $xmlwriter
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_end_dtd_entity ($xmlwriter) {}
 
@@ -1005,7 +1005,7 @@ function xmlwriter_end_dtd_entity ($xmlwriter) {}
  * @param string $pubid 
  * @param string $sysid 
  * @param string $ndataid 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function xmlwriter_write_dtd_entity ($name, $content, $pe, $pubid, $sysid, $ndataid) {}
 

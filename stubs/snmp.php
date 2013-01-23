@@ -180,7 +180,7 @@ function snmp_set_oid_numeric_print ($oid_numeric_print) {}
  * </p>
  * @param int $retries [optional] <p>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function snmpset ($hostname, $community, $object_id, $type, $value, $timeout = null, $retries = null) {}
 

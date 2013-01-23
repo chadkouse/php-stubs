@@ -1,35 +1,15 @@
 <?php
-//class mixed {}
 
-interface callback {} 
+namespace {
 
-class string implements callback {}
+    //this one is used to find usages of this construct
+    /**
+     * @return array
+     */
+    function PS_UNRESERVE_PREFIX_array(){};
+}
 
-class number {}
-
-/**
- *  @name integer
- */
-class int extends number {}
-
-/**
- *  @name double
- *  @name real
- */
-class float extends number {}
-
-/**
- *  @name bool
- */
-class boolean {}
-class IDEARULEZ_array implements callback {}
-
-/**
- * @return array
- */
-function IDEARULEZ_array(){};
-
-interface resource {}
+namespace ___PHPSTORM_HELPERS {
 
 class object {
   /**
@@ -39,8 +19,8 @@ class object {
    *
    * Note: Parent constructors are not called implicitly if the child class defines a constructor.
    * In order to run a parent constructor, a call to parent::__construct() within the child constructor is required.
-   * 
-   * @param [ mixed $args [, $... ]]
+   *
+   * param [ mixed $args [, $... ]]
    * @return void
    * @link http://php.net/manual/en/language.oop5.decon.php
    */
@@ -128,7 +108,7 @@ class object {
    * The intended use of __sleep is to commit pending data or perform similar cleanup tasks.
    * Also, the function is useful if you have very large objects which do not need to be saved completely.
    *
-   * @return void
+   * @return array|NULL
    * @link http://php.net/manual/en/language.oop5.magic.php#language.oop5.magic.sleep
    */
   function __sleep() {}
@@ -155,7 +135,7 @@ class object {
   /**
    * The __invoke method is called when a script tries to call an object as a function.
    *
-   * @return void
+   * @return mixed
    * @link http://php.net/manual/en/language.oop5.magic.php#language.oop5.magic.invoke
    */
   function __invoke() {}
@@ -175,10 +155,13 @@ class object {
    * Any properties that are references to other variables, will remain references.
    * Once the cloning is complete, if a __clone() method is defined,
    * then the newly created object's __clone() method will be called, to allow any necessary properties that need to be changed.
+   * NOT CALLABLE DIRECTLY.
    *
    * @return mixed
    * @link http://php.net/manual/en/language.oop5.cloning.php
    */
   function __clone() {}
+
+}
 
 }

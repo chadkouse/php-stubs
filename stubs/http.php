@@ -3,1221 +3,33 @@
 // Start of http v.1.6.6
 
 class HttpException extends Exception  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
 	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpRuntimeException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpInvalidParamException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpHeaderException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpMalformedHeadersException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpRequestMethodException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpMessageTypeException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpEncodingException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpRequestException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpRequestPoolException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpSocketException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpResponseException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpUrlException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
-
 class HttpQueryStringException extends HttpException  {
-	protected $message;
-	protected $code;
-	protected $file;
-	protected $line;
-	public $innerException;
-
-
-	public function __toString () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Clone the exception
-	 * @link http://php.net/manual/en/exception.clone.php
-	 * @return void 
-	 */
-	final private function __clone () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Construct the exception
-	 * @link http://php.net/manual/en/exception.construct.php
-	 * @param $message [optional]
-	 * @param $code [optional]
-	 * @param $previous [optional]
-	 */
-	public function __construct ($message, $code, $previous) {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception message
-	 * @link http://php.net/manual/en/exception.getmessage.php
-	 * @return string the Exception message as a string.
-	 */
-	final public function getMessage () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the Exception code
-	 * @link http://php.net/manual/en/exception.getcode.php
-	 * @return int the Exception code as a integer.
-	 */
-	final public function getCode () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the file in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getfile.php
-	 * @return string the filename in which the exception was thrown.
-	 */
-	final public function getFile () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the line in which the exception occurred
-	 * @link http://php.net/manual/en/exception.getline.php
-	 * @return int the line number where the exception was thrown.
-	 */
-	final public function getLine () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace
-	 * @link http://php.net/manual/en/exception.gettrace.php
-	 * @return array the Exception stack trace as an array.
-	 */
-	final public function getTrace () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
-	 * Returns previous Exception
-	 * @link http://php.net/manual/en/exception.getprevious.php
-	 * @return Exception the previous Exception if available 
-	 * or &null; otherwise.
-	 */
-	final public function getPrevious () {}
-
-	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
-	 * Gets the stack trace as a string
-	 * @link http://php.net/manual/en/exception.gettraceasstring.php
-	 * @return string the Exception stack trace as a string.
-	 */
-	final public function getTraceAsString () {}
-
 }
 
 /**
@@ -1258,7 +70,7 @@ class HttpDeflateStream  {
 	 * @param string $data <p>
 	 * data to deflate
 	 * </p>
-	 * @return string deflated data on success&return.falseforfailure;.
+	 * @return string deflated data on success or false on failure.
 	 */
 	public function update ($data) {}
 
@@ -1269,7 +81,7 @@ class HttpDeflateStream  {
 	 * @param string $data [optional] <p>
 	 * more data to deflate
 	 * </p>
-	 * @return string some deflated data as string on success&return.falseforfailure;.
+	 * @return string some deflated data as string on success or false on failure.
 	 */
 	public function flush ($data = null) {}
 
@@ -1327,7 +139,7 @@ class HttpInflateStream  {
 	 * @param string $data <p>
 	 * data to inflate
 	 * </p>
-	 * @return string inflated data on success&return.falseforfailure;.
+	 * @return string inflated data on success or false on failure.
 	 */
 	public function update ($data) {}
 
@@ -1338,7 +150,7 @@ class HttpInflateStream  {
 	 * @param string $data [optional] <p>
 	 * more data to inflate
 	 * </p>
-	 * @return string some inflated data as string on success&return.falseforfailure;.
+	 * @return string some inflated data as string on success or false on failure.
 	 */
 	public function flush ($data = null) {}
 
@@ -1460,7 +272,7 @@ class HttpMessage implements Countable, Serializable, Iterator, Traversable {
 	 * header will be converted to an array containing both header values, otherwise
 	 * it will be overwritten with the new header value
 	 * </p>
-	 * @return void Returns true on success or false on failure.
+	 * @return void true on success or false on failure.
 	 */
 	public function addHeaders ($headersarray , $append = null) {}
 
@@ -1602,7 +414,7 @@ class HttpMessage implements Countable, Serializable, Iterator, Traversable {
 	 * @param int $magic_mode [optional] <p>
 	 * flags for libmagic
 	 * </p>
-	 * @return string the guessed content type on success&return.falseforfailure;.
+	 * @return string the guessed content type on success or false on failure.
 	 */
 	public function guessContentType ($magic_file, $magic_mode = null) {}
 
@@ -1618,7 +430,7 @@ class HttpMessage implements Countable, Serializable, Iterator, Traversable {
 	 * (PECL pecl_http &gt;= 0.10.0)<br/>
 	 * Send message
 	 * @link http://php.net/manual/en/function.httpmessage-send.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function send () {}
 
@@ -1898,7 +710,7 @@ class HttpQueryString implements Serializable, ArrayAccess {
 	 * @param string $oe <p>
 	 * output encoding
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function xlate ($ie, $oe) {}
 
@@ -2027,7 +839,7 @@ class HttpRequest  {
 	 * currently set request options;
 	 * if empty or omitted, the options of the HttpRequest object will be reset
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setOptions (array $options = null ) {}
 
@@ -2047,7 +859,7 @@ class HttpRequest  {
 	 * an associative array containing any SSL specific options;
 	 * if empty or omitted, the SSL options will be reset
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setSslOptions (array $options = null ) {}
 
@@ -2066,7 +878,7 @@ class HttpRequest  {
 	 * @param array $options <p>
 	 * an associative array as parameter containing additional SSL specific options
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function addSslOptions ($optionsarray ) {}
 
@@ -2077,7 +889,7 @@ class HttpRequest  {
 	 * @param array $headers <p>
 	 * an associative array as parameter containing additional header name/value pairs
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function addHeaders ($headersarray ) {}
 
@@ -2097,7 +909,7 @@ class HttpRequest  {
 	 * an associative array as parameter containing header name/value pairs;
 	 * if empty or omitted, all previously set headers will be unset
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setHeaders ( array $headers = null ) {}
 
@@ -2108,7 +920,7 @@ class HttpRequest  {
 	 * @param array $cookies <p>
 	 * an associative array containing any cookie name/value pairs to add
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function addCookies ($cookiesarray ) {}
 
@@ -2128,7 +940,7 @@ class HttpRequest  {
 	 * an associative array as parameter containing cookie name/value pairs;
 	 * if empty or omitted, all previously set cookies will be unset
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setCookies ( array $cookies = null ) {}
 
@@ -2136,7 +948,7 @@ class HttpRequest  {
 	 * (PECL pecl_http &gt;= 1.0.0)<br/>
 	 * Enable cookies
 	 * @link http://php.net/manual/en/function.httprequest-enablecookies.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function enableCookies () {}
 
@@ -2147,7 +959,7 @@ class HttpRequest  {
 	 * @param bool $session_only [optional] <p>
 	 * whether only session cookies should be reset (needs libcurl >= v7.15.4, else libcurl >= v7.14.1)
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function resetCookies ($session_only = null) {}
 
@@ -2160,7 +972,7 @@ class HttpRequest  {
 	 * @param int $request_method <p>
 	 * the request method to use
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setMethod ($request_method) {}
 
@@ -2179,7 +991,7 @@ class HttpRequest  {
 	 * @param string $url <p>
 	 * the request url
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setUrl ($url) {}
 
@@ -2220,7 +1032,7 @@ class HttpRequest  {
 	 * query string or to be encoded query fields;
 	 * if empty, the query data will be unset
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setQueryData ($query_data) {}
 
@@ -2239,7 +1051,7 @@ class HttpRequest  {
 	 * @param array $query_params <p>
 	 * an associative array as parameter containing the query fields to add
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function addQueryData ($query_paramsarray ) {}
 
@@ -2251,7 +1063,7 @@ class HttpRequest  {
 	 * an associative array containing the post fields;
 	 * if empty, the post data will be unset
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setPostFields ($post_dataarray ) {}
 
@@ -2270,7 +1082,7 @@ class HttpRequest  {
 	 * @param array $post_data <p>
 	 * an associative array as parameter containing the post fields
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function addPostFields ($post_dataarray ) {}
 
@@ -2293,7 +1105,7 @@ class HttpRequest  {
 	 * @param string $raw_post_data [optional] <p>
 	 * raw post data
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setRawPostData ($raw_post_data = null) {}
 
@@ -2312,7 +1124,7 @@ class HttpRequest  {
 	 * @param string $raw_post_data <p>
 	 * the raw post data to concatenate
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function addRawPostData ($raw_post_data) {}
 
@@ -2324,7 +1136,7 @@ class HttpRequest  {
 	 * an array containing the files to post;
 	 * if empty, the post files will be unset
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setPostFiles ($post_filesarray ) {}
 
@@ -2362,7 +1174,7 @@ class HttpRequest  {
 	 * the path to the file to send;
 	 * if empty or omitted the put file will be unset
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setPutFile ($file = null) {}
 
@@ -2381,7 +1193,7 @@ class HttpRequest  {
 	 * @param string $put_data [optional] <p>
 	 * the data to upload
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setPutData ($put_data = null) {}
 
@@ -2400,7 +1212,7 @@ class HttpRequest  {
 	 * @param string $put_data <p>
 	 * the data to concatenate
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function addPutData ($put_data) {}
 
@@ -2692,7 +1504,7 @@ class HttpRequestPool implements Countable, Iterator, Traversable {
 	 * @param HttpRequest $request <p>
 	 * an HttpRequest object not already attached to any HttpRequestPool object
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function attach ( HttpRequest $request) {}
 
@@ -2703,7 +1515,7 @@ class HttpRequestPool implements Countable, Iterator, Traversable {
 	 * @param HttpRequest $request <p>
 	 * an HttpRequest object attached to this HttpRequestPool object
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function detach ( HttpRequest $request ) {}
 
@@ -2711,7 +1523,7 @@ class HttpRequestPool implements Countable, Iterator, Traversable {
 	 * (PECL pecl_http &gt;= 0.10.0)<br/>
 	 * Send all requests
 	 * @link http://php.net/manual/en/function.httprequestpool-send.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function send () {}
 
@@ -2735,7 +1547,7 @@ class HttpRequestPool implements Countable, Iterator, Traversable {
 	 * (PECL pecl_http &gt;= 0.10.0)<br/>
 	 * Perform socket select
 	 * @link http://php.net/manual/en/function.httprequestpool-socketselect.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	protected function socketSelect () {}
 
@@ -2821,7 +1633,7 @@ class HttpResponse  {
 	 * @param bool $replace [optional] <p>
 	 * whether an existing header should be replaced
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function setHeader ($name, $value = null, $replace = null) {}
 
@@ -2845,7 +1657,7 @@ class HttpResponse  {
 	 * @param string $etag <p>
 	 * unquoted string as parameter containing the ETag
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function setETag ($etag) {}
 
@@ -2864,7 +1676,7 @@ class HttpResponse  {
 	 * @param int $timestamp <p>
 	 * Unix timestamp representing the last modification time of the sent entity
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function setLastModified ($timestamp) {}
 
@@ -2887,7 +1699,7 @@ class HttpResponse  {
 	 * if set to true and the user agent knows how to handle the content type,
 	 * it will probably not cause the popup window to be shown
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function setContentDisposition ($filename, $inline = null) {}
 
@@ -2929,7 +1741,7 @@ class HttpResponse  {
 	 * @param int $magic_mode [optional] <p>
 	 * flags for libmagic
 	 * </p>
-	 * @return string the guessed content type on success&return.falseforfailure;.
+	 * @return string the guessed content type on success or false on failure.
 	 */
 	public static function guessContentType ($magic_file, $magic_mode = null) {}
 
@@ -2940,7 +1752,7 @@ class HttpResponse  {
 	 * @param bool $cache <p>
 	 * whether caching should be attempted
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function setCache ($cache) {}
 
@@ -2984,7 +1796,7 @@ class HttpResponse  {
 	 * @param bool $gzip <p>
 	 * whether GZip compression should be enabled
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function setGzip ($gzip) {}
 
@@ -3003,7 +1815,7 @@ class HttpResponse  {
 	 * @param float $seconds <p>
 	 * seconds to sleep after each chunk sent
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function setThrottleDelay ($seconds) {}
 
@@ -3022,7 +1834,7 @@ class HttpResponse  {
 	 * @param int $bytes <p>
 	 * the chunk size in bytes
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function setBufferSize ($bytes) {}
 
@@ -3041,7 +1853,7 @@ class HttpResponse  {
 	 * @param mixed $data <p>
 	 * data to send
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function setData ($data) {}
 
@@ -3060,7 +1872,7 @@ class HttpResponse  {
 	 * @param string $file <p>
 	 * the path to the file to send
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function setFile ($file) {}
 
@@ -3079,7 +1891,7 @@ class HttpResponse  {
 	 * @param resource $stream <p>
 	 * already opened stream from which the data to send will be read
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function setStream ($stream) {}
 
@@ -3098,7 +1910,7 @@ class HttpResponse  {
 	 * @param bool $clean_ob [optional] <p>
 	 * whether to destroy all previously started output handlers and their buffers
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public static function send ($clean_ob = null) {}
 
@@ -3293,7 +2105,7 @@ function http_date ($timestamp = null) {}
  * @param array $new_url [optional] <p>
  * if set, it will be filled with the parts of the composed url like parse_url would return
  * </p>
- * @return string the new URL as string on success&return.falseforfailure;.
+ * @return string the new URL as string on success or false on failure.
  */
 function http_build_url ($url = null, $parts = null, $flags = null,  array &$new_url = null ) {}
 
@@ -3310,7 +2122,7 @@ function http_build_url ($url = null, $parts = null, $flags = null,  array &$new
  * @param string $arg_separator [optional] <p>
  * argument separator to use (by default the INI setting arg_separator.output will be used, or &quot;&amp;&quot; if neither is set
  * </p>
- * @return string the built query as string on success&return.falseforfailure;.
+ * @return string the built query as string on success or false on failure.
  */
 function http_build_str ($queryarray , $prefix = null, $arg_separator = null) {}
 
@@ -3398,7 +2210,7 @@ function http_throttle ($sec = null, $bytes = null) {}
  * @param int $status <p>
  * HTTP status code (100-599)
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function http_send_status ($status) {}
 
@@ -3410,7 +2222,7 @@ function http_send_status ($status) {}
  * a Unix timestamp, converted to a valid HTTP date;
  * if omitted, the current time will be sent
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function http_send_last_modified ($timestamp = null) {}
 
@@ -3421,7 +2233,7 @@ function http_send_last_modified ($timestamp = null) {}
  * @param string $content_type [optional] <p>
  * the desired content type (primary/secondary)
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function http_send_content_type ($content_type = null) {}
 
@@ -3436,7 +2248,7 @@ function http_send_content_type ($content_type = null) {}
  * if set to true and the user agent knows how to handle the content type,
  * it will probably not cause the popup window to be shown
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function http_send_content_disposition ($filename, $inline = null) {}
 
@@ -3499,7 +2311,7 @@ function http_cache_etag ($etag = null) {}
  * @param string $data <p>
  * data to send
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function http_send_data ($data) {}
 
@@ -3510,7 +2322,7 @@ function http_send_data ($data) {}
  * @param string $file <p>
  * the file to send
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function http_send_file ($file) {}
 
@@ -3521,7 +2333,7 @@ function http_send_file ($file) {}
  * @param resource $stream <p>
  * stream to read from (must be seekable)
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function http_send_stream ($stream) {}
 
@@ -3532,7 +2344,7 @@ function http_send_stream ($stream) {}
  * @param string $encoded <p>
  * chunked encoded string
  * </p>
- * @return string the decoded string on success&return.falseforfailure;.
+ * @return string the decoded string on success or false on failure.
  */
 function http_chunked_decode ($encoded) {}
 
@@ -3554,7 +2366,7 @@ function http_parse_message ($message) {}
  * @param string $header <p>
  * string containing HTTP headers
  * </p>
- * @return array an array on success&return.falseforfailure;.
+ * @return array an array on success or false on failure.
  */
 function http_parse_headers ($header) {}
 
@@ -3572,7 +2384,7 @@ function http_parse_headers ($header) {}
  * array containing recognized extra keys;
  * by default all unknown keys will be treated as cookie names
  * </p>
- * @return stdClass|object a stdClass object on success&return.falseforfailure;.
+ * @return stdClass|object a stdClass object on success or false on failure.
  */
 function http_parse_cookie ($cookie, $flags = null,  array $allowed_extras = null ) {}
 
@@ -3646,7 +2458,7 @@ function http_match_request_header ($header, $value, $match_case = null) {}
  * (PECL pecl_http &gt;= 1.5.0)<br/>
  * Stat persistent handles
  * @link http://php.net/manual/en/function.http-persistent-handles-count.php
- * @return stdClass|object persistent handles statistics as stdClass object on success&return.falseforfailure;.
+ * @return stdClass|object persistent handles statistics as stdClass object on success or false on failure.
  */
 function http_persistent_handles_count () {}
 
@@ -3666,7 +2478,7 @@ function http_persistent_handles_clean ($ident = null) {}
  * @param string $ident <p>
  * the identification string
  * </p>
- * @return string the prior ident as string on success&return.falseforfailure;.
+ * @return string the prior ident as string on success or false on failure.
  */
 function http_persistent_handles_ident ($ident) {}
 
@@ -3840,7 +2652,7 @@ function http_request ($method, $url = null, $body = null, array $options = null
  * @param array $files <p>
  * POST files
  * </p>
- * @return string encoded string on success&return.falseforfailure;.
+ * @return string encoded string on success or false on failure.
  */
 function http_request_body_encode ($fieldsarray , $filesarray ) {}
 
@@ -3851,7 +2663,7 @@ function http_request_body_encode ($fieldsarray , $filesarray ) {}
  * @param string $method <p>
  * the request method name to register
  * </p>
- * @return int the ID of the request method on success&return.falseforfailure;.
+ * @return int the ID of the request method on success or false on failure.
  */
 function http_request_method_register ($method) {}
 
@@ -3862,7 +2674,7 @@ function http_request_method_register ($method) {}
  * @param mixed $method <p>
  * The request method name or ID
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function http_request_method_unregister ($method) {}
 
@@ -3884,7 +2696,7 @@ function http_request_method_exists ($method) {}
  * @param int $method <p>
  * request method ID
  * </p>
- * @return string the request method name as string on success&return.falseforfailure;.
+ * @return string the request method name as string on success or false on failure.
  */
 function http_request_method_name ($method) {}
 

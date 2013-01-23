@@ -59,7 +59,7 @@ function ftp_ssl_connect ($host, $port = null, $timeout = null) {}
  * @param string $password <p>
  * The password (PASS).
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  * If login fails, PHP will also throw a warning.
  */
 function ftp_login ($ftp_stream, $username, $password) {}
@@ -82,7 +82,7 @@ function ftp_pwd ($ftp_stream) {}
  * @param resource $ftp_stream <p>
  * The link identifier of the FTP connection.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_cdup ($ftp_stream) {}
 
@@ -96,7 +96,7 @@ function ftp_cdup ($ftp_stream) {}
  * @param string $directory <p>
  * The target directory.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  * If changing directory fails, PHP will also throw a warning.
  */
 function ftp_chdir ($ftp_stream, $directory) {}
@@ -157,7 +157,7 @@ function ftp_mkdir ($ftp_stream, $directory) {}
  * The directory to delete. This must be either an absolute or relative
  * path to an empty directory.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_rmdir ($ftp_stream, $directory) {}
 
@@ -189,7 +189,7 @@ function ftp_chmod ($ftp_stream, $mode, $filename) {}
  * The number of bytes to allocate.
  * </p>
  * @param string $result [optional] 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_alloc ($ftp_stream, $filesize, &$result = null) {}
 
@@ -254,7 +254,7 @@ function ftp_systype ($ftp_stream) {}
  * @param bool $pasv <p>
  * If true, the passive mode is turned on, else it's turned off.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_pasv ($ftp_stream, $pasv) {}
 
@@ -278,7 +278,7 @@ function ftp_pasv ($ftp_stream, $pasv) {}
  * @param int $resumepos [optional] <p>
  * The position in the remote file to start downloading from.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_get ($ftp_stream, $local_file, $remote_file, $mode, $resumepos = null) {}
 
@@ -302,7 +302,7 @@ function ftp_get ($ftp_stream, $local_file, $remote_file, $mode, $resumepos = nu
  * @param int $resumepos [optional] <p>
  * The position in the remote file to start downloading from.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_fget ($ftp_stream, $handle, $remote_file, $mode, $resumepos = null) {}
 
@@ -324,7 +324,7 @@ function ftp_fget ($ftp_stream, $handle, $remote_file, $mode, $resumepos = null)
  * FTP_BINARY.
  * </p>
  * @param int $startpos [optional] <p></p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_put ($ftp_stream, $remote_file, $local_file, $mode, $startpos = null) {}
 
@@ -346,7 +346,7 @@ function ftp_put ($ftp_stream, $remote_file, $local_file, $mode, $startpos = nul
  * FTP_BINARY.
  * </p>
  * @param int $startpos [optional] <p></p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_fput ($ftp_stream, $remote_file, $handle, $mode, $startpos = null) {}
 
@@ -392,7 +392,7 @@ function ftp_mdtm ($ftp_stream, $remote_file) {}
  * @param string $newname <p>
  * The new name.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_rename ($ftp_stream, $oldname, $newname) {}
 
@@ -406,7 +406,7 @@ function ftp_rename ($ftp_stream, $oldname, $newname) {}
  * @param string $path <p>
  * The file to delete.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_delete ($ftp_stream, $path) {}
 
@@ -421,7 +421,7 @@ function ftp_delete ($ftp_stream, $path) {}
  * The SITE command. Note that this parameter isn't escaped so there may
  * be some issues with filenames containing spaces and other characters.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_site ($ftp_stream, $command) {}
 
@@ -432,7 +432,7 @@ function ftp_site ($ftp_stream, $command) {}
  * @param resource $ftp_stream <p>
  * The link identifier of the FTP connection.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftp_close ($ftp_stream) {}
 

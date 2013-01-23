@@ -58,7 +58,7 @@ function db2_connect ($database, $username, $password, array $options = null) {}
  * A valid database connection resource variable as returned from
  * db2_connect or db2_pconnect.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function db2_commit ($connection) {}
 
@@ -119,7 +119,7 @@ function db2_pconnect ($database, $username, $password, array $options = null) {
  * connection parameter and
  * autocommit parameter, it attempts to set the
  * AUTOCOMMIT state of the requested connection to the corresponding state.
- * Returns true on success or false on failure.
+ * true on success or false on failure.
  */
 function db2_autocommit ($connection, $value = null) {}
 
@@ -145,7 +145,7 @@ function db2_autocommit ($connection, $value = null) {}
  * Specifies the scale with which the variable should be bound to the
  * database.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function db2_bind_param ($stmt, $parameter_number, $variable_name, $parameter_type = null, $data_type = null, $precision = null, $scale = null) {}
 
@@ -155,7 +155,7 @@ function db2_bind_param ($stmt, $parameter_number, $variable_name, $parameter_ty
  * @param connection resource <p>
  * Specifies an active DB2 client connection.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function db2_close ($connection) {}
 
@@ -1209,7 +1209,7 @@ function db2_prepare ($connection, $statement, array $options = null) {}
  * An array of input parameters matching any parameter markers contained
  * in the prepared statement.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function db2_execute ($stmt, array $parameters = null) {}
 
@@ -1436,7 +1436,7 @@ function db2_cursor_type ($stmt) {}
  * A valid database connection resource variable as returned from
  * db2_connect or db2_pconnect.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function db2_rollback ($connection) {}
 
@@ -1446,7 +1446,7 @@ function db2_rollback ($connection) {}
  * @param stmt resource <p>
  * A valid statement resource.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function db2_free_stmt ($stmt) {}
 
@@ -1541,7 +1541,7 @@ function db2_fetch_both ($stmt, $row_number = null) {}
  * @param stmt resource <p>
  * A valid statement resource.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function db2_free_result ($stmt) {}
 
@@ -1582,7 +1582,7 @@ function db2_free_result ($stmt) {}
  * the value specifies that a statement resource has been
  * passed into the function.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function db2_set_option ($resource, array $options, $type) {}
 

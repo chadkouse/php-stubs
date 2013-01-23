@@ -42,7 +42,7 @@ function readline_info ($varname = null, $newvalue = null) {}
  * @param string $line <p>
  * The line to be added in the history.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function readline_add_history ($line) {}
 
@@ -50,7 +50,7 @@ function readline_add_history ($line) {}
  * (PHP 4, PHP 5)<br/>
  * Clears the history
  * @link http://php.net/manual/en/function.readline-clear-history.php
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function readline_clear_history () {}
 
@@ -70,7 +70,7 @@ function readline_list_history () {}
  * @param string $filename [optional] <p>
  * Path to the filename containing the command history.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function readline_read_history ($filename = null) {}
 
@@ -81,7 +81,7 @@ function readline_read_history ($filename = null) {}
  * @param string $filename [optional] <p>
  * Path to the saved file.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function readline_write_history ($filename = null) {}
 
@@ -93,7 +93,7 @@ function readline_write_history ($filename = null) {}
  * You must supply the name of an existing function which accepts a
  * partial command line and returns an array of possible matches.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function readline_completion_function ($function) {}
 
@@ -108,7 +108,7 @@ function readline_completion_function ($function) {}
  * The callback function takes one parameter; the
  * user input returned.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function readline_callback_handler_install ($prompt, $callback) {}
 

@@ -162,7 +162,7 @@ function pcntl_wait (&$status, $options = null) {}
  * Specifies whether system call restarting should be used when this
  * signal arrives.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pcntl_signal ($signo, $handler, $restart_syscalls = null) {}
 
@@ -170,7 +170,7 @@ function pcntl_signal ($signo, $handler, $restart_syscalls = null) {}
  * (PHP 5 &gt;= 5.3.0)<br/>
  * Calls signal handlers for pending signals
  * @link http://php.net/manual/en/function.pcntl-signal-dispatch.php
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pcntl_signal_dispatch () {}
 
@@ -305,7 +305,7 @@ function pcntl_getpriority ($pid = null, $process_identifier = null) {}
  * One of PRIO_PGRP, PRIO_USER
  * or PRIO_PROCESS.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pcntl_setpriority ($priority, $pid = null, $process_identifier = null) {}
 
@@ -330,7 +330,7 @@ function pcntl_setpriority ($priority, $pid = null, $process_identifier = null) 
  * The oldset parameter is set to an array
  * containing the list of the previously blocked signals.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pcntl_sigprocmask ($how, array $set, array &$oldset = null) {}
 

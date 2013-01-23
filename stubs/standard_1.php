@@ -506,7 +506,7 @@ function money_format ($format, $number) {}
  * </p>
  * Using a negative length
  * ]]>
- * @return string the extracted part of string&return.falseforfailure;.
+ * @return string the extracted part of string or false on failure.
  */
 function substr ($string, $start, $length = null) {}
 
@@ -600,10 +600,10 @@ function ucwords ($str) {}
  * The string being translated.
  * </p>
  * @param string $from <p>
- * The string being translated to to.
+ * The string replacing from.
  * </p>
  * @param string $to <p>
- * The string replacing from.
+ * The string being translated to to.
  * </p>
  * @return string This function returns a copy of str,
  * translating all occurrences of each character in
@@ -664,7 +664,16 @@ function addcslashes ($str, $charlist) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
- * Strip whitespace (or other characters) from the end of a string
+ * Strip whitespace (or other characters) from the end of a string.
+ * Without the second parameter, rtrim() will strip these characters:
+ * <ul>
+ * <li>" " (ASCII 32 (0x20)), an ordinary space.
+ * <li>"\t" (ASCII 9 (0x09)), a tab.
+ * <li>"\n" (ASCII 10 (0x0A)), a new line (line feed).
+ * <li>"\r" (ASCII 13 (0x0D)), a carriage return.
+ * <li>"\0" (ASCII 0 (0x00)), the NUL-byte.
+ * <li>"\x0B" (ASCII 11 (0x0B)), a vertical tab.
+ * </ul>
  * @link http://php.net/manual/en/function.rtrim.php
  * @param string $str <p>
  * The input string.
@@ -914,7 +923,7 @@ function explode ($delimiter, $string, $limit = null) {}
  * (PHP 4, PHP 5)<br/>
  * Join array elements with a string
  * @link http://php.net/manual/en/function.implode.php
- * @param string $glue <p>
+ * @param string $glue [optional]<p>
  * Defaults to an empty string. This is not the preferred usage of
  * implode as glue would be
  * the second parameter and thus, the bad prototype would be used.

@@ -161,7 +161,7 @@ function filter_list () {}
  * @param string $variable_name <p>
  * Name of a variable to check.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function filter_has_var ($type, $variable_name) {}
 

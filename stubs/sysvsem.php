@@ -34,7 +34,7 @@ function sem_get ($key, $max_acquire = null, $perm = null, $auto_release = null)
  * sem_identifier is a semaphore resource,
  * obtained from sem_get.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function sem_acquire ($sem_identifier) {}
 
@@ -46,7 +46,7 @@ function sem_acquire ($sem_identifier) {}
  * A Semaphore resource handle as returned by
  * sem_get.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function sem_release ($sem_identifier) {}
 
@@ -58,7 +58,7 @@ function sem_release ($sem_identifier) {}
  * A semaphore resource identifier as returned
  * by sem_get.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function sem_remove ($sem_identifier) {}
 

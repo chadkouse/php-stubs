@@ -14,18 +14,18 @@
  * </p>
  * <p>
  * If you append the string //TRANSLIT to
- * out_charset transliteration is activated. This
+ * <i>out_charset</i> transliteration is activated. This
  * means that when a character can't be represented in the target charset,
  * it can be approximated through one or several similarly looking
  * characters. If you append the string //IGNORE,
  * characters that cannot be represented in the target charset are silently
- * discarded. Otherwise, str is cut from the first
- * illegal character and an E_NOTICE is generated.
+ * discarded. Otherwise, <i>str</i> is cut from the first
+ * illegal character and an <b>E_NOTICE</b> is generated.
  * </p>
  * @param string $str <p>
  * The string to be converted.
  * </p>
- * @return string the converted string&return.falseforfailure;.
+ * @return string the converted string or false on failure.
  */
 function iconv ($in_charset, $out_charset, $str) {}
 
@@ -35,7 +35,7 @@ function iconv ($in_charset, $out_charset, $str) {}
  * @link http://php.net/manual/en/function.ob-iconv-handler.php
  * @param string $contents 
  * @param int $status 
- * @return string See ob_start for information about this handler
+ * @return string See <b>ob_start</b> for information about this handler
  * return values.
  */
 function ob_iconv_handler ($contents, $status) {}
@@ -45,28 +45,28 @@ function ob_iconv_handler ($contents, $status) {}
  * Retrieve internal configuration variables of iconv extension
  * @link http://php.net/manual/en/function.iconv-get-encoding.php
  * @param string $type [optional] <p>
- * The value of the optional type can be:
+ * The value of the optional <i>type</i> can be:
  * all
  * input_encoding
  * output_encoding
  * internal_encoding
  * </p>
  * @return mixed the current value of the internal configuration variable if
- * successful&return.falseforfailure;.
+ * successful or false on failure.
  * </p>
  * <p>
- * If type is omitted or set to "all",
- * iconv_get_encoding returns an array that
+ * If <i>type</i> is omitted or set to "all",
+ * <b>iconv_get_encoding</b> returns an array that
  * stores all these variables.
  */
-function iconv_get_encoding ($type = null) {}
+function iconv_get_encoding ($type = "all") {}
 
 /**
  * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
  * Set current setting for character encoding conversion
  * @link http://php.net/manual/en/function.iconv-set-encoding.php
  * @param string $type <p>
- * The value of type can be any one of those:
+ * The value of <i>type</i> can be any one of those:
  * input_encoding
  * output_encoding
  * internal_encoding
@@ -74,7 +74,7 @@ function iconv_get_encoding ($type = null) {}
  * @param string $charset <p>
  * The character set.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function iconv_set_encoding ($type, $charset) {}
 
@@ -86,13 +86,13 @@ function iconv_set_encoding ($type, $charset) {}
  * The string.
  * </p>
  * @param string $charset [optional] <p>
- * If charset parameter is omitted,
- * str is assumed to be encoded in
+ * If <i>charset</i> parameter is omitted,
+ * <i>str</i> is assumed to be encoded in
  * iconv.internal_encoding.
  * </p>
- * @return int the character count of str, as an integer.
+ * @return int the character count of <i>str</i>, as an integer.
  */
-function iconv_strlen ($str, $charset = null) {}
+function iconv_strlen ($str, $charset = 'ini_get("iconv.internal_encoding")') {}
 
 /**
  * (PHP 5)<br/>
@@ -102,52 +102,52 @@ function iconv_strlen ($str, $charset = null) {}
  * The original string.
  * </p>
  * @param int $offset <p>
- * If offset is non-negative,
- * iconv_substr cuts the portion out of
- * str beginning at offset'th
+ * If <i>offset</i> is non-negative,
+ * <b>iconv_substr</b> cuts the portion out of
+ * <i>str</i> beginning at <i>offset</i>'th
  * character, counting from zero.
  * </p>
  * <p>
- * If offset is negative,
- * iconv_substr cuts out the portion beginning
- * at the position, offset characters
- * away from the end of str.
+ * If <i>offset</i> is negative,
+ * <b>iconv_substr</b> cuts out the portion beginning
+ * at the position, <i>offset</i> characters
+ * away from the end of <i>str</i>.
  * </p>
  * @param int $length [optional] <p>
- * If length is given and is positive, the return
- * value will contain at most length characters
- * of the portion that begins at offset
- * (depending on the length of string).
+ * If <i>length</i> is given and is positive, the return
+ * value will contain at most <i>length</i> characters
+ * of the portion that begins at <i>offset</i>
+ * (depending on the length of <i>string</i>).
  * </p>
  * <p>
- * If negative length is passed,
- * iconv_substr cuts the portion out of
- * str from the offset'th
+ * If negative <i>length</i> is passed,
+ * <b>iconv_substr</b> cuts the portion out of
+ * <i>str</i> from the <i>offset</i>'th
  * character up to the character that is
- * length characters away from the end of the string.
- * In case offset is also negative, the start position
+ * <i>length</i> characters away from the end of the string.
+ * In case <i>offset</i> is also negative, the start position
  * is calculated beforehand according to the rule explained above.
  * </p>
  * @param string $charset [optional] <p>
- * If charset parameter is omitted,
- * string are assumed to be encoded in
+ * If <i>charset</i> parameter is omitted,
+ * <i>string</i> are assumed to be encoded in
  * iconv.internal_encoding.
  * </p>
  * <p>
- * Note that offset and length
+ * Note that <i>offset</i> and <i>length</i>
  * parameters are always deemed to represent offsets that are
  * calculated on the basis of the character set determined by
- * charset, whilst the counterpart
- * substr always takes these for byte offsets.
+ * <i>charset</i>, whilst the counterpart
+ * <b>substr</b> always takes these for byte offsets.
  * </p>
- * @return string the portion of str specified by the
- * offset and length parameters.
+ * @return string the portion of <i>str</i> specified by the
+ * <i>offset</i> and <i>length</i> parameters.
  * </p>
  * <p>
- * If str is shorter than offset
+ * If <i>str</i> is shorter than <i>offset</i>
  * characters long, false will be returned.
  */
-function iconv_substr ($str, $offset, $length = null, $charset = null) {}
+function iconv_substr ($str, $offset, $length = 'iconv_strlen($str, $charset)', $charset = 'ini_get("iconv.internal_encoding")') {}
 
 /**
  * (PHP 5)<br/>
@@ -160,22 +160,22 @@ function iconv_substr ($str, $offset, $length = null, $charset = null) {}
  * The searched substring.
  * </p>
  * @param int $offset [optional] <p>
- * The optional offset parameter specifies
+ * The optional <i>offset</i> parameter specifies
  * the position from which the search should be performed.
  * </p>
  * @param string $charset [optional] <p>
- * If charset parameter is omitted,
- * string are assumed to be encoded in
+ * If <i>charset</i> parameter is omitted,
+ * <i>string</i> are assumed to be encoded in
  * iconv.internal_encoding.
  * </p>
  * @return int the numeric position of the first occurrence of
- * needle in haystack.
+ * <i>needle</i> in <i>haystack</i>.
  * </p>
  * <p>
- * If needle is not found,
- * iconv_strpos will return false.
+ * If <i>needle</i> is not found,
+ * <b>iconv_strpos</b> will return false.
  */
-function iconv_strpos ($haystack, $needle, $offset = null, $charset = null) {}
+function iconv_strpos ($haystack, $needle, $offset = 0, $charset = 'ini_get("iconv.internal_encoding")') {}
 
 /**
  * (PHP 5)<br/>
@@ -188,24 +188,22 @@ function iconv_strpos ($haystack, $needle, $offset = null, $charset = null) {}
  * The searched substring.
  * </p>
  * @param string $charset [optional] <p>
- * If charset parameter is omitted,
- * string are assumed to be encoded in
+ * If <i>charset</i> parameter is omitted,
+ * <i>string</i> are assumed to be encoded in
  * iconv.internal_encoding.
  * </p>
  * @return int the numeric position of the last occurrence of
- * needle in haystack.
- * The characters are counted
- * on the basis of the specified character set charset.
+ * <i>needle</i> in <i>haystack</i>.
  * </p>
  * <p>
- * If needle is not found,
- * iconv_strrpos will return false.
+ * If <i>needle</i> is not found,
+ * <b>iconv_strrpos</b> will return false.
  */
-function iconv_strrpos ($haystack, $needle, $charset = null) {}
+function iconv_strrpos ($haystack, $needle, $charset = 'ini_get("iconv.internal_encoding")') {}
 
 /**
  * (PHP 5)<br/>
- * Composes a <literal>MIME</literal> header field
+ * Composes a MIME header field
  * @link http://php.net/manual/en/function.iconv-mime-encode.php
  * @param string $field_name <p>
  * The field name.
@@ -214,13 +212,13 @@ function iconv_strrpos ($haystack, $needle, $charset = null) {}
  * The field value.
  * </p>
  * @param array $preferences [optional] <p>
- * You can control the behaviour of iconv_mime_encode
+ * You can control the behaviour of <b>iconv_mime_encode</b>
  * by specifying an associative array that contains configuration items
- * to the optional third parameter preferences.
- * The items supported by iconv_mime_encode are
+ * to the optional third parameter <i>preferences</i>.
+ * The items supported by <b>iconv_mime_encode</b> are
  * listed below. Note that item names are treated case-sensitive.
  * <table>
- * Configuration items supported by iconv_mime_encode
+ * Configuration items supported by <b>iconv_mime_encode</b>
  * <tr valign="top">
  * <td>Item</td>
  * <td>Type</td>
@@ -245,9 +243,9 @@ function iconv_strrpos ($haystack, $needle, $charset = null) {}
  * <td>string</td>
  * <td>
  * Specifies the character set in which the first parameter
- * field_name and the second parameter
- * field_value are presented. If not given,
- * iconv_mime_encode assumes those parameters
+ * <i>field_name</i> and the second parameter
+ * <i>field_value</i> are presented. If not given,
+ * <b>iconv_mime_encode</b> assumes those parameters
  * are presented to it in the
  * iconv.internal_encoding
  * ini setting.
@@ -262,8 +260,7 @@ function iconv_strrpos ($haystack, $needle, $charset = null) {}
  * <td>string</td>
  * <td>
  * Specifies the character set to use to compose the
- * MIME header. If not given, the same value as
- * input-charset will be used.
+ * MIME header.
  * </td>
  * <td>
  * iconv.internal_encoding
@@ -307,18 +304,18 @@ function iconv_mime_encode ($field_name, $field_value, array $preferences = null
 
 /**
  * (PHP 5)<br/>
- * Decodes a <literal>MIME</literal> header field
+ * Decodes a MIME header field
  * @link http://php.net/manual/en/function.iconv-mime-decode.php
  * @param string $encoded_header <p>
  * The encoded header, as a string.
  * </p>
  * @param int $mode [optional] <p>
- * mode determines the behaviour in the event
- * iconv_mime_decode encounters a malformed
+ * <i>mode</i> determines the behaviour in the event
+ * <b>iconv_mime_decode</b> encounters a malformed
  * MIME header field. You can specify any combination
  * of the following bitmasks.
  * <table>
- * Bitmasks acceptable to iconv_mime_decode
+ * Bitmasks acceptable to <b>iconv_mime_decode</b>
  * <tr valign="top">
  * <td>Value</td>
  * <td>Constant</td>
@@ -339,7 +336,7 @@ function iconv_mime_encode ($field_name, $field_value, array $preferences = null
  * <td>2</td>
  * <td>ICONV_MIME_DECODE_CONTINUE_ON_ERROR</td>
  * <td>
- * If set, iconv_mime_decode_headers
+ * If set, <b>iconv_mime_decode_headers</b>
  * attempts to ignore any grammatical errors and continue to process
  * a given header.
  * </td>
@@ -347,7 +344,7 @@ function iconv_mime_encode ($field_name, $field_value, array $preferences = null
  * </table>
  * </p>
  * @param string $charset [optional] <p>
- * The optional charset parameter specifies the
+ * The optional <i>charset</i> parameter specifies the
  * character set to represent the result by. If omitted,
  * iconv.internal_encoding
  * will be used.
@@ -355,22 +352,22 @@ function iconv_mime_encode ($field_name, $field_value, array $preferences = null
  * @return string a decoded MIME field on success,
  * or false if an error occurs during the decoding.
  */
-function iconv_mime_decode ($encoded_header, $mode = null, $charset = null) {}
+function iconv_mime_decode ($encoded_header, $mode = 0, $charset = 'ini_get("iconv.internal_encoding")') {}
 
 /**
  * (PHP 5)<br/>
- * Decodes multiple <literal>MIME</literal> header fields at once
+ * Decodes multiple MIME header fields at once
  * @link http://php.net/manual/en/function.iconv-mime-decode-headers.php
  * @param string $encoded_headers <p>
  * The encoded headers, as a string.
  * </p>
  * @param int $mode [optional] <p>
- * mode determines the behaviour in the event
- * iconv_mime_decode_headers encounters a malformed
+ * <i>mode</i> determines the behaviour in the event
+ * <b>iconv_mime_decode_headers</b> encounters a malformed
  * MIME header field. You can specify any combination
  * of the following bitmasks.
  * <table>
- * Bitmasks acceptable to iconv_mime_decode_headers
+ * Bitmasks acceptable to <b>iconv_mime_decode_headers</b>
  * <tr valign="top">
  * <td>Value</td>
  * <td>Constant</td>
@@ -391,7 +388,7 @@ function iconv_mime_decode ($encoded_header, $mode = null, $charset = null) {}
  * <td>2</td>
  * <td>ICONV_MIME_DECODE_CONTINUE_ON_ERROR</td>
  * <td>
- * If set, iconv_mime_decode_headers
+ * If set, <b>iconv_mime_decode_headers</b>
  * attempts to ignore any grammatical errors and continue to process
  * a given header.
  * </td>
@@ -399,24 +396,24 @@ function iconv_mime_decode ($encoded_header, $mode = null, $charset = null) {}
  * </table>
  * </p>
  * @param string $charset [optional] <p>
- * The optional charset parameter specifies the
+ * The optional <i>charset</i> parameter specifies the
  * character set to represent the result by. If omitted,
  * iconv.internal_encoding
  * will be used.
  * </p>
  * @return array an associative array that holds a whole set of
  * MIME header fields specified by
- * encoded_headers on success, or false
+ * <i>encoded_headers</i> on success, or false
  * if an error occurs during the decoding.
  * </p>
  * <p>
  * Each key of the return value represents an individual
  * field name and the corresponding element represents a field value.
  * If more than one field of the same name are present,
- * iconv_mime_decode_headers automatically incorporates
+ * <b>iconv_mime_decode_headers</b> automatically incorporates
  * them into a numerically indexed array in the order of occurrence.
  */
-function iconv_mime_decode_headers ($encoded_headers, $mode = null, $charset = null) {}
+function iconv_mime_decode_headers ($encoded_headers, $mode = 0, $charset = 'ini_get("iconv.internal_encoding")') {}
 
 
 /**
@@ -429,7 +426,7 @@ define ('ICONV_IMPL', "glibc");
  * string
  * @link http://php.net/manual/en/iconv.constants.php
  */
-define ('ICONV_VERSION', "2.10.1");
+define ('ICONV_VERSION', 2.13);
 
 /**
  * integer

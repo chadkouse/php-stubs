@@ -30,7 +30,7 @@
  * directory depends on
  * whether PHP has been built with --enable-debug
  * or not
- * @return int Returns true on success or false on failure. If the functionality of loading modules is not available
+ * @return int true on success or false on failure. If the functionality of loading modules is not available
  * or has been disabled (either by setting
  * enable_dl off or by enabling &safemode;
  * in &php.ini;) an E_ERROR is emitted
@@ -61,9 +61,20 @@ define ('__LINE__', 0);
  * The class name. (Added in PHP 4.3.0) As of PHP 5 this constant
  * returns the class name as it was declared (case-sensitive). In PHP
  * 4 its value is always lowercased.
+ * The class name includes the namespace it was declared in (e.g. Foo\Bar).
+ * Note that as of PHP 5.4 __CLASS__ works also in traits.
+ * When used in a trait method, __CLASS__ is the name of the class the trait is used in.
  * @link http://php.net/manual/en/language.constants.predefined.php
  */
 define ('__CLASS__', '');
+
+/**
+ * The trait name. (Added in PHP 5.4.0) As of PHP 5.4 this constant
+ * returns the trait as it was declared (case-sensitive).
+ * The trait name includes the namespace it was declared in (e.g. Foo\Bar).
+ * @link http://php.net/manual/en/language.constants.predefined.php
+ */
+define ('__TRAIT__', '');
 
 /**
  * The function name. (Added in PHP 4.3.0) As of PHP 5 this constant

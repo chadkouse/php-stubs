@@ -55,7 +55,7 @@ function spl_autoload_extensions ($file_extensions = null) {}
  * autoload_function cannot be registered.
  * @param bool $prepend If true, spl_autoload_register() will prepend the autoloader on the autoload stack instead of
  * appending it. 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function spl_autoload_register ($autoload_function = null, $throw = true, $prepend = false) {}
 
@@ -66,7 +66,7 @@ function spl_autoload_register ($autoload_function = null, $throw = true, $prepe
  * @param mixed $autoload_function <p>
  * The autoload function being unregistered.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function spl_autoload_unregister ($autoload_function) {}
 
@@ -178,4 +178,15 @@ function iterator_count ($iterator) {}
 function iterator_apply ($iterator, $function, array $args = null) {}
 
 // End of SPL v.0.2
+
+/**
+ * (PHP 5 &gt;= 5.4.0)<br/>
+ * Return the traits used by the given class
+ * @param mixed $class An object (class instance) or a string (class name).
+ * @param bool $autoload Whether to allow this function to load the class automatically through the __autoload() magic method.
+ * @return array on success, or FALSE on error.
+ * @link http://php.net/manual/en/function.class-uses.php
+ * @see class_parents(), get_declared_traits()
+ */
+function class_uses($class, bool $autoload = true ) {}
 ?>

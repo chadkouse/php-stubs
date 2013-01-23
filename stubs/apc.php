@@ -128,14 +128,15 @@ function apc_sma_info($limited = false){}
 /**
  * Cache a variable in the data store
  * @link http://php.net/manual/en/function.apc-store.php
- * @param string $key Store the variable using this name. Keys are cache-unique,
+ * @param string|array $key String: Store the variable using this name. Keys are cache-unique,
  * so storing a second value with the same key will overwrite the original value.
- * @param mixed $var The variable to store
- * @param int $ttl Time To Live; store var in the cache for ttl seconds. After the ttl has passed,
+ * Array: Names in key, variables in value.
+ * @param mixed $var [optional] The variable to store
+ * @param int $ttl [optional]  Time To Live; store var in the cache for ttl seconds. After the ttl has passed,
  * the stored variable will be expunged from the cache (on the next request). If no ttl is supplied
  * (or if the ttl is 0), the value will persist until it is removed from the cache manually,
  * or otherwise fails to exist in the cache (clear, restart, etc.).
- * @return bool Returns TRUE on success or FALSE on failure.
+ * @return bool|array Returns TRUE on success or FALSE on failure | array with error keys.
  */
 function apc_store($key, $var, $ttl = 0){}
 

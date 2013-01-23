@@ -17,7 +17,7 @@ function enchant_broker_init () {}
  * @param resource $broker <p>
  * Broker resource
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function enchant_broker_free ($broker) {}
 
@@ -52,7 +52,7 @@ function enchant_broker_get_dict_path ($broker, $name) {}
  * @param resource $broker <p>
  * Broker resource
  * </p>
- * @return mixed Returns true on success or false on failure.
+ * @return mixed true on success or false on failure.
  */
 function enchant_broker_list_dicts ($broker) {}
 
@@ -66,7 +66,7 @@ function enchant_broker_list_dicts ($broker) {}
  * @param string $tag <p>
  * A tag describing the locale, for example en_US, de_DE
  * </p>
- * @return resource a dictionary resource on success&return.falseforfailure;.
+ * @return resource a dictionary resource on success or false on failure.
  */
 function enchant_broker_request_dict ($broker, $tag) {}
 
@@ -80,7 +80,7 @@ function enchant_broker_request_dict ($broker, $tag) {}
  * @param string $filename <p>
  * Path to the PWL file.
  * </p>
- * @return resource a dictionary resource on success&return.falseforfailure;.
+ * @return resource a dictionary resource on success or false on failure.
  */
 function enchant_broker_request_pwl_dict ($broker, $filename) {}
 
@@ -91,7 +91,7 @@ function enchant_broker_request_pwl_dict ($broker, $filename) {}
  * @param resource $dict <p>
  * Dictionary resource.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function enchant_broker_free_dict ($dict) {}
 
@@ -124,7 +124,7 @@ function enchant_broker_dict_exists ($broker, $tag) {}
  * @param string $ordering <p>
  * Comma delimited list of provider names
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function enchant_broker_set_ordering ($broker, $tag, $ordering) {}
 
@@ -135,7 +135,7 @@ function enchant_broker_set_ordering ($broker, $tag, $ordering) {}
  * @param resource $broker <p>
  * Broker resource
  * </p>
- * @return array Returns true on success or false on failure.
+ * @return array true on success or false on failure.
  */
 function enchant_broker_describe ($broker) {}
 
@@ -177,7 +177,7 @@ function enchant_dict_suggest ($dict, $word) {}
  * @param string $word <p>
  * The word to add
  * </p>
- * @return void Returns true on success or false on failure.
+ * @return void true on success or false on failure.
  */
 function enchant_dict_add_to_personal ($dict, $word) {}
 
@@ -191,7 +191,7 @@ function enchant_dict_add_to_personal ($dict, $word) {}
  * @param string $word <p>
  * The word to add
  * </p>
- * @return void Returns true on success or false on failure.
+ * @return void true on success or false on failure.
  */
 function enchant_dict_add_to_session ($dict, $word) {}
 
@@ -222,7 +222,7 @@ function enchant_dict_is_in_session ($dict, $word) {}
  * @param string $cor <p>
  * The correct word
  * </p>
- * @return void Returns true on success or false on failure.
+ * @return void true on success or false on failure.
  */
 function enchant_dict_store_replacement ($dict, $mis, $cor) {}
 
@@ -244,7 +244,7 @@ function enchant_dict_get_error ($dict) {}
  * @param resource $dict <p>
  * Dictinaray resource
  * </p>
- * @return mixed Returns true on success or false on failure.
+ * @return mixed true on success or false on failure.
  */
 function enchant_dict_describe ($dict) {}
 

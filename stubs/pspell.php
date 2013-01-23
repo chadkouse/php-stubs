@@ -33,7 +33,7 @@
  * There are several modes available:
  * PSPELL_FAST - Fast mode (least number of
  * suggestions)
- * @return int the dictionary link identifier on success&return.falseforfailure;.
+ * @return int the dictionary link identifier on success or false on failure.
  */
 function pspell_new ($language, $spelling = null, $jargon = null, $encoding = null, $mode = null) {}
 
@@ -127,7 +127,7 @@ function pspell_suggest ($dictionary_link, $word) {}
  * @param string $correct <p>
  * The fixed spelling for the misspelled word.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_store_replacement ($dictionary_link, $misspelled, $correct) {}
 
@@ -140,7 +140,7 @@ function pspell_store_replacement ($dictionary_link, $misspelled, $correct) {}
  * @param string $word <p>
  * The added word.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_add_to_personal ($dictionary_link, $word) {}
 
@@ -153,7 +153,7 @@ function pspell_add_to_personal ($dictionary_link, $word) {}
  * @param string $word <p>
  * The added word.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_add_to_session ($dictionary_link, $word) {}
 
@@ -163,7 +163,7 @@ function pspell_add_to_session ($dictionary_link, $word) {}
  * @link http://php.net/manual/en/function.pspell-clear-session.php
  * @param int $dictionary_link <p>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_clear_session ($dictionary_link) {}
 
@@ -175,7 +175,7 @@ function pspell_clear_session ($dictionary_link) {}
  * A dictionary link identifier opened with
  * pspell_new_personal.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_save_wordlist ($dictionary_link) {}
 
@@ -219,7 +219,7 @@ function pspell_config_create ($language, $spelling = null, $jargon = null, $enc
  * true if run-together words should be treated as legal compounds,
  * false otherwise.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_config_runtogether ($dictionary_link, $flag) {}
 
@@ -234,7 +234,7 @@ function pspell_config_runtogether ($dictionary_link, $flag) {}
  * There are several modes available:
  * PSPELL_FAST - Fast mode (least number of
  * suggestions)
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_config_mode ($dictionary_link, $mode) {}
 
@@ -247,7 +247,7 @@ function pspell_config_mode ($dictionary_link, $mode) {}
  * @param int $n <p>
  * Words less than n characters will be skipped.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_config_ignore ($dictionary_link, $n) {}
 
@@ -261,7 +261,7 @@ function pspell_config_ignore ($dictionary_link, $n) {}
  * The personal wordlist. If the file does not exist, it will be created.
  * The file should be writable by whoever PHP runs as (e.g. nobody). 
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_config_personal ($dictionary_link, $file) {}
 
@@ -271,7 +271,7 @@ function pspell_config_personal ($dictionary_link, $file) {}
  * @link http://php.net/manual/en/function.pspell-config-dict-dir.php
  * @param int $conf 
  * @param string $directory 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_config_dict_dir ($conf, $directory) {}
 
@@ -281,7 +281,7 @@ function pspell_config_dict_dir ($conf, $directory) {}
  * @link http://php.net/manual/en/function.pspell-config-data-dir.php
  * @param int $conf 
  * @param string $directory 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_config_data_dir ($conf, $directory) {}
 
@@ -294,7 +294,7 @@ function pspell_config_data_dir ($conf, $directory) {}
  * @param string $file <p>
  * The file should be writable by whoever PHP runs as (e.g. nobody).
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_config_repl ($dictionary_link, $file) {}
 
@@ -308,7 +308,7 @@ function pspell_config_repl ($dictionary_link, $file) {}
  * @param bool $flag <p>
  * true if replacement pairs should be saved, false otherwise.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function pspell_config_save_repl ($dictionary_link, $flag) {}
 

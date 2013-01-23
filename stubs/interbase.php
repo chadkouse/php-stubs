@@ -97,7 +97,7 @@ function ibase_pconnect ($database = null, $username = null, $password = null, $
  * ibase_connect. If omitted, the last opened link
  * is assumed.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_close ($connection_id = null) {}
 
@@ -109,7 +109,7 @@ function ibase_close ($connection_id = null) {}
  * An InterBase link identifier. If omitted, the last opened link is
  * assumed.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_drop_db ($connection = null) {}
 
@@ -210,7 +210,7 @@ function ibase_fetch_object ($result_id, $fetch_flag = null) {}
  * A result set created by ibase_query or
  * ibase_execute.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_free_result ($result_identifier) {}
 
@@ -224,7 +224,7 @@ function ibase_free_result ($result_identifier) {}
  * @param string $name <p>
  * The name to be assigned.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_name_result ($result, $name) {}
 
@@ -269,7 +269,7 @@ function ibase_execute ($query, $bind_arg = null, $_ = null) {}
  * @param resource $query <p>
  * A query prepared with ibase_prepare.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_free_query ($query) {}
 
@@ -385,7 +385,7 @@ function ibase_trans ($trans_args = null, $link_identifier = null) {}
  * will be committed. If the argument is a transaction identifier, the
  * corresponding transaction will be committed.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_commit ($link_or_trans_identifier = null) {}
 
@@ -400,7 +400,7 @@ function ibase_commit ($link_or_trans_identifier = null) {}
  * will be rolled back. If the argument is a transaction identifier, the
  * corresponding transaction will be rolled back.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_rollback ($link_or_trans_identifier = null) {}
 
@@ -417,7 +417,7 @@ function ibase_rollback ($link_or_trans_identifier = null) {}
  * will be retained, so statements executed from within this transaction
  * will not be invalidated.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_commit_ret ($link_or_trans_identifier = null) {}
 
@@ -434,7 +434,7 @@ function ibase_commit_ret ($link_or_trans_identifier = null) {}
  * will be retained, so statements executed from within this transaction
  * will not be invalidated.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_rollback_ret ($link_or_trans_identifier = null) {}
 
@@ -464,7 +464,7 @@ function ibase_blob_info ($link_identifier, $blob_id) {}
  * assumed.
  * </p>
  * @return resource a BLOB handle for later use with
- * ibase_blob_add&return.falseforfailure;.
+ * ibase_blob_add or false on failure.
  */
 function ibase_blob_create ($link_identifier = null) {}
 
@@ -489,7 +489,7 @@ function ibase_blob_add ($blob_handle, $data) {}
  * @param resource $blob_handle <p>
  * A BLOB handle opened with ibase_blob_create.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_blob_cancel ($blob_handle) {}
 
@@ -520,7 +520,7 @@ function ibase_blob_close ($blob_handle) {}
  * A BLOB id.
  * </p>
  * @return resource a BLOB handle for later use with 
- * ibase_blob_get&return.falseforfailure;.
+ * ibase_blob_get or false on failure.
  */
 function ibase_blob_open ($link_identifier, $blob_id) {}
 
@@ -545,7 +545,7 @@ function ibase_blob_get ($blob_handle, $len) {}
  * @link http://php.net/manual/en/function.ibase-blob-echo.php
  * @param string $blob_id <p>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_blob_echo ($blob_id) {}
 
@@ -590,7 +590,7 @@ function ibase_errcode () {}
  * @param string $first_name [optional] 
  * @param string $middle_name [optional] 
  * @param string $last_name [optional] 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_add_user ($service_handle, $user_name, $password, $first_name = null, $middle_name = null, $last_name = null) {}
 
@@ -604,7 +604,7 @@ function ibase_add_user ($service_handle, $user_name, $password, $first_name = n
  * @param string $first_name [optional] 
  * @param string $middle_name [optional] 
  * @param string $last_name [optional] 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_modify_user ($service_handle, $user_name, $password, $first_name = null, $middle_name = null, $last_name = null) {}
 
@@ -614,7 +614,7 @@ function ibase_modify_user ($service_handle, $user_name, $password, $first_name 
  * @link http://php.net/manual/en/function.ibase-delete-user.php
  * @param resource $service_handle 
  * @param string $user_name 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_delete_user ($service_handle, $user_name) {}
 
@@ -634,7 +634,7 @@ function ibase_service_attach ($host, $dba_username, $dba_password) {}
  * Disconnect from the service manager
  * @link http://php.net/manual/en/function.ibase-service-detach.php
  * @param resource $service_handle 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_service_detach ($service_handle) {}
 
@@ -672,7 +672,7 @@ function ibase_restore ($service_handle, $source_file, $dest_db, $options = null
  * @param string $db 
  * @param int $action 
  * @param int $argument [optional] 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_maintain_db ($service_handle, $db, $action, $argument = null) {}
 
@@ -746,7 +746,7 @@ function ibase_set_event_handler ($event_handler, $event_name1, $event_name2 = n
  * An event resource, created by
  * ibase_set_event_handler.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ibase_free_event_handler ($event) {}
 

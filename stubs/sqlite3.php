@@ -126,7 +126,7 @@ class SQLite3  {
 	 * @param string $query <p>
 	 * The SQL query to prepare.
 	 * </p>
-	 * @return SQLite3Stmt an SQLite3Stmt object on success&return.falseforfailure;.
+	 * @return SQLite3Stmt an SQLite3Stmt object on success or false on failure.
 	 */
 	public function prepare ($query) {}
 
@@ -226,6 +226,15 @@ class SQLite3  {
 	 * @param $encryption_key [optional]
 	 */
 	public function __construct ($filename, $flags, $encryption_key) {}
+
+	/**
+	 * (PHP 5 &gt;= 5.3.3)<br/>
+	 * Sets the busy connection handler
+	 * @link http://www.php.net/manual/en/sqlite3.busytimeout.php
+	 * @param int $msecs The milliseconds to sleep. Setting this value to a value less than or equal to zero, will turn off an already set timeout handler.
+	 * @return bool Returns TRUE on success, FALSE on failure.
+	 */
+	public function busyTimeout ($msecs) {}
 
 }
 

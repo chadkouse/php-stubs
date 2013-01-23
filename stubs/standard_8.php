@@ -54,7 +54,7 @@
  * (strerror) corresponding to the present value of
  * errno.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function syslog ($priority, $message) {}
 
@@ -62,9 +62,60 @@ function syslog ($priority, $message) {}
  * (PHP 4, PHP 5)<br/>
  * Close connection to system logger
  * @link http://php.net/manual/en/function.closelog.php
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function closelog () {}
+
+/**
+ * (PHP 4, PHP 5)<br/>
+ * Registers a function that will be called when PHP starts sending output.
+ * The callback is executed just after PHP prepares all headers to be sent,<br>
+ * and before any other output is sent, creating a window to manipulate the outgoing headers before being sent.
+ * @link http://www.php.net/manual/en/function.header-register-callback.php
+ * @param callable $callback Function called just before the headers are sent.
+ * @return bool true on success or false on failure.
+ */
+function header_register_callback ( callable $callback ) {}
+
+/**
+ * PHP > 5.4.0<br/>
+ * Get the size of an image from a string.
+ * @link http://www.php.net/manual/en/function.getimagesizefromstring.php
+ * @param string $imagedata The image data, as a string.
+ * @param array $imageinfo This optional parameter allows you to extract<br>
+ * some extended information from the image file. Currently, this will <br>
+ * return the different JPG APP markers as an associative array. <br>
+ * Some programs use these APP markers to embed text information in images. <br>
+ * A very common one is to embed » IPTC information in the APP13 marker. <br>
+ * You can use the iptcparse() function to parse the binary APP13 marker into something readable.
+ * @return array Returns an array with 7 elements.<br>
+ * Index 0 and 1 contains respectively the width and the height of the image.<br>
+ * Index 2 is one of the <b>IMAGETYPE_XXX</b> constants indicating the type of the image.<br>
+ * Index 3 is a text string with the correct <b>height="yyy" width="xxx"</b> string<br>
+ * that can be used directly in an IMG tag.<br>
+ * On failure, FALSE is returned.
+ */
+function getimagesizefromstring ($imagedata , array &$imageinfo) {}
+
+/**
+ * PHP > 5.4.0<br/>
+ * Set the stream chunk size.
+ * @link http://www.php.net/manual/en/function.stream-set-chunk-size.php
+ * @param resource $fp The target stream.
+ * @param int $chunk_size The desired new chunk size.
+ * @return int Returns the previous chunk size on success.<br>
+ * Will return <b>FALSE</b> if chunk_size is less than 1 or greater than <b>PHP_INT_MAX</b>.
+ */
+function stream_set_chunk_size ($fp , $chunk_size) {}
+
+/**
+ * PHP > 5.4.0<br/>
+ * Import a stream.
+ * @link http://www.php.net/manual/en/function.socket-import-stream.php
+ * @param resource $stream The stream resource to import.
+ * @return void Returns <b>FALSE</b> or <b>NULL</b> on failure.
+ */
+function socket_import_stream ($stream) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -161,7 +212,7 @@ function metaphone ($str, $phones = null) {}
  * This causes that flushing and cleaning functions would issue a notice
  * and return false if called.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ob_start ($output_callback = null, $chunk_size = null, $erase = null) {}
 
@@ -185,7 +236,7 @@ function ob_clean () {}
  * (PHP 4, PHP 5)<br/>
  * Flush (send) the output buffer and turn off output buffering
  * @link http://php.net/manual/en/function.ob-end-flush.php
- * @return bool Returns true on success or false on failure. Reasons for failure are first that you called the
+ * @return bool true on success or false on failure. Reasons for failure are first that you called the
  * function without an active buffer or that for some reason a buffer could
  * not be deleted (possible for special buffer).
  */
@@ -195,7 +246,7 @@ function ob_end_flush () {}
  * (PHP 4, PHP 5)<br/>
  * Clean (erase) the output buffer and turn off output buffering
  * @link http://php.net/manual/en/function.ob-end-clean.php
- * @return bool Returns true on success or false on failure. Reasons for failure are first that you called the
+ * @return bool true on success or false on failure. Reasons for failure are first that you called the
  * function without an active buffer or that for some reason a buffer could
  * not be deleted (possible for special buffer).
  */
@@ -346,7 +397,7 @@ function ob_list_handlers () {}
  * parameter sort_flags, for details
  * see sort.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ksort (array &$array, $sort_flags = null) {}
 
@@ -362,7 +413,7 @@ function ksort (array &$array, $sort_flags = null) {}
  * sort_flags, for details see
  * sort.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function krsort (array &$array, $sort_flags = null) {}
 
@@ -373,7 +424,7 @@ function krsort (array &$array, $sort_flags = null) {}
  * @param array $array <p>
  * The input array.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function natsort (array &$array) {}
 
@@ -384,7 +435,7 @@ function natsort (array &$array) {}
  * @param array $array <p>
  * The input array.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function natcasesort (array &$array) {}
 
@@ -400,7 +451,7 @@ function natcasesort (array &$array) {}
  * parameter sort_flags, for details
  * see sort.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function asort (array &$array, $sort_flags = null) {}
 
@@ -416,7 +467,7 @@ function asort (array &$array, $sort_flags = null) {}
  * sort_flags, for details see
  * sort.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function arsort (array &$array, $sort_flags = null) {}
 
@@ -435,7 +486,7 @@ function arsort (array &$array, $sort_flags = null) {}
  * Sorting type flags:
  * SORT_REGULAR - compare items normally
  * (don't change types)
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function sort (array &$array, $sort_flags = null) {}
 
@@ -451,7 +502,7 @@ function sort (array &$array, $sort_flags = null) {}
  * parameter sort_flags, for details see
  * sort.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function rsort (array &$array, $sort_flags = null) {}
 
@@ -467,7 +518,7 @@ function rsort (array &$array, $sort_flags = null) {}
  * greater than zero if the first argument is considered to be
  * respectively less than, equal to, or greater than the second.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function usort (array &$array, $cmp_function) {}
 
@@ -482,7 +533,7 @@ function usort (array &$array, $cmp_function) {}
  * See usort and uksort for
  * examples of user-defined comparison functions.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function uasort (array &$array, $cmp_function) {}
 
@@ -504,7 +555,7 @@ function uasort (array &$array, $cmp_function) {}
  * be respectively less than, equal to, or greater than the
  * second.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function uksort (array &$array, $cmp_function) {}
 
@@ -515,7 +566,7 @@ function uksort (array &$array, $cmp_function) {}
  * @param array $array <p>
  * The array.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function shuffle (array &$array) {}
 
@@ -550,7 +601,7 @@ function shuffle (array &$array) {}
  * it will be passed as the third parameter to the callback
  * funcname.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function array_walk (array &$array, $funcname, $userdata = null) {}
 
@@ -579,24 +630,22 @@ function array_walk (array &$array, $funcname, $userdata = null) {}
  * it will be passed as the third parameter to the callback
  * funcname.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function array_walk_recursive (array &$input, $funcname, $userdata = null) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
- * Count all elements in an array, or properties in an object
+ * Counts all elements in an array, or something in an object.
+ * <p>For objects, if you have SPL installed, you can hook into count() by implementing interface {@see Countable}.
+ * The interface has exactly one method, {@see Countable::count()}, which returns the return value for the count() function.
+ * Please see the {@see Array} section of the manual for a detailed explanation of how arrays are implemented and used in PHP.
  * @link http://php.net/manual/en/function.count.php
- * @param mixed $var <p>
- * The array.
- * </p>
- * @param int $mode [optional] <p>
- * If the optional mode parameter is set to
+ * @param array|Countable $var  The array or the object.
+ * @param int $mode [optional] If the optional mode parameter is set to
  * COUNT_RECURSIVE (or 1), count
  * will recursively count the array. This is particularly useful for
- * counting all the elements of a multidimensional array.
- * count does not detect infinite recursion.
- * </p>
+ * counting all the elements of a multidimensional array. count does not detect infinite recursion.
  * @return int the number of elements in var, which is
  * typically an array, since anything else will have one
  * element.
@@ -609,11 +658,11 @@ function array_walk_recursive (array &$input, $funcname, $userdata = null) {}
  * 0 will be returned.
  * </p>
  * <p>
- * count may return 0 for a variable that isn't set,
+ * Caution: count may return 0 for a variable that isn't set,
  * but it may also return 0 for a variable that has been initialized with an
  * empty array. Use isset to test if a variable is set.
  */
-function count ($var, $mode = null) {}
+function count ($var, $mode = COUNT_NORMAL) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -894,7 +943,7 @@ function range ($low, $high, $step = null) {}
  * </p>
  * @param mixed $arg [optional] 
  * @param mixed $_ [optional] 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function array_multisort (array &$arr, $arg = null, $arg = null, $_ = null) {}
 

@@ -155,4 +155,15 @@ define ('T_NS_SEPARATOR', 380);
 define ('T_DOUBLE_COLON', 376);
 
 // End of tokenizer v.0.1
+
+
+/** @link http://php.net/manual/en/tokens.php */
+define('T_INSTEADOF', 341);
+/** @link http://php.net/manual/en/tokens.php */
+define('T_TRAIT', 355);
+/** @link http://php.net/manual/en/tokens.php */
+define('T_CALLABLE', 363);
+/** @link http://php.net/manual/en/tokens.php */
+define('T_TRAIT_C', 365);
+
 ?>

@@ -240,7 +240,7 @@ function socket_create_listen ($port, $backlog = null) {}
  * @param array $fd <p>
  * Reference to an array in which the two socket resources will be inserted.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function socket_create_pair ($domain, $type, $protocol, array &$fd) {}
 
@@ -267,7 +267,7 @@ function socket_accept ($socket) {}
  * A valid socket resource created with socket_create
  * or socket_accept.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function socket_set_nonblock ($socket) {}
 
@@ -279,7 +279,7 @@ function socket_set_nonblock ($socket) {}
  * A valid socket resource created with socket_create
  * or socket_accept.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function socket_set_block ($socket) {}
 
@@ -306,7 +306,7 @@ function socket_set_block ($socket) {}
  * reasonable value. There is no standard provision to
  * find out the actual backlog value on this platform.
  * </p>
- * @return bool Returns true on success or false on failure. The error code can be retrieved with
+ * @return bool true on success or false on failure. The error code can be retrieved with
  * socket_last_error. This code may be passed to
  * socket_strerror to get a textual explanation of the
  * error.
@@ -340,7 +340,7 @@ function socket_close ($socket) {}
  * greater then the buffer length, it is silently truncated to the length
  * of the buffer.
  * </p>
- * @return int the number of bytes successfully written to the socket&return.falseforfailure;.
+ * @return int the number of bytes successfully written to the socket or false on failure.
  * The error code can be retrieved with
  * socket_last_error. This code may be passed to
  * socket_strerror to get a textual explanation of the
@@ -411,7 +411,7 @@ function socket_read ($socket, $length, $type = null) {}
  * @param int $port [optional] <p>
  * If provided, this will hold the associated port.
  * </p>
- * @return bool Returns true on success or false on failure. socket_getsockname may also return
+ * @return bool true on success or false on failure. socket_getsockname may also return
  * false if the socket type is not any of AF_INET,
  * AF_INET6, or AF_UNIX, in which
  * case the last socket error code is not updated.
@@ -445,7 +445,7 @@ function socket_getsockname ($socket, &$addr, &$port = null) {}
  * If given, this will hold the port associated to
  * address.
  * </p>
- * @return bool Returns true on success or false on failure. socket_getpeername may also return
+ * @return bool true on success or false on failure. socket_getpeername may also return
  * false if the socket type is not any of AF_INET,
  * AF_INET6, or AF_UNIX, in which
  * case the last socket error code is not updated.
@@ -473,7 +473,7 @@ function socket_getpeername ($socket, &$address, &$port = null) {}
  * AF_INET6 socket, and designates
  * the port on the remote host to which a connection should be made.
  * </p>
- * @return bool Returns true on success or false on failure. The error code can be retrieved with
+ * @return bool true on success or false on failure. The error code can be retrieved with
  * socket_last_error. This code may be passed to
  * socket_strerror to get a textual explanation of the
  * error.
@@ -520,7 +520,7 @@ function socket_strerror ($errno) {}
  * designates the port on the remote host to which a connection
  * should be made.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  * </p>
  * <p>
  * The error code can be retrieved with socket_last_error.
@@ -1014,7 +1014,7 @@ function socket_get_option ($socket, $level, $optname) {}
  * @param mixed $optval <p>
  * The option value.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function socket_set_option ($socket, $level, $optname, $optval) {}
 
@@ -1049,7 +1049,7 @@ function socket_set_option ($socket, $level, $optname, $optval) {}
  * </tr>
  * </table>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function socket_shutdown ($socket, $how = null) {}
 

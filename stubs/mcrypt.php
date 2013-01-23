@@ -334,7 +334,8 @@ function mdecrypt_generic ($td, $data) {}
  * This function terminates encryption
  * @link http://php.net/manual/en/function.mcrypt-generic-end.php
  * @param resource $td 
- * @return bool 
+ * @return bool
+ * @deprecated This function has been DEPRECATED as of PHP 5.4.0.
  */
 function mcrypt_generic_end ($td) {}
 
@@ -345,7 +346,7 @@ function mcrypt_generic_end ($td) {}
  * @param resource $td <p>
  * The encryption descriptor.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function mcrypt_generic_deinit ($td) {}
 
@@ -588,7 +589,7 @@ function mcrypt_module_get_supported_key_sizes ($algorithm, $lib_dir = null) {}
  * @param resource $td <p>
  * The encryption descriptor.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function mcrypt_module_close ($td) {}
 

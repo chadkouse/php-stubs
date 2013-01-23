@@ -117,7 +117,7 @@ class XMLReader  {
 	 * (PHP 5 &gt;= 5.1.2)<br/>
 	 * Close the XMLReader input
 	 * @link http://php.net/manual/en/xmlreader.close.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function close () {}
 
@@ -169,7 +169,7 @@ class XMLReader  {
 	 * One of the parser option
 	 * constants.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function getParserProperty ($property) {}
 
@@ -177,7 +177,7 @@ class XMLReader  {
 	 * (PHP 5 &gt;= 5.1.2)<br/>
 	 * Indicates if the parsed document is valid
 	 * @link http://php.net/manual/en/xmlreader.isvalid.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function isValid () {}
 
@@ -188,7 +188,7 @@ class XMLReader  {
 	 * @param string $prefix <p>
 	 * String containing the prefix.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function lookupNamespace ($prefix) {}
 
@@ -199,7 +199,7 @@ class XMLReader  {
 	 * @param int $index <p>
 	 * The position of the attribute.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function moveToAttributeNo ($index) {}
 
@@ -210,7 +210,7 @@ class XMLReader  {
 	 * @param string $name <p>
 	 * The name of the attribute.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function moveToAttribute ($name) {}
 
@@ -224,7 +224,7 @@ class XMLReader  {
 	 * @param string $namespaceURI <p>
 	 * The namespace URI.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function moveToAttributeNs ($localName, $namespaceURI) {}
 
@@ -241,7 +241,7 @@ class XMLReader  {
 	 * (PHP 5 &gt;= 5.1.2)<br/>
 	 * Position cursor on the first Attribute
 	 * @link http://php.net/manual/en/xmlreader.movetofirstattribute.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function moveToFirstAttribute () {}
 
@@ -249,7 +249,7 @@ class XMLReader  {
 	 * (PHP 5 &gt;= 5.1.2)<br/>
 	 * Position cursor on the next Attribute
 	 * @link http://php.net/manual/en/xmlreader.movetonextattribute.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function moveToNextAttribute () {}
 
@@ -267,7 +267,7 @@ class XMLReader  {
 	 * A bitmask of the LIBXML_*
 	 * constants.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function open ($URI, $encoding = null, $options = null) {}
 
@@ -275,7 +275,7 @@ class XMLReader  {
 	 * (PHP 5 &gt;= 5.1.2)<br/>
 	 * Move to next node in document
 	 * @link http://php.net/manual/en/xmlreader.read.php
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function read () {}
 
@@ -286,7 +286,7 @@ class XMLReader  {
 	 * @param string $localname [optional] <p>
 	 * The name of the next node to move to.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function next ($localname = null) {}
 
@@ -322,7 +322,7 @@ class XMLReader  {
 	 * @param string $filename <p>
 	 * The filename of the XSD schema.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setSchema ($filename) {}
 
@@ -338,7 +338,7 @@ class XMLReader  {
 	 * If set to true the option will be enabled otherwise will
 	 * be disabled.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setParserProperty ($property, $value) {}
 
@@ -349,7 +349,7 @@ class XMLReader  {
 	 * @param string $filename <p>
 	 * filename or URI pointing to a RelaxNG Schema.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setRelaxNGSchema ($filename) {}
 
@@ -360,7 +360,7 @@ class XMLReader  {
 	 * @param string $source <p>
 	 * String containing the RelaxNG Schema.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function setRelaxNGSchemaSource ($source) {}
 
@@ -378,7 +378,7 @@ class XMLReader  {
 	 * A bitmask of the LIBXML_*
 	 * constants.
 	 * </p>
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool true on success or false on failure.
 	 */
 	public function XML ($source, $encoding = null, $options = null) {}
 

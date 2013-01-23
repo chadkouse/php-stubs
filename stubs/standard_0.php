@@ -24,13 +24,35 @@ class php_user_filter  {
 
 }
 
+/**
+ * Instances of Directory are created by calling the dir() function, not by the new operator.
+ */
 class Directory  {
 
-        public function close () {}
+    /**
+     * Close directory handle.
+     * Same as closedir(), only dir_handle defaults to $this.
+     * @param resource $dir_handle [optional]
+     * @link http://www.php.net/manual/en/directory.close.php
+     */
+    public function close ( $dir_handle ) {}
 
-        public function rewind () {}
+    /**
+     *  Rewind directory handle.
+     * Same as rewinddir(), only dir_handle defaults to $this.
+     * @param resource $dir_handle [optional]
+     * @link http://www.php.net/manual/en/directory.rewind.php
+     */
+    public function rewind ( $dir_handle ) {}
 
-        public function read () {}
+    /**
+     * Read entry from directory handle.
+     * Same as readdir(), only dir_handle defaults to $this.
+     * @param resource $dir_handle [optional]
+     * @return string
+     * @link http://www.php.net/manual/en/directory.read.php
+     */
+    public function read ( $dir_handle) { }
 
 }
 
@@ -92,7 +114,7 @@ function usleep ($micro_seconds) {}
  * @param int $nanoseconds <p>
  * Must be a positive integer less than 1 billion.
  * </p>
- * @return mixed Returns true on success or false on failure.
+ * @return mixed true on success or false on failure.
  * </p>
  * <p>
  * If the delay was interrupted by a signal, an associative array will be
@@ -111,7 +133,7 @@ function time_nanosleep ($seconds, $nanoseconds) {}
  * @param float $timestamp <p>
  * The timestamp when the script should wake.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function time_sleep_until ($timestamp) {}
 
@@ -130,7 +152,7 @@ function time_sleep_until ($timestamp) {}
  * For more information about the format options, read the
  * strftime page.
  * </p>
- * @return array an array&return.falseforfailure;.
+ * @return array an array or false on failure.
  * </p>
  * <p>
  * <table>
@@ -210,7 +232,7 @@ function flush () {}
  * </p>
  * @return string the given string wrapped at the specified column.
  */
-function wordwrap ($str, $width = null, $break = null, $cut = null) {}
+function wordwrap ($str, $width = 75, $break = "\n", $cut = false) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -749,7 +771,7 @@ function image_type_to_extension ($imagetype, $include_dot = null) {}
  * </tr>
  * </table>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function phpinfo ($what = null) {}
 
@@ -829,7 +851,7 @@ function phpversion ($extension = null) {}
  * </tr>
  * </table>
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function phpcredits ($flag = null) {}
 

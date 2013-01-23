@@ -34,19 +34,19 @@ function intval ($var, $base = null) {}
  * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
  * Get float value of a variable
  * @link http://php.net/manual/en/function.floatval.php
- * @param mixed $var <p>
- * May be any scalar type. You cannot use floatval 
- * on arrays or objects.
- * </p>
- * @return float The float value of the given variable.
+ * @param mixed $var May be any scalar type. should not be used on objects, as doing so will emit an E_NOTICE level error and return 1.
+ * @return float value of the given variable. Empty arrays return 0, non-empty arrays return 1.
  */
 function floatval ($var) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4.2.0, PHP 5)<br/>
+ * doubleval � Alias of floatval()
+ * Get float value of a variable
  * &Alias; <function>floatval</function>
  * @link http://php.net/manual/en/function.doubleval.php
- * @param $var
+ * @param mixed $var May be any scalar type. should not be used on objects, as doing so will emit an E_NOTICE level error and return 1.
+ * @return float value of the given variable. Empty arrays return 0, non-empty arrays return 1.
  */
 function doubleval ($var) {}
 
@@ -97,7 +97,7 @@ function gettype ($var) {}
  * @param string $type <p>
  * Possibles values of type are:
  * "boolean" (or, since PHP 4.2.0, "bool")
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function settype (&$var, $type) {}
 
@@ -273,7 +273,7 @@ function is_scalar ($var) {}
  * (PHP 4 &gt;= 4.0.6, PHP 5)<br/>
  * Verify that the contents of a variable can be called as a function
  * @link http://php.net/manual/en/function.is-callable.php
- * @param callback $name <p>
+ * @param callback|callable $name <p>
  * Can be either the name of a function stored in a string variable, or
  * an object and the name of a method within the object, like this: 
  * array($SomeObject, 'MethodName')
@@ -359,7 +359,7 @@ function readfile ($filename, $use_include_path = null, $context = null) {}
  * The file pointer must be valid, and must point to a file
  * successfully opened by fopen.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function rewind ($handle) {}
 
@@ -371,7 +371,7 @@ function rewind ($handle) {}
  * Path to the directory.
  * </p>
  * @param resource $context [optional] &note.context-support;
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function rmdir ($dirname, $context = null) {}
 
@@ -395,7 +395,7 @@ function umask ($mask = null) {}
  * The file pointer must be valid, and must point to a file successfully
  * opened by fopen or fsockopen.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function fclose ($handle) {}
 
@@ -473,7 +473,7 @@ function fgetss ($handle, $length = null, $allowable_tags = null) {}
  * @param int $length <p>
  * Up to length number of bytes read.
  * </p>
- * @return string the read string &return.falseforfailure;.
+ * @return string the read string or false on failure.
  */
 function fread ($handle, $length) {}
 
@@ -690,7 +690,7 @@ function fpassthru ($handle) {}
  * If size is smaller than the extra data
  * will be lost.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function ftruncate ($handle, $size) {}
 
@@ -731,7 +731,7 @@ function fstat ($handle) {}
  * @return int Upon success, returns 0; otherwise, returns -1. Note that seeking
  * past EOF is not considered an error.
  */
-function fseek ($handle, $offset, $whence = null) {}
+function fseek ($handle, $offset, $whence = SEEK_SET) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -756,7 +756,7 @@ function ftell ($handle) {}
  * Flushes the output to a file
  * @link http://php.net/manual/en/function.fflush.php
  * @param resource $handle &fs.validfp.all;
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function fflush ($handle) {}
 
@@ -819,7 +819,7 @@ function fputs ($fp, $str, $length) {}
  * Allows the creation of nested directories specified in the pathname. Default to false.
  * </p>
  * @param resource $context [optional] &note.context-support;
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function mkdir ($pathname, $mode = 0777, $recursive = false, $context = null) {}
 
@@ -838,7 +838,7 @@ function mkdir ($pathname, $mode = 0777, $recursive = false, $context = null) {}
  * The new name.
  * </p>
  * @param resource $context [optional] &note.context-support;
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function rename ($oldname, $newname, $context = null) {}
 
@@ -861,7 +861,7 @@ function rename ($oldname, $newname, $context = null) {}
  * A valid context resource created with 
  * stream_context_create.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function copy ($source, $dest, $context = null) {}
 
@@ -886,7 +886,7 @@ function tempnam ($dir, $prefix) {}
  * Creates a temporary file
  * @link http://php.net/manual/en/function.tmpfile.php
  * @return resource a file handle, similar to the one returned by
- * fopen, for the new file&return.falseforfailure;.
+ * fopen, for the new file or false on failure.
  */
 function tmpfile () {}
 
@@ -994,7 +994,7 @@ function file ($filename, $flags = null, $context = null) {}
  * Maximum length of data read. The default is to read until end
  * of file is reached.
  * </p>
- * @return string The function returns the read data&return.falseforfailure;.
+ * @return string The function returns the read data or false on failure.
  */
 function file_get_contents ($filename, $flags = null, $context = null, $offset = null, $maxlen = null) {}
 

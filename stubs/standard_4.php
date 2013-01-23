@@ -294,7 +294,7 @@ function register_shutdown_function ($function, $parameter = null, $_ = null) {}
  * @param mixed $arg [optional] <p>
  * </p>
  * @param mixed $_ [optional] 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function register_tick_function ($function, $arg = null, $_ = null) {}
 
@@ -471,7 +471,7 @@ function get_include_path () {}
  * The new value for the include_path
  * </p>
  * @return string the old include_path on
- * success&return.falseforfailure;.
+ * success or false on failure.
  */
 function set_include_path ($new_include_path) {}
 
@@ -572,7 +572,7 @@ function setcookie ($name, $value = null, $expire = null, $path = null, $domain 
  * @param string $domain [optional] 
  * @param bool $secure [optional] 
  * @param bool $httponly [optional] 
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function setrawcookie ($name, $value = null, $expire = null, $path = null, $domain = null, $secure = null, $httponly = null) {}
 
@@ -745,7 +745,7 @@ function parse_ini_string ($ini, $process_sections = null, $scanner_mode = null)
  * @param string $filename <p>
  * The filename being checked.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function is_uploaded_file ($filename) {}
 

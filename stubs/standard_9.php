@@ -15,7 +15,12 @@ function array_merge_recursive (array $array1, array $_ = null) {}
 
 /**
  * (PHP 5 &gt;= 5.3.0)<br/>
- * Replaces elements from passed arrays into the first array
+ * array_replace() replaces the values of the first array with the same values from all the following arrays.
+ * If a key from the first array exists in the second array, its value will be replaced by the value from the second array.
+ * If the key exists in the second array, and not the first, it will be created in the first array.
+ * If a key only exists in the first array, it will be left as is. If several arrays are passed for replacement,
+ * they will be processed in order, the later arrays overwriting the previous values.
+ * array_replace() is not recursive : it will replace values in the first array by whatever type is in the second array.
  * @link http://php.net/manual/en/function.array-replace.php
  * @param array $array <p>
  * The array in which elements are replaced.
@@ -25,9 +30,9 @@ function array_merge_recursive (array $array1, array $_ = null) {}
  * </p>
  * @param array $array2 [optional] 
  * @param array $_ [optional] 
- * @return array an array, or &null; if an error occurs.
+ * @return array or null if an error occurs.
  */
-function array_replace (array &$array, array &$array1, array &$array2 = null, array &$_ = null) {}
+function array_replace (array $array, array $array1, array $array2 = null, array $_ = null) {}
 
 /**
  * (PHP 5 &gt;= 5.3.0)<br/>
@@ -661,7 +666,7 @@ function array_combine (array $keys, array $values) {}
  * @param array $search <p>
  * An array with keys to check.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function array_key_exists ($key, array $search) {}
 
@@ -684,8 +689,17 @@ function pos (&$arg) {}
 function sizeof ($var, $mode) {}
 
 /**
- * @param $key
- * @param $search
+ * (PHP 4 < 4.0.6)<br/>
+ * Checks if the given key or index exists in the array. The name of this function is array_key_exists() in PHP > 4.0.6.
+ * @link http://php.net/manual/en/function.array-key-exists.php
+ * @param mixed $key <p>
+ * Value to check.
+ * </p>
+ * @param array $search <p>
+ * An array with keys to check.
+ * </p>
+ * @return bool true on success or false on failure.
+ * @deprecated
  */
 function key_exists ($key, $search) {}
 
@@ -936,7 +950,7 @@ function stream_get_filters () {}
  * were allocated or initialzed during onCreate()
  * this would be the time to destroy or dispose of them.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  * </p>
  * <p>
  * stream_filter_register will return false if the
@@ -993,7 +1007,7 @@ function stream_bucket_new ($stream, $buffer) {}
  * @param string $value <p>
  * The variable value.
  * </p>
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function output_add_rewrite_var ($name, $value) {}
 
@@ -1001,7 +1015,7 @@ function output_add_rewrite_var ($name, $value) {}
  * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
  * Reset URL rewriter values
  * @link http://php.net/manual/en/function.output-reset-rewrite-vars.php
- * @return bool Returns true on success or false on failure.
+ * @return bool true on success or false on failure.
  */
 function output_reset_rewrite_vars () {}
 
