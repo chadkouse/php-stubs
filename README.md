@@ -20,7 +20,9 @@ I will cleanup the thread if it gets too big and we will change process to somet
 Legal notice: we do accept stub patches along with link to publicly available source of information used to make them. i.e. you prepare them (basically transform to appropriate form) from official (and public) documentation.
 
 Steps to update php.jar:
+
 The following steps are for mac but should be pretty close on linux/windows.
+
  1. cd /Applications/PhpStorm.app/plugins/php/lib/
  1. backup php.jar: cp php.jar php_backup.jar
  1. extract the php jar to a new folder
