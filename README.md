@@ -29,7 +29,7 @@ The following steps are for mac but should be pretty close on linux/windows.
   * mkdir php
   * cd php
   * jar xf ../php.jar
- 1. change the stubs directory
+ 1. change to the stubs directory
   * pushd com/jetbrains/php/lang/psi/stubs/data
  1. copy the stubs you want into this directory
   * cp /path/to/your/stub/file .
